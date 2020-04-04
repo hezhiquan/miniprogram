@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/test/test"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "一信以航",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#66ffff",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "../miniprogram/images/tabbar/home.png",
+        "selectedIconPath": "../miniprogram/images/tabbar/home-a.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "个人信息",
+        "iconPath": "../miniprogram/images/tabbar/my.png",
+        "selectedIconPath": "../miniprogram/images/tabbar/my-a.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+ 
+}

@@ -1,0 +1,48 @@
+/* miniprogram/pages/index/index.wxss */
+.canvas{
+  width: 200px;
+  height: 200px;
+}
+/* 自制表格 */
+.table{
+  border:1px solid #080808;
+  border-right:0;
+  border-bottom: 0;
+  width: 80%;
+  margin-left: 1%;
+}
+.tr{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+}
+.th,.td{
+  padding: 10px;
+  border-bottom: 1px solid #080808;
+  border-right: 1px solid #080808;
+  text-align: center;
+  width: 100%;
+}
+
+.th{
+  font-size: 20rpx;
+  color: #330e0e;
+}
+.td{
+  font-size: 20rpx;
+  width: 30%;
+}
+.birthday{
+  padding-left:100rpx;
+}
+.center{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  }
+.btn{
+  background-color:#8bf7ee;
+  height:80rpx;
+  width:600rpx;
+  
+}

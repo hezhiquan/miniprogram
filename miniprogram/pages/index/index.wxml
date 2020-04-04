@@ -1,0 +1,45 @@
+<!--miniprogram/pages/index/index.wxml-->
+<!-- 绘制时钟 -->
+<view class="center" >
+<canvas class='canvas' canvas-id='myCanvas'></canvas>
+</view>
+
+<!-- 绘制生辰钟 -->
+<view >
+	<view wx:if="{{showClock}}" class="birthday" >
+		<text style="color:grey">  在这个世界上，你已经存在</text>
+		<view >
+			<view class="table ">
+				<view class="tr">
+					<view class="th ">{{years}} 年</view>
+					<view class="th "> {{months}} 月</view>
+					<view class="th ">{{weeks}} 周</view>
+				</view>
+				<view class="tr">
+					<view class="td "> {{days}} 天</view>
+					<view class="td"> {{hours}} 小时</view>
+					<view class="td ">{{minutes}} 分钟</view>
+				</view>
+			</view>
+		</view>
+
+	</view>
+	<view wx:else>
+
+
+		<picker mode="date" value="{{date}}" start="1920-01-01" end="{{endTime}}" bindchange="bindDateChange">
+			<view class=" center">			
+				<button >获取我的生辰钟</button>													
+			</view>
+		</picker>
+	</view>
+</view>
+<!-- 绘制其它区域 -->
+
+<mp-cells style="padding-top:30rpx">
+<view wx:for="{{lists}}" wx:key="*this">
+		<mp-cell link hover value="{{item.value}}" footer="{{item.footer}}">
+				<image slot="title" src="{{item.src}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+		</mp-cell> 
+</view>
+</mp-cells>    
