@@ -2,7 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/my/my",
-    "pages/test/test"
+    "pages/test/test",
+    "pages/hzq/123",
+    "pages/123/123"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -31,5 +33,4 @@
     ]
   },
   "sitemapLocation": "sitemap.json"
- 
 }
