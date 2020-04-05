@@ -1,4 +1,4 @@
-// miniprogram/pages/test3/test3.js
+// miniprogram/pages/123/123.js
 Page({
 
   /**

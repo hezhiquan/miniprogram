@@ -2,7 +2,13 @@
   "pages": [
     "pages/index/index",
     "pages/my/my",
+<<<<<<< HEAD
     "pages/test3/test3"
+=======
+    "pages/test/test",
+    "pages/hzq/123",
+    "pages/123/123"
+>>>>>>> master
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
