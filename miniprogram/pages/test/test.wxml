@@ -1,4 +1,0 @@
-
-<mp-toptips msg="{{info}}" type="info" show="{{info}}"></mp-toptips>
-<view>sdadada</view>
-<button bindtap="clickBtn">dffsfs</button>

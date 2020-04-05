@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "i-message": "../../dist/message/index",
-    "mp-toptips": "../../weui/toptips/toptips"
-  }
-}
