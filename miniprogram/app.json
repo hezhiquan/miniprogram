@@ -2,7 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/my/my",
-    "pages/test/test"
+    "pages/test3/test3"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -31,5 +31,4 @@
     ]
   },
   "sitemapLocation": "sitemap.json"
- 
 }
