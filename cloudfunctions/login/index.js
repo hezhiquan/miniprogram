@@ -6,7 +6,7 @@ const cloud = require('wx-server-sdk')
 // 初始化 cloud
 cloud.init({
   // API 调用都保持和云函数当前所在环境一致
-  env: cloud.DYNAMIC_CURRENT_ENV
+  env: "we-chat-test-25sxs"
 })
 
 /**
@@ -16,8 +16,8 @@ cloud.init({
  * 
  */
 exports.main = (event, context) => {
-  console.log(event)
-  console.log(context)
+  //console.log(event)
+  // console.log(context)
 
   // 可执行其他自定义逻辑
   // console.log 的内容可以在云开发云函数调用日志查看

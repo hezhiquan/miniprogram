@@ -7,7 +7,11 @@
 <!-- 绘制生辰钟 -->
 <view >
 	<view wx:if="{{showClock}}" class="birthday" >
-		<text style="color:grey">  在这个世界上，你已经存在</text>
+	<view><text style="padding-left:90rpx">你已经 {{seconds }} 岁了</text></view>
+	<view><text style="color:grey;font-size:12px;">  
+	         在这个世界上，你已经存在</text>
+	 </view>
+		
 		<view >
 			<view class="table ">
 				<view class="tr">

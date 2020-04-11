@@ -1,2 +1,16 @@
-<!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<!-- 展示用户头像 -->
+  <view class="userinfo">
+    <button wx:if="{{!isLogin}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{avatarUrl}}" mode="cover"></image>
+      <text style="color:grey">{{nickName}}</text>
+    </block>
+  </view>
+<!-- 绘制其它区域 -->
+<mp-cells style="padding-top:30rpx">
+<view wx:for="{{lists}}" wx:key="*this">
+		<mp-cell  hover value="{{item.value}}" footer="{{item.footer}}">
+				<image slot="title" src="{{item.src}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+		</mp-cell> 
+</view>
+</mp-cells>  

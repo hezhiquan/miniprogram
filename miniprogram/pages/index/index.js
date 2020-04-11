@@ -1,12 +1,15 @@
 //index.js
 //获取应用实例
 const ctx = wx.createCanvasContext('myCanvas')
+const app = getApp()
+const db = wx.cloud.database()
 
 Page({
   data: {
     endTime:"",
     showClock: false,
     date: "",
+    seconds:"",
     minutes: "",
     hours: "",
     days: "",
@@ -16,32 +19,57 @@ Page({
     timer:"",
     
     lists:[
+      
+      {
+        value:"生辰树",
+        footer:"生命不息，生辰不止",
+        src:"../../images/icons/tree.png"
+      },
+      
+     
+      {
+        value:"心之絮语",
+        footer:"日记三行，纸短情长",
+        src:"../../images/icons/xin.png"
+
+      },
       {
         value:"时光胶囊",
         footer:"愿你多年后不负所期",
         src:"../../images/icons/ziyuan.png"
       },
       {
-        value:"见字如面",
-        footer:"一信千行，纸短情长",
-        src:"../../images/icons/xin.png"
-      },
-      {
-        value:"树洞",
+        value:"解忧杂货铺",
         footer:"你说，我听",
         src:"../../images/icons/mail.png"
-      },
-      {
-        value:"生辰树",
-        footer:"看看今天自己又学习了多少吧",
-        src:"../../images/icons/tree.png"
       }
+      
+      
     ]
   },
   onReady: function () {
-    
+    //设置时间选择器的终止时间
     this.setData({
       endTime:getEndTime()
+    })
+
+    //刚进入页面时，调用云函数尝试登录
+    wx.cloud.callFunction({
+      name : 'login',
+      data : {}
+    }).then((res)=>{
+      db.collection('users').where({
+        _openid : res.result.openid
+      }).get().then((res)=>{
+        if( res.data.length ){         
+          console.log("login函数调用结果为",res)
+          app.userInfo = Object.assign(app.userInfo, res.data[0]);    
+         
+        }       
+      });
+    })
+    .catch((err)=>{
+      console.log(err)
     })
   },
   onShow: function (e) {
@@ -94,6 +122,7 @@ Page({
     let date2 = today.getFullYear() * 12 + today.getMonth();
   
     that.setData({
+      seconds:(allMilliseconds/(1000*60*60*24*365)).toFixed(9),
       minutes: minutes,
       hours: hours,
       days: days,

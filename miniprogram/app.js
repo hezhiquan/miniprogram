@@ -1,7 +1,7 @@
 //app.js
 App({
   onLaunch: function () {
-    
+    //云环境初始化
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -11,10 +11,13 @@ App({
         //   此处请填入环境 ID, 环境 ID 可打开云控制台查看
         //   如不填则使用默认环境（第一个创建的环境）
         // env: 'my-env-id',
-        traceUser: true,
+        env:'we-chat-test-25sxs',
+        traceUser: true
       })
     }
-
     this.globalData = {}
+    this.userInfo = {}
+    
   }
+  
 })
