@@ -1,0 +1,42 @@
+    <!-- 侧边栏内容 -->
+    <view class="page-slidebar">
+		<view  class="image11">
+		<image src="{{avatarUrl}}" mode="widthFix" class="image1"></image>
+		<!-- <text>{{nickName}}</text> -->
+		</view>
+    	<view class="page-content" wx:for="{{sidebars}}" wx:key="item">
+		
+    		<navigator url="{{item.url}}" class="sidebar-content">	<image src="{{item.src}}"  ></image>{{item.text}}</navigator>
+    	</view>
+    </view>
+
+    <!-- 主页内容 -->
+    <!-- （open ? 'c-state' : ''）三元运算符： -->
+    <!-- 1.默认情况下 open 为 false -->
+    <!-- 2.当点击左上角图标的时候或者屏幕向左滑动，open 变化 true -->
+    <!-- 3.当 open 为 true 时，会加上类名为 c-state 和 cover 的 css 样式 -->
+    <!-- bindtouchstart、 bindtouchmove、bindtouchend -->
+    <!-- 当手指触摸屏幕并滑动时，所触发的三个函数 -->
+    <view bindtouchmove="tap_drag" bindtouchend="tap_end" bindtouchstart="tap_start" class="page-top {{open ? ['c-state','cover'] : ''}} ">
+    	<image class="more" bindtap="tap_ch" src="../../../images/tree/goal2.png"></image>
+
+    	<view class="page">
+    		<!-- 浮动的云 -->
+    		<view class="flowingCloud">
+    			<image src="../../../images/tree/cloud1.png" mode="widthFix" style="width:40%;">
+    			</image>
+    		</view>
+    		<!-- 静止的云 -->
+    		<view>
+    			<image class="staticCloud" src="../../../images/tree/cloud1.png" mode="widthFix" style="width:20%;">
+    			</image>
+    		</view>
+    		<!-- 树苗 -->
+    		<view class="tree">
+    			<image src="{{treeUrl}}" mode="widthFix" style="width:20%;" bindtap='touchTree' animation="{{animTreeSwingData}}">
+    			</image>
+    			<!-- 树苗对话框 -->
+    			<view class="treeOut {{dialogue1}}">{{talk}}</view>
+    		</view>
+    	</view>
+    </view>

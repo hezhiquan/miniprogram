@@ -2,7 +2,11 @@
   "pages": [
     "pages/index/index",
     "pages/my/my",
-    "pages/123/123"
+    "pages/tree/tree",
+    "pages/tree/singleTree/singleTree",
+    "pages/tree/singleTree/addGoal/addGoal",
+    "pages/tree/singleTree/showGoals/showGoals",
+    "pages/tree/singleTree/showDoneGoals/showDoneGoals"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -13,20 +17,26 @@
   },
   "tabBar": {
     "color": "#000000",
-    "selectedColor": "#66ffff",
+    "selectedColor": "#3fe296",
     "backgroundColor": "#fff",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "主页",
-        "iconPath": "../miniprogram/images/tabbar/home.png",
-        "selectedIconPath": "../miniprogram/images/tabbar/home-a.png"
+        "iconPath": "../miniprogram/images/tabbar/tabbar1.png",
+        "selectedIconPath": "../miniprogram/images/tabbar/tabbar111.png"
+      },
+      {
+        "pagePath": "pages/tree/tree",
+        "text": "种树",
+        "iconPath": "../miniprogram/images/tabbar/tabbar2.png",
+        "selectedIconPath": "../miniprogram/images/tabbar/tabbar222.png"
       },
       {
         "pagePath": "pages/my/my",
         "text": "个人信息",
-        "iconPath": "../miniprogram/images/tabbar/my.png",
-        "selectedIconPath": "../miniprogram/images/tabbar/my-a.png"
+        "iconPath": "../miniprogram/images/tabbar/tabbar3.png",
+        "selectedIconPath": "../miniprogram/images/tabbar/tabbar333.png"
       }
     ]
   },

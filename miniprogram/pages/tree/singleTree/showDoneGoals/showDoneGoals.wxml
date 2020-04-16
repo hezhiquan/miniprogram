@@ -1,0 +1,10 @@
+<!--miniprogram/pages/tree/singleTree/showDoneGoals/showDoneGoals.wxml-->
+<view class="text1">已完成列表</view>
+<scroll-view scroll-y = true class="scroll" bindscrolltolower="onReachBottom">
+	<view class="title {{(index%2)==0?'color1':'color2'}}" wx:for="{{dataList}}" wx:key="item" wx:for-index="index">
+		<mp-cell hover value="{{item.goal}}"> </mp-cell>
+</view>
+	<view class="text1" hidden="{{!loadMore}}">正在载入更多...</view>
+	<view class="text1" hidden="{{!loadAll}}">已加载全部</view>
+
+</scroll-view>

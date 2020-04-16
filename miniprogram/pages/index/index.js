@@ -18,30 +18,26 @@ Page({
     years: "",
     timer:"",
     
-    lists:[
-      
-      {
-        value:"生辰树",
-        footer:"生命不息，生辰不止",
-        src:"../../images/icons/tree.png"
-      },
-      
-     
+    lists:[   
       {
         value:"心之絮语",
         footer:"日记三行，纸短情长",
-        src:"../../images/icons/xin.png"
-
+        src:"../../images/icons/xin.png",
+        url:"../tree/singleTree/singleTree"
       },
       {
         value:"时光胶囊",
         footer:"愿你多年后不负所期",
-        src:"../../images/icons/ziyuan.png"
+        src:"../../images/icons/ziyuan.png",
+        url:"../tree/singleTree/singleTree"
+
       },
       {
         value:"解忧杂货铺",
         footer:"你说，我听",
-        src:"../../images/icons/mail.png"
+        src:"../../images/icons/mail.png",
+        url:"../tree/singleTree/singleTree"
+        //../tree/singleTree/singleTree
       }
       
       
@@ -192,17 +188,7 @@ function backshow() {
   ctx.closePath()
   ctx.stroke()
 }
-//数字
-function numbershow() {
-  ctx.beginPath()
-  ctx.setFontSize(20)
-  for (var i = 1; i < 13; i++) {
-    var angle = i * Math.PI / 6
-    var x = 80 * Math.sin(angle) + 145 //微调
-    var y = 158 - 80 * Math.cos(angle)
-    ctx.fillText(i, x, y)
-  }
-}
+
 //格式化endTime
 function getEndTime(){
   //格式化endTime

@@ -1,0 +1,20 @@
+/* miniprogram/pages/tree/singleTree/showDoneGoals/showDoneGoals.wxss */
+.title{
+  background-color: white;
+  height: auto;
+}
+.text1{
+  color: grey;
+  font-size: 40rpx;
+  padding:20rpx 0rpx;
+  text-align: center;
+}
+.color1{
+  background-color: white;
+    }
+  .color2{
+  background-color: #F8F8F8;
+  }
+.scroll{
+  height: 100%;
+}

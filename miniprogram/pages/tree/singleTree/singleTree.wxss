@@ -1,0 +1,194 @@
+/* 侧边栏样式 */
+.page-slidebar {
+  height: 100%;
+  width: 750rpx;
+  position: fixed;
+  padding-top: 60rpx;
+  background-color:white;
+  z-index: 0;
+}
+
+.image1{
+  margin:0 13%;
+  vertical-align: middle;
+  width:30%; 
+  border-radius: 50%;
+}
+
+/* 控制侧边栏的内容距离顶部的距离 */
+.page-content {
+  padding-top: 40rpx;
+  width: 450rpx;
+ 
+}
+.page-content image{
+  margin-right: 16rpx;
+  margin-left: 18rpx;
+  vertical-align: middle;
+  width:20px; 
+  height: 20px;
+  
+}
+/* 侧边栏内容的 css 样式 */
+.sidebar-content {
+  color:black;
+  padding-top: 0rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #eee; 
+}
+
+/* 当屏幕向左滑动，出现侧边栏的时候，主页的动画样式 */
+/* scale：取值范围 0~1 ，表示屏幕大小是原来的百分之几，可以自己修改成 0.8 试下*/
+/* translate(60%,0%) 表示向左滑动的时候，侧边栏占用平时的宽度为 60%   */
+.c-state {
+  transform: rotate(0deg) scale(1) translate(60%, 0%);
+}
+
+/* 主页样式 */
+.page-top {
+  height: 100%;
+  position: fixed;
+  width: 750rpx;
+  background-color:white;
+  z-index: 0;
+  transition: All 0.4s ease;
+  
+}
+/* 左上角图标的样式 */
+.more{
+  
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  left: 40rpx;
+  top: 60rpx;
+  z-index: 4;
+  border-radius: 50%;
+  box-shadow: 10rpx 10rpx 5rpx #888888;
+}
+
+
+
+/* 遮盖层样式 */
+.cover{
+  width: 100%;
+  height: 100%;
+  background-color:gray;
+  opacity: 0.5;
+  /* 设为较大的数值，遮住其它页面 */
+  z-index: 10;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://s1.ax1x.com/2020/04/14/JpyRMj.md.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  
+}
+
+
+/* 样式：流动的云 
+  从左到右，10S完成*/
+
+  .flowingCloud {
+    position: absolute;
+    z-index: 3;
+    width: 50%;
+    height: 50%;
+    top: 180rpx;
+    right: 0;
+    bottom: 0;
+    animation: cloud 10s linear infinite;
+  }
+  
+  @keyframes cloud {
+    from {
+      transform: translate3d(-700rpx, 0, 0);
+    }
+  
+    to {
+      transform: translate3d(300rpx, 0, 0);
+    }
+  }
+/* 静止的云 */
+.staticCloud{
+  position: relative;
+  width: 30%;
+  height:30%;
+  left: 65%;
+  top:80rpx;
+}
+
+
+
+
+
+  .tree {
+    bottom: 150rpx;
+    left: 0;
+    right: 0;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    position: absolute;
+    z-index: 3;
+  }
+
+  /* 对话框 */
+ .dialogue{
+    
+    animation: dialogue 5s;
+  }
+
+  @keyframes dialogue{
+   
+    from{ top:-70rpx; visibility: visible;}
+    to{top: -100rpx; visibility: visible; }
+
+  }
+  /*  */
+  .treeOut{
+    position: absolute;
+    top: -70rpx;
+    left: 440rpx;
+    /* height: 100rpx;
+    width: 300rpx; */
+    border: 1px solid;
+    border-radius: 8%;
+    border-color:rgb(104, 243, 106);
+    color: rgb(104, 243, 106);
+  /* 将对话框设为不可见，开始移动的时候再设为可见 */
+    visibility: hidden;
+   
+  }

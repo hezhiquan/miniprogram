@@ -1,0 +1,6 @@
+<!--miniprogram/pages/tree/tree.wxml-->
+<!-- TODO:定时 -->
+<text>miniprogram/pages/tree/tree.wxml</text>
+<text>这里写生辰树的定时功能</text>
+
+<!--TODO:在已登录的情况下，提供进入个人树，多人树的入口 -->
