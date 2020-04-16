@@ -11,6 +11,7 @@ Page({
     myGoal:"",
     expectedTime:"",
     isAchieve:false,
+    type:"error",
     tips:"" //用户输入错误的提示
   },
 
@@ -46,6 +47,7 @@ Page({
   },
   //提交小目标
   bindSubmit:function(){
+    let that=this;
     if(this.data.myGoal!="" && this.data.expectedTime!=""){
       db.collection("goals").add({
         data:{
@@ -57,6 +59,17 @@ Page({
         },
         success:function(res){
           console.log("提交成功",res)
+          that.setData({
+            type:"success",
+            tips:"提交成功"
+          })
+          console.log("开始跳转")
+          //两秒后跳转回上一页
+          setTimeout(function(){
+            wx.navigateBack({
+              delta:1
+            })
+          },2000) 
         },
         fail:function(err){
           console.log("提交失败",err)
@@ -66,6 +79,7 @@ Page({
     }else {
       console.log("输入不符合条件")
       this.setData({
+      
         tips:"输入不能为空"
       })
     }

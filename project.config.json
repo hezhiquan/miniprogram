@@ -2,12 +2,25 @@
 	"miniprogramRoot": "miniprogram/",
 	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
+		"enhance": true,
 		"postcss": true,
+		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
-		"enhance": true
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"appid": "wx70d132c0a5478380",
 	"projectname": "miniProgram",
@@ -45,9 +58,9 @@
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "pages/test/test",
-					"pathName": "pages/test/test",
+					"id": 1,
+					"name": "pages/tree/singleTree/test/test",
+					"pathName": "pages/tree/singleTree/test/test",
 					"query": "",
 					"scene": null
 				},
@@ -55,6 +68,28 @@
 					"id": -1,
 					"name": "pages/my/my",
 					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/tree/tree",
+					"pathName": "pages/tree/tree",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/tree/singleTree/singleTree",
+					"pathName": "pages/tree/singleTree/singleTree",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "pages/tree/singleTree/addGoal/addGoal",
+					"pathName": "pages/tree/singleTree/addGoal/addGoal",
+					"query": "",
 					"scene": null
 				}
 			]

@@ -8,5 +8,5 @@
 		<input bindinput="bindTime" placeholder="准时完成它哦"></input>
     <button bindtap="bindSubmit" plain hover-class >提交</button>
 	</view>
-<mp-toptips msg="{{tips}}" type="error" show="{{tips}}"></mp-toptips>
+<mp-toptips msg="{{tips}}" type="{{type}}" show="{{tips}}"></mp-toptips>
 </view>
