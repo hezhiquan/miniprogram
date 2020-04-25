@@ -49,46 +49,26 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
 				{
-					"id": -1,
-					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide",
-					"query": ""
+					"id": 0,
+					"name": "pages/tree/singleTree/demo1/demo1",
+					"pathName": "pages/tree/singleTree/demo1/demo1",
+					"query": "",
+					"scene": null
 				},
 				{
 					"id": 1,
-					"name": "pages/tree/singleTree/test/test",
-					"pathName": "pages/tree/singleTree/test/test",
+					"name": "pages/timing/timing",
+					"pathName": "pages/timing/timing",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/my/my",
-					"pathName": "pages/my/my",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/tree/tree",
-					"pathName": "pages/tree/tree",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/tree/singleTree/singleTree",
-					"pathName": "pages/tree/singleTree/singleTree",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 5,
-					"name": "pages/tree/singleTree/addGoal/addGoal",
-					"pathName": "pages/tree/singleTree/addGoal/addGoal",
+					"id": 2,
+					"name": "pages/tree/singleTree/demo3/demo3",
+					"pathName": "pages/tree/singleTree/demo3/demo3",
 					"query": "",
 					"scene": null
 				}

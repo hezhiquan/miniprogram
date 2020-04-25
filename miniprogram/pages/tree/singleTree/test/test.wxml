@@ -1,0 +1,10 @@
+    <!-- 通过绑定事件，当触碰到这个元素时，将display设为可见 -->
+    <view bindtap="showview">点击我可以展示弹窗</view>
+    	<!-- 遮罩层 -->
+      <!-- 将关闭弹窗绑定到遮罩层和遮罩层内容上,一旦触碰内容或者背景,就会将整个弹窗关掉,在实际应用中,若想按某个键关掉弹窗,则把该键绑定hideview事件,其它元素都不要绑定即可 -->
+    	<view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+    	<view class="myContent" bindtap='hideview' style='display:{{display}}'>
+      <view>我是内容</view>
+       <view>点击我或者背景都可以关掉弹窗</view>
+      
+      </view>

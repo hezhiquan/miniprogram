@@ -4,14 +4,14 @@
   width: 750rpx;
   position: fixed;
   padding-top: 60rpx;
-  background-color:white;
+  background-color: white;
   z-index: 0;
 }
 
-.image1{
-  margin:0 13%;
+.image1 {
+  margin: 0 13%;
   vertical-align: middle;
-  width:30%; 
+  width: 30%;
   border-radius: 50%;
 }
 
@@ -19,22 +19,24 @@
 .page-content {
   padding-top: 40rpx;
   width: 450rpx;
- 
+
 }
-.page-content image{
+
+.page-content image {
   margin-right: 16rpx;
   margin-left: 18rpx;
   vertical-align: middle;
-  width:20px; 
+  width: 20px;
   height: 20px;
-  
+
 }
+
 /* 侧边栏内容的 css 样式 */
 .sidebar-content {
-  color:black;
+  color: black;
   padding-top: 0rpx;
   padding-bottom: 20rpx;
-  border-bottom: 1px solid #eee; 
+  border-bottom: 1px solid #eee;
 }
 
 /* 当屏幕向左滑动，出现侧边栏的时候，主页的动画样式 */
@@ -49,14 +51,15 @@
   height: 100%;
   position: fixed;
   width: 750rpx;
-  background-color:white;
+  background-color: white;
   z-index: 0;
   transition: All 0.4s ease;
-  
+
 }
+
 /* 左上角图标的样式 */
-.more{
-  
+.more {
+
   position: absolute;
   width: 100rpx;
   height: 100rpx;
@@ -70,39 +73,14 @@
 
 
 /* 遮盖层样式 */
-.cover{
+.cover {
   width: 100%;
   height: 100%;
-  background-color:gray;
+  background-color: gray;
   opacity: 0.5;
   /* 设为较大的数值，遮住其它页面 */
   z-index: 10;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -114,81 +92,324 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
-  
+
 }
 
 
 /* 样式：流动的云 
   从左到右，10S完成*/
 
-  .flowingCloud {
-    position: absolute;
-    z-index: 3;
-    width: 50%;
-    height: 50%;
-    top: 180rpx;
-    right: 0;
-    bottom: 0;
-    animation: cloud 10s linear infinite;
+.flowingCloud {
+  position: absolute;
+  z-index: 3;
+  width: 50%;
+  height: 50%;
+  top: 180rpx;
+  right: 0;
+  bottom: 0;
+  animation: cloud 10s linear infinite;
+}
+
+@keyframes cloud {
+  from {
+    transform: translate3d(-700rpx, 0, 0);
   }
-  
-  @keyframes cloud {
-    from {
-      transform: translate3d(-700rpx, 0, 0);
-    }
-  
-    to {
-      transform: translate3d(300rpx, 0, 0);
-    }
+
+  to {
+    transform: translate3d(300rpx, 0, 0);
   }
+}
+
 /* 静止的云 */
-.staticCloud{
+.staticCloud {
   position: relative;
   width: 30%;
-  height:30%;
+  height: 30%;
   left: 65%;
-  top:80rpx;
+  top: 80rpx;
 }
 
 
 
 
 
-  .tree {
-    bottom: 150rpx;
-    left: 0;
-    right: 0;
-    padding: 0px;
-    margin: 0px;
-    text-align: center;
-    position: absolute;
-    z-index: 3;
-  }
+.tree {
+  bottom: 150rpx;
+  left: 0;
+  right: 0;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  position: absolute;
+  z-index: 3;
+}
 
-  /* 对话框 */
- .dialogue{
-    
-    animation: dialogue 5s;
-  }
-
-  @keyframes dialogue{
-   
-    from{ top:-70rpx; visibility: visible;}
-    to{top: -100rpx; visibility: visible; }
-
-  }
-  /*  */
-  .treeOut{
-    position: absolute;
-    top: -70rpx;
-    left: 440rpx;
-    /* height: 100rpx;
-    width: 300rpx; */
-    border: 1px solid;
-    border-radius: 8%;
-    border-color:rgb(104, 243, 106);
-    color: rgb(104, 243, 106);
+/*  */
+.treeOut {
+  position: absolute;
+  top: -70rpx;
+  left: 440rpx;
+  /* height: 100rpx;
+      width: 300rpx; */
+  border: 1px solid;
+  border-radius: 8%;
+  border-color: rgb(104, 243, 106);
+  color: rgb(104, 243, 106);
   /* 将对话框设为不可见，开始移动的时候再设为可见 */
-    visibility: hidden;
-   
+  visibility: hidden;
+
+}
+
+/* 对话框 */
+.dialogue {
+  visibility: visible;
+  animation: dialogue 5s;
+}
+
+@keyframes dialogue {
+
+  from {
+    top: -70rpx;
+    visibility: visible;
   }
+
+  to {
+    top: -100rpx;
+    visibility: visible;
+  }
+
+}
+
+/* 大树 */
+/* 设置渐变 */
+.gradients {
+  width: 750rpx;
+  height: 1200rpx;
+  background-image: linear-gradient(to bottom right, rgba(243, 240, 99, 0.861), rgba(106, 244, 13, 0.922));
+}
+
+.bigTree {
+  position: absolute;
+
+}
+
+.imageBigTree {
+  position: absolute;
+  
+  padding-bottom: 200rpx;
+  width: 750rpx;
+  height: 750rpx;
+}
+
+/* 设定果子大小 */
+.apples{
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+
+/* 果子掉落 */
+/* 设定对应的10个关键帧 */
+@keyframes drop0 {
+  from { opacity: 1.0;top: 100rpx;left: 360rpx;rotate: 0deg;  }
+  to {
+    opacity: 0.4;
+    top: 860rpx;
+    left: 360rpx;
+    rotate: 360deg; 
+  }
+}
+.drop0{
+
+  animation: drop0 5s ease-in 1;
+}
+@keyframes drop1{
+  from{opacity: 1.0;top:120rpx;left: 160rpx;rotate: 0deg; }
+  30%{opacity: 0.8;top:220rpx;left: 160rpx; rotate: 360deg;}
+  60%{opacity: 0.6;top:380rpx;left: 0;rotate: 0deg; }
+  to{opacity: 0.4;top: 620rpx;left: 160rpx; rotate: 360deg;}
+}
+.drop1{
+  animation: drop1 5s ease-in 1;
+}
+@keyframes drop2{
+  from{opacity: 1.0;top:120rpx;left: 400rpx;rotate: 0deg; }
+  /* 30%{opacity: 0.8;top:220rpx;left: 400rpx; rotate: 360deg;}
+  60%{opacity: 0.6;top:380rpx;left: 400rpx;rotate: 0deg; } */
+  to{opacity: 0.4;top: 620rpx;left: 400rpx; rotate: 360deg;}
+}
+.drop2{
+  animation: drop2 5s ease-in 1;
+}
+@keyframes drop3{
+  from{opacity: 1.0;top:160rpx;left: 180rpx;rotate: 0deg; }
+  /* 30%{opacity: 0.8;top:260rpx;left: 180rpx; rotate: 360deg;}
+  60%{opacity: 0.6;top:430rpx;left: 180rpx;rotate: 0deg; } */
+  to{opacity: 0.4;top: 620rpx;left: 180rpx; rotate: 360deg;}
+}
+.drop3{
+  animation: drop3 5s ease-in 1;
+}
+@keyframes drop4{
+  from{opacity: 1.0;top:80rpx;left: 580rpx;rotate: 0deg; }
+  /* 30%{opacity: 0.8;top:180rpx;left: 580rpx; rotate: 360deg;}
+  60%{opacity: 0.6;top:350rpx;left: 580rpx;rotate: 0deg; } */
+  to{opacity: 0.4;top: 520rpx;left: 580rpx; rotate: 360deg;}
+}
+.drop4{
+  animation: drop4 5s ease-in 1;
+}
+@keyframes drop5{
+  from{opacity: 1.0;top:80rpx;left: 450rpx;rotate: 0deg; }
+  /* 30%{opacity: 0.8;top:220rpx;left: 450rpx; rotate: 360deg;}
+  60%{opacity: 0.6;top:380rpx;left: 450rpx;rotate: 0deg; } */
+  to{opacity: 0.4;top: 520rpx;left: 450rpx; rotate: 360deg;}
+}
+.drop5{
+  animation: drop5 5s ease-in 1;
+}
+@keyframes drop6{
+  from{opacity: 1.0;top:80rpx;left: 270rpx;rotate: 0deg; }
+  /* 30%{opacity: 0.8;top:190rpx;left: 270rpx; rotate: 360deg;}
+  60%{opacity: 0.6;top:330rpx;left: 270rpx;rotate: 0deg; } */
+  to{opacity: 0.4;top: 520rpx;left: 270rpx; rotate: 360deg;}
+}
+.drop6{
+  animation: drop6 5s ease-in 1;
+}
+@keyframes drop7{
+  from{opacity: 1.0;top:90rpx;left: 500rpx;rotate: 0deg; }
+  /* 30%{opacity: 0.8;top:190rpx;left: 500rpx; rotate: 360deg;}
+  60%{opacity: 0.6;top:320rpx;left: 500rpx;rotate: 0deg; } */
+  to{opacity: 0.4;top: 400rpx;left: 500rpx; rotate: 360deg;}
+}
+.drop7{
+  animation: drop7 5s ease-in 1;
+}
+@keyframes drop8{
+  from{opacity: 1.0;top:80rpx;left: 190rpx;rotate: 0deg; }
+  /* 30%{opacity: 0.8;top:160rpx;left: 190rpx; rotate: 360deg;}
+  60%{opacity: 0.6;top:270rpx;left: 190rpx;rotate: 0deg; } */
+  to{opacity: 0.4;top: 300rpx;left: 190rpx; rotate: 360deg;}
+}
+.drop8{
+  animation: drop8 5s ease-in 1;
+}
+@keyframes drop9{
+  from{opacity: 1.0;top:30rpx;left: 260rpx;rotate: 0deg; }
+  /* 30%{opacity: 0.8;top:90rpx;left: 260rpx; rotate: 360deg;}
+  60%{opacity: 0.6;top:180rpx;left: 260rpx;rotate: 0deg; } */
+  to{opacity: 0.4;top: 290rpx;left: 260rpx; rotate: 360deg;}
+}
+.drop9{
+  animation: drop9 5s ease-in 1;
+}
+/* 设定苹果初始位置 */
+#apple0{
+  position: relative;
+  top: 100rpx;
+  left: 360rpx;
+}
+#apple1{
+  position: relative;
+  top: 120rpx;
+  left: 160rpx;
+}
+#apple2{
+  position: relative;
+  top: 120rpx;
+  left: 400rpx;
+}
+#apple3{
+  position: relative;
+  top: 160rpx;
+  left: 180rpx;
+}
+#apple4{
+  position: relative;
+  top: 80rpx;
+  left: 580rpx;
+}
+#apple5{
+  position: relative;
+  top: 80rpx;
+  left: 450rpx;
+}
+#apple6{
+  position: relative;
+  top: 80rpx;
+  left: 270rpx;
+}
+#apple7{
+  position: relative;
+  top: 90rpx;
+  left: 500rpx;
+}
+#apple8{
+  position: relative;
+  top: 80rpx;
+  left: 190rpx;
+}
+#apple9{
+  position: relative;
+  top: 30rpx;
+  left: 260rpx;
+}
+
+/* 苹果掉落后的遮罩层 */
+.bg {
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(143, 134, 134, 0.744);
+  z-index: 1001;
+  opacity: 0.70;
+  filter: alpha(opacity=70);
+  
+}
+
+.myGoal {
+  display: none;
+  text-align: center;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  /* border: 4px solid #c0fd7f; */
+  /* box-shadow: 3px 3px 6px 6px grey; */
+  background-image: linear-gradient(to bottom , rgba(231, 229, 158, 0.861), rgba(226, 238, 158, 0.922));
+  /* background-color: white; */
+  z-index: 1002;
+  overflow: auto;
+  animation: myGoal 2s ease 1;
+}
+@keyframes myGoal{
+  from{scale: 0.3;}
+  to{scale: 1;}
+}
+.myGoal image{
+  /* background-color:white; */
+  width: 560rpx;
+  height: 560rpx;
+  z-index: 1002;
+}
+.goal{
+ 
+  text-align: center;
+  
+  padding-top: 30rpx;
+  padding-bottom: 10rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  color:rgb(120, 112, 112);
+}
+.time{
+  font-size: 20rpx;
+}
+
+

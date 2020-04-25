@@ -5,7 +5,7 @@
 	<view wx:for="{{goals}}" wx:key="item" wx:for-index="index">
 		<mp-cells>
 					<view  class="{{(index%2)==0?'color1':'color2'}}">
-						<mp-slideview data-id="{{item._id}}" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
+						<mp-slideview data-id="{{item._id}}" buttons="{{slideButtons}}"  bindbuttontap="slideButtonTap">
 							<mp-cell value="{{item.goal}}" footer="<"></mp-cell>
 						</mp-slideview>
 					</view>

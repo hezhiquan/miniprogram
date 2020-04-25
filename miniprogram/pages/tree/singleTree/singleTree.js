@@ -2,14 +2,11 @@
 let app = getApp();
 let animTreeSwing; //树苗摆动的动画变量
 let  clearTimeOut=0;//控制对话框，若是在对话框未开始之前多次点击，则消失时间设为最后一次点击时间
-
-
+const db=wx.cloud.database();
+let isClick=false;//是否已经点击，多次点击时只展现第一个
 
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
     nickName:"",
     avatarUrl:"",
@@ -27,23 +24,59 @@ Page({
     {text:"待完成的小目标",url:"./showGoals/showGoals",src:"https://s1.ax1x.com/2020/04/16/Jiz610.png"}
     ],//侧边栏列表项的内容
 
-    //下面六个属性针对小树苗
+    //下面五个属性针对小树苗
     animTreeSwingData: {}, //设定树苗动画所需的动画对象
     talk: "种树，与学习更配哦",
     talkList: ["爱种树的人，运气都不会太差", "今天，你种树了么", "你好啊", "种树,与学习更配哦"],
     dialogue1: "", //给对话框添加的动态属性，一开始为无，之后添加dialogue类的css，使对话框能够显示
-    treeUrl: "../../../images/tree/tree_1.png",
+    treeUrl: ["../../../images/tree/tree_1.png","https://s1.ax1x.com/2020/04/18/JnMP8e.md.png","https://s1.ax1x.com/2020/04/18/JnEjFH.md.png",
+    "https://s1.ax1x.com/2020/04/18/JnVnlq.md.png"],
    
+    //完成的成就数若少于10个则展示小树苗，否则展示大树
+    
+    appleSrc:["https://s1.ax1x.com/2020/04/18/JnEtL8.md.png"],
+    dropApple:[false,false,false,false,false,false,false,false,false,false],
+    drop:['drop0','drop1','drop2','drop3','drop4','drop5','drop6','drop7','drop8','drop9'],
+    top10:[],
+    isDisplay:'',
+    myGoal:"",
+    bgUrl:"",
+    finishedTime:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let that=this;
     console.log("获取的app信息为",app)
     this.setData({
       avatarUrl:app.userInfo.avatarUrl,
       nickName:app.userInfo.nickName
+    })
+    this.getGoals();
+
+  },
+  // 初始时，获取最新完成的成就列表
+  getGoals:function(){
+    let that=this;
+    db.collection("goals").where({
+      _openid:'openid',
+      isAchieve:true
+    })
+    .orderBy("createdDate","desc")
+    .limit(10).get({
+    success:function(res){
+      
+      console.log("查询成功",res)
+      that.setData({
+        top10:res.data
+      })
+      
+    },
+    fail:function(err){
+      console.log("查询失败",err);
+    }
     })
   },
 
@@ -130,25 +163,60 @@ Page({
 
     //该值不为零，说明对话框还存在，则应取消上一次点击时设置的取消对话框行为
     if(clearTimeOut!=0){
-      clearTimeOut(clearTimeOut);
+      clearTimeout(clearTimeOut);
     }
 
-    clearTimeOut=setTimeout(function () {
+    setTimeout(function () {
       console.log("重置对话");
       that.setData({
         dialogue1: ""
       })
-      clearTimeOut=0
+     
     }, 5000)
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+  //苹果掉落动画
+  drop:function(e){
+    if(isClick==false){
+      isClick=true;
+      let that=this;
+    console.log("event 是 ",e);
+    //返回的id为apple1，apple2之类
+    let index=parseInt(e.target.id.substring(5));
+    console.log(index);
+    let temp='dropApple['+index+']';
+   //e.currentTarget.dataset['goal'],得到点击果子的成就
+   let index2=e.currentTarget.dataset['index'];
+   let time=that.data.top10[index2].finishedTime.getFullYear()+"-"+that.data.top10[index2].finishedTime.getMonth()+"-"+that.data.top10[index2].finishedTime.getDate();
+   let url='https://s1.ax1x.com/2020/04/19/Jur24O.md.png';
+    this.setData({
+      [temp]:true,
+      myGoal:this.data.top10[index].goal,
+      bgUrl:url,
+      finishedTime:time
+    })
+    console.log("修改后，data ",this.data);
+    setTimeout(function(){
+      that.setData({
+        [temp]:false
+      })
+      that.showview();
+      isClick=false;//改为未点击状态
+      
+      console.log("2修改后，data ",that.data);
+    },5000)
+    }
 
   },
-
-
+  showview: function() { 
+    this.setData({
+      display: "block"
+    })
+  },
+  hideview: function() {
+    this.setData({
+      display: "none"
+    })
+  }
 })

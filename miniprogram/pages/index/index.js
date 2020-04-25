@@ -23,7 +23,7 @@ Page({
         value:"心之絮语",
         footer:"日记三行，纸短情长",
         src:"../../images/icons/xin.png",
-        url:"../tree/singleTree/singleTree"
+        url:"../tree/multiTree/demo2/demo2"
       },
       {
         value:"时光胶囊",

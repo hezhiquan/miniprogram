@@ -1,18 +1,22 @@
 /* miniprogram/pages/tree/singleTree/addGoal/addGoal.wxss */
+page{
+  /* 铺满整个屏幕 */
+  height:100%
+}
 .my-goal{
-  padding-top: 20rpx;
+  padding-top: 90rpx;
   width:100%;
-  height:auto;
+  
   
   display:flex;
   justify-content: center;
- 
+  
 }
 .my-goal-content{
 
   background-color: white;
-  box-shadow:4px 4px 16px #333333 ;
-  width: 90%;
+  box-shadow:4px 4px 16px #b4b1b1 ;
+  width: 85%;
   height: auto;
   
 }
