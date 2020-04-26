@@ -220,7 +220,8 @@ countInterval: function(){
    },
   onLoad: function (options) {
     // 调用函数
-    this.Initi();   
+    this.Initi() 
+   
   },  
   
 startTime()
