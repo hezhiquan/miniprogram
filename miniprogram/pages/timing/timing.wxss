@@ -1,0 +1,300 @@
+.container{
+  height: 100%;
+  width:100%;
+  display:flex;
+  flex-direction:row;
+}
+.item1{
+  flex-grow: 1;
+  height:150rpx;
+  width:100rpx;
+  background-color:cyan;
+  border: 1px solid #fff
+}
+.timing 
+{ 
+  position: relative;
+  top:124rpx;
+  left: 168rpx;
+}
+.button1 {
+  position: relative;
+  background-color: #4CAF50;
+  border: none;
+  font-size: 28px;
+  color: #FFFFFF;
+  padding: 40rpx;
+  width: 400rpx;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.marright
+{
+   font-size: 85rpx; 
+}
+.start
+{
+  position: relative;
+  top: 270rpx;
+  font-size: 123rpx;
+}
+
+.button1 {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;  
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  left: 200rpx;
+  font-size: 30rpx;
+}
+
+.button1:hover {background-color: #3e8e41}
+
+.button1:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+ 
+.button3 {
+  position: relative;
+  background-color: rgba(163, 133, 14, 0.405);
+  border: none;
+  font-size: 28px;
+  color: #FFFFFF;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button3 {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;  
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: rgba(163, 133, 14, 0.405);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;  
+  left: 200rpx;
+  font-size: 40rpx; 
+}
+
+.button3:hover {background-color: rgba(186, 105, 0, 0.666)}
+
+.button3:active {
+  background-color: #7d8e3ef5;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+ 
+.drawer_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+}
+ 
+.drawer_box {
+  width: 650rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 1001;
+  background: #FAFAFA;
+  margin: -150px 50rpx 0 50rpx;
+  border-radius: 3px;
+}
+ 
+.drawer_title{
+  padding:15px;
+  font: 20px "microsoft yahei";
+  text-align: center;
+}
+.drawer_content {
+  height: 150px;
+  overflow-y: scroll; /*超出父盒子高度可滚动*/
+}
+ 
+.btn_ok{
+  padding: 10px;
+  font: 20px "microsoft yahei";
+  text-align: center;
+  border-top: 1px solid #E8E8EA;
+  color: #3CC51F;
+}
+ 
+.top{
+	padding-top:20px;
+} 
+.bottom {
+	padding-bottom:8px;
+}
+.title {
+  font-size: 15px;
+	height: 30px;
+	line-height: 30px;
+	width: 160rpx;
+	text-align: center;
+	display: inline-block;
+	font: 300 28rpx/30px "microsoft yahei";
+}
+ 
+.input_base {
+  size: 30px;
+	border: 2rpx solid #ccc;
+	padding-left: 10rpx;
+	margin-right: 50rpx;
+}
+
+.picker{
+  position: relative;
+  top:30px;
+  font: 20px;
+  text-align: center;
+}
+ 
+input {
+	font: 12px "microsoft yahei"; 
+	background: #fff;
+	color:#000 ;
+}
+
+.grid { display: -webkit-box; display: box; }
+.col-0 {-webkit-box-flex:0;box-flex:0;}
+.col-1 {-webkit-box-flex:1;box-flex:1;}
+.fl { float: left;}
+.fr { float: right;}
+
+.progress_box{
+  position: relative;
+  width: 220px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.progress_canvas
+{
+  position: absolute; 
+  top:20px;
+  left: 75px;  
+}
+.progress_bg{
+  position: absolute; 
+  top:20px;
+  left: 75px;  
+}
+canvas{
+  width: 220px;
+  height: 220px;
+}
+
+.goal
+{
+  height: 20px;
+  position: absolute;
+  top:230px;
+  left: 117px;
+}
+
+/* 侧边栏样式 */
+.page-slidebar {
+  height: 100%;
+  width: 750rpx;
+  position: fixed;
+  padding-top: 60rpx;
+  background-color: white;
+  z-index: 0;
+}
+/* 控制侧边栏的内容距离顶部的距离 */
+.page-content {
+  padding-top: 40rpx;
+  width: 450rpx;
+
+}
+
+.page-content image {
+  margin-right: 16rpx;
+  margin-left: 18rpx;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+
+}
+
+/* 侧边栏内容的 css 样式 */
+.sidebar-content {
+  color: black;
+  padding-top: 0rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #eee;
+}
+
+/* 当屏幕向左滑动，出现侧边栏的时候，主页的动画样式 */
+/* scale：取值范围 0~1 ，表示屏幕大小是原来的百分之几，可以自己修改成 0.8 试下*/
+/* translate(60%,0%) 表示向左滑动的时候，侧边栏占用平时的宽度为 60%   */
+.c-state {
+  transform: rotate(0deg) scale(1) translate(60%, 0%);
+}
+
+/* 主页样式 */
+.page-top {
+  height: 100%;
+  position: fixed;
+  width: 750rpx;
+  background-color: white;
+  z-index: 0;
+  transition: All 0.4s ease;
+
+}
+
+/* 左上角图标的样式 */
+.more {
+  position: absolute;
+  top:4%;
+  left: 4%;
+  width: 100rpx;
+  height: 100rpx;
+  z-index: 4;
+  border-radius: 50%;
+  box-shadow: 10rpx 10rpx 5rpx #888888;
+}
+
+
+
+/* 遮盖层样式 */
+.cover {
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+  opacity: 0.5;
+  /* 设为较大的数值，遮住其它页面 */
+  z-index: 10;
+}

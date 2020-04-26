@@ -53,8 +53,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/tree/singleTree/demo1/demo1",
-					"pathName": "pages/tree/singleTree/demo1/demo1",
+					"name": "pages/timing/timing",
+					"pathName": "pages/timing/timing",
 					"query": "",
 					"scene": null
 				},

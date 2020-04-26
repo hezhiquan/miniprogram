@@ -61,6 +61,7 @@ Page({
            nickName: userInfo.nickName,
            signature : '', //寄语          
            friendList : [],
+           gray:[],
            times:0
          }
        }).then((res)=>{
