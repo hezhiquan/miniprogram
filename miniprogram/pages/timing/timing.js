@@ -14,20 +14,28 @@ Page({
     second: 0,
     centisecond:0,  
     timer:0 ,
-    flag:false ,
+    flag:true,
     fag:false,
     showModalStatus: false, 
     time: '00:00',
     count:0,
-    countTimer:0,
+    countTimer:0, 
     goal:'',
+    display:'',
     sidebars://侧边栏列表项的内容
     [
     {text:"我的树苗",url:"../tree/singleTree/singleTree",src:"https://s1.ax1x.com/2020/04/16/JizRnU.png"},
-    {text:"树苗商店",url:"../purchase/purchase",src:"https://s1.ax1x.com/2020/04/16/JizBkj.png"},
+    {text:"树苗商店",url:"purchase/purchase",src:"https://s1.ax1x.com/2020/04/16/JizBkj.png"},
     {text:"超级树屋",url:"../tree/multiTree/multiTree",src:"https://s1.ax1x.com/2020/04/16/Jiz610.png"}
     ],
-    isLogin:false//判断用户是否登录
+    isLogin:false,//判断用户是否登录
+    //下面四个个属性针对侧边栏 
+    open: false,
+    // mark 是指原点x轴坐标
+    mark: 0, 
+    // nweMark 是指移动的最新点的x轴坐标 
+    nweMark: 0,
+    istoright: true,
   }, 
   
 countInterval: function(){
@@ -70,49 +78,43 @@ countInterval: function(){
   bindTimeChange: function(e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      time: e.detail.value, 
-      flag:true,
+      time: e.detail.value,
+      flag:true, 
       count:0
     })
     const that = this 
-    clearInterval(that.data.timer)
-    clearInterval(that.data.countTimer)
-    that.progress_canvas(0); 
     var second = 0
     var cent = 0
-    if(that.data.time[0]==0)
+   if(that.data.time[0]==0)
     {
          var hours = that.data.time[1]
-         that.setData({
+        that.setData({
             ghour:that.data.time[1]
-         })
-         console.log(that.data.ghour)
+        })
     }
     else
     {
         var hours = that.data.time[0]+that.data.time[1]
         that.setData({
             ghour:that.data.time[0]+that.data.time[1]
-         })
-         console.log(that.data.ghour)
+        })
     }
+    console.log(that.data.ghour)
     if(that.data.time[3]==0)
     {
          var minute = that.data.time[4]
          that.setData({
-             gminute:that.data.time[4]
-         })
-         console.log(that.data.gminute)
-    }
+             gminute:that.data.time[4]  
+         }) 
+    } 
     else
     { 
         var minute = that.data.time[3]+that.data.time[4]
         that.setData({
             gminute:that.data.time[3]+that.data.time[4]
         })
-        console.log(that.data.gminute)
     }
-    
+    console.log(that.data.gminute)
     if (hours < 10) {
         // 少于10补零
         that.setData({
@@ -164,10 +166,50 @@ countInterval: function(){
         })
      }
   },
-
+   
+  changeT()
+  {
+     if(this.data.countTimer>0&&this.data.timer>0)
+      {
+      this.progress_canvas(0); 
+      clearInterval(this.data.countTimer) 
+      clearInterval(this.data.timer)
+      } 
+      this.setData({
+          flag:true,
+          count:0,
+          countTimer:-1,
+          timer:-1,
+          hours:0,
+          minute:0,
+          second:0,
+          centisecond:0
+      })
+      this.Initi()
+  },
 
   powerDrawer: function (e) {
     var currentStatu = e.currentTarget.dataset.statu;
+    console.log(e.currentTarget.dataset.statu)
+    if(e.currentTarget.dataset.statu=="close1"&&this.data.time!='00:00')
+    {
+       console.log(6666)
+       this.setData({
+        flag:true,
+        time:"00:00"
+        }) 
+        this.startTime()
+    }
+    if(e.currentTarget.dataset.statu=="open")
+    {
+        this.setData({
+            display:'none'
+        })
+    }
+    else
+       this.setData({
+           display:''
+       })
     this.util(currentStatu)
   },  
   util: function(currentStatu){
@@ -200,12 +242,12 @@ countInterval: function(){
       })
       
       //关闭
-      if (currentStatu == "close") {
+      if (currentStatu == "close"||currentStatu == "close1") {
         this.setData(
           {
             showModalStatus: false
           }
-        );
+        )  
       }
     }.bind(this), 200)
   
@@ -221,106 +263,126 @@ countInterval: function(){
   onLoad: function (options) {
     // 调用函数
     this.Initi() 
-   
   },  
   
-startTime()
-{
-  const that=this
-  var second = that.data.second  
-  var minute = that.data.minute
-  var hours = that.data.hours
-  var centisecond = that.data.centisecond
-  if(!(second==0&&minute==0&&hours==0&&centisecond==0))  
-  if(that.data.flag)   
+  startTime()
   {
-      that.smile();
-      that.countInterval(); 
-  }  
-  if(that.data.flag)          
-    that.setData({
-        flag:false, 
-        fag:true,
-        timer:setInterval(function () {  
-        if(centisecond>=0)  
-           centisecond--     
-        if(centisecond<0){ 
-        if(second>0)
-        centisecond=99        
-        if(second>=0)  
-        second--
-        if (second <0) {
-            if(minute>0)
-              second = 60  
-            if(minute>=0) 
-            minute--
-            if (minute < 0) {
-               if(hours>0)
-                minute = 60  
-                if(hours>0)
-                {
-                 hours--
-                 if (hours < 10) {
-                    that.setData({
-                        hours: '0' + hours
-                    })
-                } else {
-                    that.setData({ 
-                        hours: hours
-                    })
-                }
-               } 
-            }
-            if(minute>=0)
-            if (minute < 10) {
-                that.setData({
-                    minute: '0' + minute
-                })
-            } else {
-                that.setData({
-                    minute: minute
-                })
-            }
-        }
-        if(second>=0)
-        if (second < 10) {
-            that.setData({
-                second: '0' + second
-            })
-         } else {
-            that.setData({
-                second: second
-            })
-         }
-        }
-        if(centisecond>=0)
-        if (centisecond < 10) {
-            that.setData({
-                centisecond: '0' + centisecond
-            })
-         } 
-         else {
-            that.setData({
-                centisecond: centisecond
-            })
-         }
-         if(hours==0&&minute==0&&second==0&&centisecond==0)
-         {      
-                 that.progress_canvas(0); 
-                 clearInterval(that.data.countTimer) 
-                 clearInterval(that.data.timer)
-                 wx.showModal({
-                    title:'任务成功',
-                    content:'恭喜你\^o^/！',
-                })
-                that.setData({
-                    fag:false
-                })
-                
-         }
-        }, 8)
-    })
-  },
+    const that=this
+    var second = that.data.second  
+    var minute = that.data.minute
+    var hours = that.data.hours
+    if(!app.userInfo.nickName)
+       console.log("1231")  
+    var centisecond = that.data.centisecond
+    if(!(second==0&&minute==0&&hours==0&&centisecond==0))  
+    if(that.data.flag)   
+    { 
+        that.smile();
+        that.countInterval(); 
+    }  
+    if(that.data.flag)          
+      that.setData({
+          flag:false, 
+          fag:true,
+          timer:setInterval(function () {  
+          if(centisecond>=0)  
+             centisecond--     
+          if(centisecond<0){ 
+          if(second>0)
+          centisecond=99        
+          if(second>=0)  
+          second--
+          if (second <0) {
+              if(minute>0)
+                second = 60  
+              if(minute>=0) 
+              minute--
+              if (minute < 0) {
+                 if(hours>0)
+                  minute = 60  
+                  if(hours>0)
+                  {
+                   hours--
+                   if (hours < 10) {
+                      that.setData({
+                          hours: '0' + hours
+                      })
+                  } else {
+                      that.setData({ 
+                          hours: hours
+                      })
+                  }
+                 } 
+              }
+              if(minute>=0)
+              if (minute < 10) {
+                  that.setData({
+                      minute: '0' + minute
+                  })
+              } else {
+                  that.setData({
+                      minute: minute
+                  })
+              }
+          }
+          if(second>=0)
+          if (second < 10) {
+              that.setData({
+                  second: '0' + second
+              })
+           } else {
+              that.setData({
+                  second: second
+              })
+           }
+          }
+          if(centisecond>=0)
+          if (centisecond < 10) {
+              that.setData({
+                  centisecond: '0' + centisecond
+              })
+           } 
+           else {
+              that.setData({
+                  centisecond: centisecond
+              })
+           }
+           if(hours==0&&minute==0&&second==0&&centisecond==0)
+           {      
+                   that.progress_canvas(0); 
+                   clearInterval(that.data.countTimer) 
+                   clearInterval(that.data.timer)
+                   wx.showModal({
+                      title:'任务成功',
+                      content:'恭喜你\^o^/！',
+                  })
+                  that.setData({
+                      flag:true,
+                      fag:false
+                  })
+                  const banner=db.collection("users")
+                  banner.doc(app.userInfo._id).get()
+                  .then(res=>{
+                      banner.doc(app.userInfo._id).update({
+                          data:{
+                             times:parseInt(res.data.times)+parseInt(that.data.ghour)*60+parseInt(that.data.gminute) 
+                          }
+                      })
+                      .then(res=>{
+                          console.log(res)
+                      })
+                      .catch(err=>{
+                          console.log(err)
+                      })
+                      console.log(res)
+                  })
+                  .catch(err=>{
+                      console.log(err)
+                  })
+           }
+          }, 8)
+      })
+    },  
 
   Initi()
   {
@@ -332,8 +394,8 @@ startTime()
     that.setData({
         hours:0,
         minute:0, 
-        second:0
-    }) 
+        second:0,
+        }) 
     if (hours < 10) {
         // 少于10补零
         that.setData({
@@ -349,7 +411,7 @@ startTime()
         that.setData({
             minute: '0' + minute
         })
-    } else {
+    } else { 
         that.setData({
             minute: minute
         })
@@ -403,9 +465,11 @@ startTime()
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function () { 
     //判断是否登录
     // console.log(app)
+    this.progress_canvas(0)
+    console.log(this.data.count+'ddwdawd')
     if(this.data.isLogin==false &&app.userInfo.nickName!=null){
         this.setData({
             isLogin:true
@@ -419,19 +483,22 @@ startTime()
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
+
          const that=this 
         if(that.data.fag) 
         {
            that.setData({
               centisecond:0,
-              second:0,
+              second:0, 
               minute:0,
               hours:0,
               count:0,
+              flag:true
           }) 
           clearInterval(that.data.countTimer)
           that.progress_canvas(0)
           clearInterval(that.data.timer)
+          console.log(that.data.count)
           that.Initi()
           wx.showModal({
             title:'任务失败',
@@ -470,7 +537,7 @@ startTime()
     this.setData({
       open:!this.data.open
     })
-
+    console.log(this.data.open) 
   },
 
   tap_start: function (e) {

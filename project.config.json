@@ -71,6 +71,19 @@
 					"pathName": "pages/tree/singleTree/demo3/demo3",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/timing/purchase/purchase",
+					"pathName": "pages/timing/purchase/purchase",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/timing/timing",
+					"pathName": "pages/timing/timing",
+					"scene": null
 				}
 			]
 		}

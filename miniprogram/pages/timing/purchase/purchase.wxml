@@ -1,0 +1,11 @@
+<!--pages/purchase/purchase.wxml-->
+<view>当前余额：{{Balance}}$</view>
+<view class="item">
+<view wx:for="{{list}}" wx:key="*this">
+<image class="myhover" src="{{item.src}}" mode="widthFix"  style="height:300px;width:176px;filter:grayscale({{item.gray}})" data-id="{{item.id}}"bindtap="purChase" >
+</image>
+<view style="text-align: center">{{item.price}}$</view>
+</view>
+</view>
+
+

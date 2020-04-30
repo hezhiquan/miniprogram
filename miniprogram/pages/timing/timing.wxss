@@ -1,15 +1,5 @@
-.container{
-  height: 100%;
-  width:100%;
-  display:flex;
-  flex-direction:row;
-}
-.item1{
-  flex-grow: 1;
-  height:150rpx;
-  width:100rpx;
-  background-color:cyan;
-  border: 1px solid #fff
+.all{
+  background-image: linear-gradient( 135deg, #FFF886 10%, #F072B6 100%);
 }
 .timing 
 { 
@@ -17,95 +7,15 @@
   top:124rpx;
   left: 168rpx;
 }
-.button1 {
-  position: relative;
-  background-color: #4CAF50;
-  border: none;
-  font-size: 28px;
-  color: #FFFFFF;
-  padding: 40rpx;
-  width: 400rpx;
-  text-align: center;
-  transition-duration: 0.4s;
-  text-decoration: none;
-  overflow: hidden;
-  cursor: pointer;
-}
 
 .marright
 {
-   font-size: 85rpx; 
+   font-size: 85rpx;
 }
 .start
 {
   position: relative;
-  top: 270rpx;
-  font-size: 123rpx;
-}
-
-.button1 {
-  display: inline-block;
-  padding: 10px 15px;
-  font-size: 24px;
-  cursor: pointer;
-  text-align: center;  
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
-  left: 200rpx;
-  font-size: 30rpx;
-}
-
-.button1:hover {background-color: #3e8e41}
-
-.button1:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
- 
-.button3 {
-  position: relative;
-  background-color: rgba(163, 133, 14, 0.405);
-  border: none;
-  font-size: 28px;
-  color: #FFFFFF;
-  padding: 20px;
-  width: 200px;
-  text-align: center;
-  transition-duration: 0.4s;
-  text-decoration: none;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.button3 {
-  display: inline-block;
-  padding: 10px 15px;
-  font-size: 24px;
-  cursor: pointer;
-  text-align: center;  
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: rgba(163, 133, 14, 0.405);
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;  
-  left: 200rpx;
-  font-size: 40rpx; 
-}
-
-.button3:hover {background-color: rgba(186, 105, 0, 0.666)}
-
-.button3:active {
-  background-color: #7d8e3ef5;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+  top: 250rpx;
 }
  
 .drawer_screen {
@@ -219,6 +129,8 @@ canvas{
 .goal
 {
   height: 20px;
+  margin: 10rpx;
+  width: 220px;
   position: absolute;
   top:230px;
   left: 117px;
@@ -298,3 +210,11 @@ canvas{
   /* 设为较大的数值，遮住其它页面 */
   z-index: 10;
 }
+
+.setTime{
+  margin: 30px;
+  position: relative;
+  left: 125px;
+  height: 70px;
+  width: 70px;
+} 
