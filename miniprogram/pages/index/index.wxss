@@ -1,5 +1,6 @@
 /* miniprogram/pages/index/index.wxss */
 .canvas{
+  margin-top: 80rpx;
   width: 200px;
   height: 200px;
 }
@@ -45,4 +46,13 @@
   height:80rpx;
   width:600rpx;
   
+}
+.cake{
+  position: absolute;
+  
+}
+ 
+@keyframes dropdown {
+  from{margin-top: -50rpx;}
+  to{margin-top: 1200rpx;}
 }

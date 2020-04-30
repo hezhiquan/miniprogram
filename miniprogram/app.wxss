@@ -5,7 +5,7 @@
   /* 一开始设为不可见 */
   display: none;
   /* 使用绝对定位，将该遮罩层放在距离其父元素顶部0%，左边0%的位置 */
-  position: absolute;top: 0%;left: 0%;
+  position: fixed;top: 0%;left: 0%;
   /*设置大小为整个父元素的大小  */
   width: 100%;  height: 100%;
   /* 设置背景色 */

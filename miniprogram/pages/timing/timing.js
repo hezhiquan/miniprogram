@@ -29,23 +29,14 @@ Page({
     {text:"超级树屋",url:"../tree/multiTree/multiTree",src:"https://s1.ax1x.com/2020/04/16/Jiz610.png"}
     ],
     isLogin:false,//判断用户是否登录
-<<<<<<< HEAD
-    //下面四个个属性针对侧边栏
-    open: false,
-    // mark 是指原点x轴坐标
-    mark: 0,
-    // nweMark 是指移动的最新点的x轴坐标 
-    nweMark: 0,
-    istoright: false,
-=======
     //下面四个个属性针对侧边栏 
     open: false,
     // mark 是指原点x轴坐标
     mark: 0, 
     // nweMark 是指移动的最新点的x轴坐标 
     nweMark: 0,
-    istoright: true,
->>>>>>> e1d7466987cf99ad6d07c93d3cf401dd8a089f86
+    istoright: false,
+   
   }, 
   
 countInterval: function(){
@@ -273,6 +264,7 @@ countInterval: function(){
   onLoad: function (options) {
     // 调用函数
     this.Initi() 
+    // this.smile();
   },  
   
   startTime()
@@ -547,11 +539,7 @@ countInterval: function(){
     this.setData({
       open:!this.data.open
     })
-<<<<<<< HEAD
-console.log(this.data.open)
-=======
     console.log(this.data.open) 
->>>>>>> e1d7466987cf99ad6d07c93d3cf401dd8a089f86
   },
 
   tap_start: function (e) {

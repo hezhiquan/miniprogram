@@ -1,8 +1,10 @@
 // miniprogram/pages/tree/multiTree/multiTree.js
 const app = getApp();
 const db = wx.cloud.database();
+const _=db.command;
 let id; //被点击的树屋id
 let rightPassword; //被点击的树屋对应的密码
+let index;//对应下标
 Page({
 
   data: {
@@ -11,7 +13,7 @@ Page({
     dataList: [], //放置返回数据的数组  
     loadMore: true, //"上拉加载"的变量，默认true，隐藏  
     loadAll: false, //“没有数据”的变量，默认false，隐藏 
-    display: '', //设置是否展示遮罩层
+    display: 'none', //设置是否展示遮罩层
     password: "", //树屋的密码
     tips: "", //提示信息
     type: "error", //提示类型
@@ -40,7 +42,9 @@ Page({
       })
   },
   onShow: function () {
-    // this.getData();
+    console.log("onShow begin")
+    
+   
   },
   onReachBottom: function (e) {
     console.log("触底了")
@@ -60,17 +64,16 @@ Page({
     })
     let that = this;
 
+    console.log("openid is",app.userInfo._openid)
     //云数据的请求
     db.collection("treeHouse")
       .orderBy("createdDate", "desc")
       .skip(that.data.currentPage * that.data.pageSize) //从第几个数据开始
       .limit(that.data.pageSize)
+      
       .get({
         success(res) {
-          
-          
             console.log("请求成功", res.data)
-
             //把新请求到的数据添加到dataList里  
             let list = that.data.dataList.concat(res.data)
             that.setData({
@@ -107,7 +110,7 @@ Page({
   },
   enterHouse: function (e) {
     //如果是该树屋的成员，则进入树屋
-    let index=e.currentTarget.dataset['index'];
+    index=e.currentTarget.dataset['index'];
     id = e.currentTarget.dataset['id'];
     //this.data.dataList[index].openidList.indexOf(app.userInfo._openid)>-1
     if(this.data.dataList[index].openidList.indexOf(app.userInfo._openid)>-1){
@@ -122,7 +125,6 @@ Page({
     
   },
   showView: function () { //展示遮罩层
-    let that=this;
     this.setData({
       display: "block"
     })
@@ -162,6 +164,18 @@ Page({
         },
         success: function (res) {
           console.log("已将该用户加入树屋", res)
+          //加入树屋成功之后，除了在云端更新数据，也要在本地更新数据
+          let openidList1=that.data.dataList[index].openidList;
+          openidList1.push(app.userInfo._openid);
+          let memberList1=that.data.dataList[index].memberList;
+          memberList1.push(app.userInfo.nickName);
+          console.log(" add ",memberList1,openidList1)
+          let temp1="that.data.dataList["+index+"].openidList";
+          let temp2="that.data.dataList["+index+"].memberList";
+          that.setData({
+            [temp1]:openidList1,
+            [temp2]:memberList1,
+          })
           that.hideView();
           wx.navigateTo({
             url: './myHouse/myHouse?id=' + id

@@ -1,5 +1,4 @@
-   
-	 <!-- 侧边栏内容 -->
+   <!-- 侧边栏内容 -->
    <view class="page-slidebar">
    	<view wx:if="{{!isLogin}}">
    		<text>请到个人信息界面登录</text>
@@ -20,41 +19,46 @@
    <!-- 3.当 open 为 true 时，会加上类名为 c-state 和 cover 的 css 样式 -->
    <!-- bindtouchstart、 bindtouchmove、bindtouchend -->
    <!-- 当手指触摸屏幕并滑动时，所触发的三个函数 -->
-	 
+
    <view bindtouchmove="tap_drag" bindtouchend="tap_end" bindtouchstart="tap_start" class="page-top {{open ? ['c-state','cover'] : ''}} ">
    	<!-- 点击出现侧边栏的图片 -->
    	<image class="more" bindtap="tap_ch" src="../../images/tree/goal2.png"></image>
-
-   	<view class="progress_box">
-   		<canvas canvas-id="progress_bg" class="progress_bg" style="display:{{display}}"></canvas>
-   		<canvas canvas-id="progress_canvas" class="progress_canvas" style="display:{{display}}"></canvas>
-   		<view class="timing">
-   			<text class='marright'>{{hours}}:{{minute}}:{{second}}</text>
-   			<view style="text-align: center ">
-   				<text style="font-size: 90rpx">{{centisecond}}</text>
+   	<view class="clock" >
+   		<view class="progress_box" style="display:{{display}}">
+   			<canvas canvas-id="progress_bg" class="progress_bg" style="display:{{display}}"></canvas>
+   			<canvas canvas-id="progress_canvas" class="progress_canvas" style="display:{{display}}"></canvas>
+   			<view class="timing marright">
+   				<text >{{hours}}:{{minute}}:{{second}}</text>
+   				<view style="text-align:center ">
+   					<text >{{centisecond}}</text>
+   				</view>
    			</view>
    		</view>
    	</view>
-   	<view class="goal" style="text-align: center"><text style="font-size: 50rpx">{{goal}}</text></view>
-   	 
-		<view class="start">
-   		<image class="setTime" wx:if="{{flag}}" src="../../images/icons/add.png" bindtap="powerDrawer" data-statu="open"></image>
-			<image class="setTime" wx:else src="../../images/icons/ontime.png" bindtap="changeT"></image>
-   		
+   	<view>
+   		<view class="goal">
+   			<text>{{goal}}</text>
+   		</view>
+   		<view>
+   			<image class="setTime" wx:if="{{flag}}" src="../../images/icons/add.png" bindtap="powerDrawer" data-statu="open"></image>
+   			<image class="setTime" wx:else src="../../images/icons/ontime.png" bindtap="changeT"></image>
+
+   		</view>
    	</view>
 
+
    	<!--mask-->
-   <view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
-   	<!--content-->     
+   	<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+   	<!--content-->
    	<!--使用animation属性指定需要执行的动画-->
    	<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
- 
+
    		<!--drawer content-->
    		<view class="drawer_title">新增目标</view>
    		<view class="drawer_content">
-   			<view class="top grid">
-   				<label class="title col-0">目标名</label>
-   				<input class="input_base input_h30 col-1" name="rName" placeholder="1235" bindinput="Finput"></input>
+   			<view class="myGoal">
+   				<!-- <text>目标名：</text> -->
+   				<input class="input_base input_h30 " name="rName" placeholder="给自己定个小目标吧" bindinput="Finput"></input>
    			</view>
    			<view class="section">
    				<picker mode="time" value="{{time}}" start="00:00" end="24:00" bindchange="bindTimeChange">
@@ -68,4 +72,3 @@
    	</view>
 
    </view>
-	 

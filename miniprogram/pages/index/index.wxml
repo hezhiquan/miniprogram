@@ -1,46 +1,69 @@
-<!-- 绘制时钟 -->
-<view class="center" >
-<canvas class='canvas' canvas-id='myCanvas'></canvas>
-</view>
-
-<!-- 绘制生辰钟 -->
-<view >
-	<view wx:if="{{showClock}}" class="birthday" >
-	<view><text style="padding-left:90rpx">你已经 {{seconds }} 岁了</text></view>
-	<view><text style="color:grey;font-size:12px;">  
-	         在这个世界上，你已经存在</text>
-	 </view>
-		
-		<view >
-			<view class="table ">
-				<view class="tr">
-					<view class="th ">{{years}} 年</view>
-					<view class="th "> {{months}} 月</view>
-					<view class="th ">{{weeks}} 周</view>
-				</view>
-				<view class="tr">
-					<view class="td "> {{days}} 天</view>
-					<view class="td"> {{hours}} 小时</view>
-					<view class="td ">{{minutes}} 分钟</view>
-				</view>
-			</view>
+<!-- 该style是为了隐藏溢出的蛋糕 -->
+<view style="overflow:hidden;position:relative;">
+	<view class='content'>
+		<view class="cakeView">
+			<block wx:for="{{cakeArr}}" wx:for-item="item">
+				<image style="transform:rotate({{item.angle}}deg);margin-left:{{item.marginleft}}rpx;width:{{item.width}}rpx;height:{{item.height}}rpx;animation: dropdown {{item.animation}}s;animation-fill-mode:forwards;" class="cake" src='https://s1.ax1x.com/2020/04/30/JLYh6K.png' data-id='{{item.id}}' id="cake_{{item.id}}"></image>
+			</block>
 		</view>
-
 	</view>
-	<view wx:else>
+	<!-- 绘制时钟 -->
+	<view class="center" >
+		<canvas class='canvas' canvas-id='myCanvas'></canvas>
+	</view>
+	<view wx:if="{{showClock}}">
 		<picker mode="date" value="{{date}}" start="1920-01-01" end="{{endTime}}" bindchange="bindDateChange">
-			<view class=" center">			
-				<button >获取我的生辰钟</button>													
+			<view>
+				<!-- style="text-align:center;font-size:25px;" -->
+				<!-- <text>重新获取生辰钟</text> -->
+				<!-- 设为static，防止浮动 -->
+				<button style="position:static;">重新获取生辰钟</button>
 			</view>
 		</picker>
 	</view>
-</view>
+	<!-- 绘制生辰钟 -->
+	<view>
+		<view wx:if="{{showClock}}" class="birthday">
 
-<!-- 绘制其它区域 -->
-<mp-cells style="padding-top:30rpx">
-<view wx:for="{{lists}}" wx:key="*this">
-		<mp-cell link url="{{item.url}}" hover value="{{item.value}}" footer="{{item.footer}}">			
-					<image slot="title" src="{{item.src}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>				
-		</mp-cell> 
+			<view><text style="padding-left:90rpx;margin-top:20rpx;">你已经 {{seconds }} 岁了</text></view>
+			<view><text style="color:grey;font-size:12px;">
+	         在这个世界上，你已经存在</text>
+			</view>
+
+			<view>
+				<view class="table ">
+					<view class="tr">
+						<view class="th ">{{years}} 年</view>
+						<view class="th "> {{months}} 月</view>
+						<view class="th ">{{weeks}} 周</view>
+					</view>
+					<view class="tr">
+						<view class="td "> {{days}} 天</view>
+						<view class="td"> {{hours}} 小时</view>
+						<view class="td ">{{minutes}} 分钟</view>
+					</view>
+				</view>
+			</view>
+
+		</view>
+		<view wx:else>
+			<picker mode="date" value="{{date}}" start="1920-01-01" end="{{endTime}}" bindchange="bindDateChange">
+				<view class=" center">
+					<button>获取我的生辰钟</button>
+				</view>
+			</picker>
+		</view>
+	</view>
+
+	<!-- 绘制其它区域 -->
+	<mp-cells style="padding-top:30rpx">
+		<view wx:for="{{lists}}" wx:key="*this">
+			<mp-cell link url="{{item.url}}" hover value="{{item.value}}" footer="{{item.footer}}">
+				<image slot="title" src="{{item.src}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+			</mp-cell>
+		</view>
+	</mp-cells>
+
+	<mp-toptips msg="{{info}}" type="info" show="{{info}}"></mp-toptips>
+
 </view>
-</mp-cells>    

@@ -19,12 +19,12 @@ Page({
     timer:"",
     
     lists:[   
-      {
-        value:"心之絮语",
-        footer:"日记三行，纸短情长",
-        src:"../../images/icons/xin.png",
-        url:"../tree/multiTree/demo2/demo2"
-      },
+      // {
+      //   value:"心之絮语",
+      //   footer:"日记三行，纸短情长",
+      //   src:"../../images/icons/xin.png",
+      //   url:"../tree/multiTree/demo2/demo2"
+      // },
       {
         value:"时光胶囊",
         footer:"愿你多年后不负所期",
@@ -41,7 +41,47 @@ Page({
       }
       
       
-    ]
+    ],
+    cakeArr:null,
+    info:"",//生日提示
+  },
+  onLoad: function (options) {
+    
+  },
+  getcake:function(i){
+    //掉落时间
+    var dropTime = Math.floor(Math.random() * (200-100)+100);
+    var angle = Math.ceil(Math.random() * 30)-15;
+    var marginLeft = Math.ceil(Math.random() * 690);
+    var width = Math.floor(Math.random() * (100 - 60 + 1) + 60);
+    var animation = Math.floor(Math.random() * (6-3)+3)
+    console.log(marginLeft);
+    var cake = {
+      id: i,
+      angle: angle,
+      marginleft: marginLeft,
+      width: width,
+      height: width,
+      animation: animation
+    }
+    var cakeA = this.data.cakeArr;
+    if (cakeA == null){
+      cakeA = new Array();
+    }
+    cakeA.push(cake);
+    this.setData({
+      cakeArr: cakeA,
+     
+    })
+    var that = this;
+    //一共要掉落多少个
+    if(i <= 60){
+      var timerTem =setTimeout(function () {
+        i = i+ 1;
+        console.log(i);
+        that.getcake(i)
+      }, dropTime)
+    }
   },
   onReady: function () {
     //设置时间选择器的终止时间
@@ -76,9 +116,7 @@ Page({
       minshow()
       houshow()
       backshow()
-      // numbershow()
       ctx.draw()
-
     }
 
   },
@@ -98,10 +136,14 @@ Page({
   //生辰钟
   getBirthday:function() {
     console.log("getBirthday")
-    let that = this;
-    that.setData({
-      timer:setInterval(function(){
-        //出生时间    
+    
+    this.setData({
+      timer:setInterval(this.getTime(),1000)
+    })
+  },
+  getTime:function(){//将对应的时间转换月，周，日，时，分，秒
+      //出生时间    
+    let that=this;
     let birthday = new Date(that.data.date);
     console.log("that.data.date is " + that.data.date);
     //获取当前时间
@@ -116,7 +158,15 @@ Page({
     let date1 = that.data.date.split('-');
     date1 = parseInt(date1[0] * 12) + parseInt(date1[1]);    
     let date2 = today.getFullYear() * 12 + today.getMonth();
-  
+
+    //彩蛋，当当前月份与生辰钟的月份相同时，掉落生日蛋糕
+    if(today.getMonth()==birthday.getMonth()){
+      this.getcake(1);
+      this.setData({
+        info:"本月生日快乐！"
+      })
+    }
+
     that.setData({
       seconds:(allMilliseconds/(1000*60*60*24*365)).toFixed(9),
       minutes: minutes,
@@ -125,8 +175,6 @@ Page({
       weeks: weeks,
       months: (date2 - date1),
       years: today.getFullYear() - birthday.getFullYear()
-    })},1000)
-
     })
   }
 
