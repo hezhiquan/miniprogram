@@ -1,0 +1,3 @@
+/* miniprogram/pages/tree/multiTree/searchHouse/searchHouse.wxss */
+@import "../../../../app.wxss";
+@import "../multiTree.wxss"

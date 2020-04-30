@@ -1,5 +1,6 @@
 // miniprogram/pages/tree/singleTree/demo2/demo2.js
 const db=wx.cloud.database();
+const app=getApp();
 Page({
 
   /**
@@ -23,6 +24,7 @@ Page({
       if(e.detail.value!=''){
         this.findSameName();
       }
+      console.log("openid 是 "+app.userInfo._openid)
       
     },
     bindIntroduction:function(e){
@@ -76,13 +78,18 @@ Page({
           tips:"暗号不能为空"
         })
       }else{//在名字不重复，暗号不为空的情况下，开始创建树屋
+        //日期格式化
+        let date=new Date();
+        let dateString=date.getFullYear()+"-"+date.getMonth()+"-"+date.getDate()
         db.collection("treeHouse").add({
           data:{
             name:that.data.name,
             introduction:that.data.introduction,
             password:that.data.password,
-            src:that.data.imgUrls[that.data.swiperIndex],            
-            createdDate:new Date()
+            bgSrc:that.data.imgUrls[that.data.swiperIndex],//对应的背景图片            
+            createdDate:dateString,//树屋创建时间
+            memberList:[app.userInfo.nickName],//所有树屋成员
+            openidList:[app.userInfo._openid],//所有树屋成员的openid
           },
           success:function(res){
             console.log("提交成功",res)

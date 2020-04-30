@@ -1,1 +1,91 @@
 /* miniprogram/pages/tree/multiTree/multiTree.wxss */
+/* 导入全局样式 */
+@import "../../../app.wxss";
+page{
+  height: 100%;
+}
+/* 顶部的搜索栏和我的树屋 */
+.head{
+  text-align: center;
+  display: flex;
+  
+  background-color:#fbfcdb;
+ 
+}
+
+.allMyHouse{
+  margin:0 20rpx;
+  /* text-align: center; */
+  padding-top: 20rpx;
+  width: 600rpx;
+  height: 80rpx;
+  border-radius: 5%;
+  
+}
+.head image{
+  padding-top: 15rpx;
+  width: 70rpx;
+  height: 70rpx;
+}
+/* 底部的创建树屋 */
+.add{
+  position: fixed;
+  width: 100rpx;
+  height: 100rpx;
+  opacity: 0.5;
+  right: 30rpx;
+  bottom: 30rpx;
+}
+/* 加载情况的文本 */
+.text1{
+  color: grey;
+  font-size: 40rpx;
+  padding:20rpx 0rpx;
+  text-align: center;
+}
+/* 中间的树屋样式 */
+/* .treeHouse-item{
+
+  background-color:#fbfcdb;
+ 
+  padding: 30rpx;
+  margin: 10rpx 0;
+}
+.treeHouse-name{
+  font-size: 40rpx;
+}
+.treeHouse-introduction{
+  padding:20rpx 0;
+  font-size: 36rpx;
+  color: grey;
+}
+.treeHouse-footer{
+  font-size: 26rpx;
+} */
+.choose{
+  text-align: center;
+  color: white;
+  
+  width: 300rpx;
+  margin: 40rpx 40rpx 40rpx 20rpx;
+  
+  padding:20rpx 0;
+  display: inline-block;
+}
+.bg1{
+  background-color:#85D0E7 ;
+}
+.bg2{
+  background-color:rgba(9, 239, 116, 0.799) ;
+}
+.myContent2{
+  position: fixed;
+  top: 30%;
+  
+  padding: 140rpx 10rpx 0 10rpx;
+  height: 24%;
+}
+.myContent2 input{
+  border-bottom: 1px solid rgb(106, 245, 130);
+  margin: 20rpx 20rpx;
+}

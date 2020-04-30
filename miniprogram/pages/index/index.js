@@ -29,7 +29,7 @@ Page({
         value:"时光胶囊",
         footer:"愿你多年后不负所期",
         src:"../../images/icons/ziyuan.png",
-        url:"../tree/singleTree/singleTree"
+        url:"../tree/multiTree/multiTree"
 
       },
       {

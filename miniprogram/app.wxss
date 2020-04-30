@@ -1,156 +1,58 @@
-/**app.wxss**/
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-} 
+/* 供全局wxss使用的样式 */
 
-button {
-  background: initial;
+/* 遮罩层 */
+.mask-bg {
+  /* 一开始设为不可见 */
+  display: none;
+  /* 使用绝对定位，将该遮罩层放在距离其父元素顶部0%，左边0%的位置 */
+  position: absolute;top: 0%;left: 0%;
+  /*设置大小为整个父元素的大小  */
+  width: 100%;  height: 100%;
+  /* 设置背景色 */
+  background-color: rgba(143, 134, 134, 0.744);
+  /* 设置所处的z轴高度，一般元素的z-index为1左右，将遮罩层设置为1001是为了确保将遮罩层放在一般元素的上
+  方，遮罩层的内容必须放在遮罩层的上方，即z-index至少为1002，当然，只要确保遮罩层的z-index比一般元素大，把遮罩层设为5，9，等等之类也行 */
+  z-index: 1001;
+  /* 设置遮罩层透明度 */
+  opacity: 0.70;
 }
 
-button:focus{
-  outline: 0;
-}
-
-button::after{
-  border: none;
-}
-
-
-page {
-  background: #f6f6f6;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.userinfo, .uploader, .tunnel {
-  margin-top: 40rpx;
-  height: 140rpx;
-  width: 100%;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-left: none;
-  border-right: none;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  transition: all 300ms ease;
-}
-
-.userinfo-avatar {
-  width: 100rpx;
-  height: 100rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-  background-size: cover;
+.mask-myContent {
+   /* 一开始设为不可见 */
+  display: none;
+  text-align: center;
+   /* 使用绝对定位，将该遮罩层放在距离其父元素顶部10%，左边10%的位置 */
+  position: absolute; top: 10%; left: 10%;
+   /*设置宽度为整个父元素宽度的80%，长度大小为整个父元素长度的80%  */
+  width: 80%; height: 80%;
+ /*设置背景色  */
   background-color: white;
+  /* 见上文 */
+  z-index: 1002;
+  /* 添加缩放动画，动画的关键帧为myContent1，持续时长2s，速度曲线为ease(动画以低速开始，然后加快，在结束前变慢)，执行一次 */
+  animation: myContent1 2s ease 1;
 }
-
-.userinfo-avatar:after {
-  border: none;
+/* 设定动画的关键帧，一开始时大小变为原来的0.3，最后缩放成原来的大小 */
+@keyframes myContent1{
+  from{scale: 0.3;}
+  to{scale: 1;}
 }
+/* 中间的树屋样式 */
+.treeHouse-item{
 
-.userinfo-nickname {
-  font-size: 32rpx;
-  color: #007aff;
-  background-color: white;
-  background-size: cover;
+  background-color:#fbfcdb;
+ 
+  padding: 30rpx;
+  margin: 10rpx 0;
 }
-
-.userinfo-nickname::after {
-  border: none;
+.treeHouse-name{
+  font-size: 40rpx;
 }
-
-.uploader, .tunnel {
-  height: auto;
-  padding: 0 0 0 40rpx;
-  flex-direction: column;
-  align-items: flex-start;
-  box-sizing: border-box;
+.treeHouse-introduction{
+  padding:20rpx 0;
+  font-size: 36rpx;
+  color: grey;
 }
-
-.uploader-text, .tunnel-text {
-  width: 100%;
-  line-height: 52px;
-  font-size: 34rpx;
-  color: #007aff;
-}
-
-.uploader-container {
-  width: 100%;
-  height: 400rpx;
-  padding: 20rpx 20rpx 20rpx 0;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  box-sizing: border-box;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.uploader-image {
-  width: 100%;
-  height: 360rpx;
-}
-
-.tunnel {
-  padding: 0 0 0 40rpx;
-}
-
-.tunnel-text {
-  position: relative;
-  color: #222;
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.tunnel-text:first-child {
-  border-top: none;
-}
-
-.tunnel-switch {
-  position: absolute;
-  right: 20rpx;
-  top: -2rpx;
-}
-
-.disable {
-  color: #888;
-}
-
-.service {
-  position: fixed;
-  right: 40rpx;
-  bottom: 40rpx;
-  width: 140rpx;
-  height: 140rpx;
-  border-radius: 50%;
-  background: linear-gradient(#007aff, #0063ce);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  transition: all 300ms ease;
-}
-
-.service-button {
-  position: absolute;
-  top: 40rpx;
-}
-
-.service:active {
-  box-shadow: none;
-}
-
-.request-text {
-  padding: 20rpx 0;
-  font-size: 24rpx;
-  line-height: 36rpx;
-  word-break: break-all;
+.treeHouse-footer{
+  font-size: 26rpx;
 }

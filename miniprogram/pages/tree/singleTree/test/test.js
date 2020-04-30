@@ -1,6 +1,6 @@
 Page({
   data: {
-    isDisplay:'',//设置是否展示遮罩层
+    display:'',//设置是否展示遮罩层
   },
   showview: function() { //展示遮罩层
     this.setData({

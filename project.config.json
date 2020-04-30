@@ -60,8 +60,8 @@
 				},
 				{
 					"id": 1,
-					"name": "pages/timing/timing",
-					"pathName": "pages/timing/timing",
+					"name": "pages/tree/multiTree/multiTree",
+					"pathName": "pages/tree/multiTree/multiTree",
 					"query": "",
 					"scene": null
 				},
