@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/my/my",
     "pages/timing/timing",
+    "pages/cardDetails/cardDetails",
     "pages/tree/singleTree/singleTree",
     "pages/tree/singleTree/addGoal/addGoal",
     "pages/tree/singleTree/showGoals/showGoals",
