@@ -6,13 +6,19 @@
     "pages/tree/singleTree/singleTree",
     "pages/tree/singleTree/addGoal/addGoal",
     "pages/tree/singleTree/showGoals/showGoals",
-    "pages/tree/singleTree/showDoneGoals/showDoneGoals"
+    "pages/tree/singleTree/showDoneGoals/showDoneGoals",
+    "pages/grocery/grocery",
+    "pages/grocery/postbox1/postbox1",
+    "pages/grocery/postbox2/postbox2",
+    "pages/grocery/writeAnnoy/writeAnnoy",
+    "pages/grocery/postbox1/huixin1/huixin1",
+    "pages/grocery/shouxin/shouxin"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "一信以航",
+    "navigationBarTitleText": "生辰邮递树",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

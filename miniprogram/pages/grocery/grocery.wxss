@@ -1,0 +1,68 @@
+/* pages/grocery/grocery.wxss */
+
+
+.title{
+  background-color: rgb(151, 88, 5);
+  border-radius: 10rpx;
+  padding: 10rpx 5rpx;
+  color: rgb(238, 234, 220);
+}
+.container{
+  background-color: rgb(242, 205, 126);
+  padding: 350rpx;
+}
+
+.box{
+  border-radius:10rpx ;
+  border-color: rgb(19, 19, 18);
+  padding: 10rpx;
+}
+.wordstyle{
+  font-size: 45rpx;
+  color: beige;
+  width: 20rpx;
+  background-color: rgb(232, 192, 133);
+  position: absolute;
+  left:-275rpx;
+  top:400rpx
+}
+.wordshou{
+  font-size: 45rpx;
+  color: beige;
+  width: 20rpx;
+  background-color: rgb(232, 192, 133);
+  position: absolute;
+  left:270rpx;
+  top:740rpx;
+}
+.imgA{
+  width:120rpx;
+  height:120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  left:50rpx;
+  top:600rpx;
+  box-shadow: 10rpx 10rpx 10rpx 2rpx rgba(0, 0, 0, 0.4);
+}
+
+.shouimag{
+  width:120rpx;
+  height:120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  right:50rpx;
+  bottom:-100rpx;
+  background-color:rgb(114, 65, 0) ;
+  box-shadow: 10rpx 10rpx 10rpx 2rpx rgba(0, 0, 0, 0.4);
+}
+
+.bt-word{
+  /* 外边界 */
+  margin: 30px 0;
+  border-radius: 10%;
+  overflow: hidden;
+  box-shadow: 2rpx 1rpx 15rpx 1rpx rgba(189, 152, 96, 0.4);
+
+}

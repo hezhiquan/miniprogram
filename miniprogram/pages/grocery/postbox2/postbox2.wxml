@@ -1,0 +1,38 @@
+<!--pages/postbox2/postbox2.wxml-->
+<view class="tit2">
+	<text style='padding-left: 17px;'>一盏茶，一本书，有诗，有远方</text>
+</view>
+
+<view >
+	<view>
+		<swiper class='swiper-item' previous-margin="40px" next-margin="40px" circular bindchange="bindchange">
+			<block wx:for="{{dataList}}" wx:key="{{index}}" class="">
+				<swiper-item class="" >
+				<view class="type-line">
+					<view class="swiperClass  {{swiperIndex == index ? 'active' : 'quiet'}}">
+          <view class="">
+            <view class="hello">你好，陌生人：</view>
+          </view>
+							<!-- 回信 -->
+						<view class="btn-area">
+						<navigator hover-class="navigator-hover" url="{{hui.url1}}?openid={{item._openid}}">
+							<view class="writeback">写回信</view>
+							<image class="huixin" src="https://s1.ax1x.com/2020/04/19/JKRdE9.png" ></image>
+						</navigator>
+						</view>
+						<text class="center">{{item.content}}</text>
+						<view class="namebox">
+						<text class="name">By  {{item.NickName}}</text></view>
+						<view>{{item.date}}</view>
+					</view>
+				</view>
+				</swiper-item>
+			</block>
+		</swiper>
+	
+		<button class="btn" bindtap="update">更新</button>
+		<!-- <button class="btn" bindtap="hideView">try</button> -->
+		
+	</view>
+	<mp-toptips msg="{{tips}}" type="{{type}}" show="{{tips}}"></mp-toptips>
+</view>

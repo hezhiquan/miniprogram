@@ -29,8 +29,8 @@ Page({
 
     //下面六个属性针对小树苗
     animTreeSwingData: {}, //设定树苗动画所需的动画对象
-    talk: "种树，与学习更配哦",
-    talkList: ["爱种树的人，运气都不会太差", "今天，你种树了么", "你好啊", "种树,与学习更配哦"],
+    talk: "听说生辰树，与学习更配哦",
+    talkList: ["爱种树的人，运气都不会太差", "今天，你种树了么", "你好啊", "听说生成树,与学习更配哦"],
     dialogue1: "", //给对话框添加的动态属性，一开始为无，之后添加dialogue类的css，使对话框能够显示
     treeUrl: "../../../images/tree/tree_1.png",
    
@@ -130,7 +130,7 @@ Page({
 
     //该值不为零，说明对话框还存在，则应取消上一次点击时设置的取消对话框行为
     if(clearTimeOut!=0){
-      clearTimeOut(clearTimeOut);
+      clearTimeOut(clearTimeout);
     }
 
     clearTimeOut=setTimeout(function () {

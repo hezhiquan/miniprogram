@@ -1,0 +1,48 @@
+/* pages/grocery/writeAnnoy/writeAnnoy.wxss */
+/* pages/post/create.wxss */
+page {
+  background: rgb(140, 73, 1);
+}
+textarea{
+  height: 600rpx;
+  color: rgb(0, 4, 7);
+}
+.placeholder-input{
+  color:white
+}
+#is-anoymous {
+  margin:0 0rpx;
+  display: flex;
+}
+
+#is-anoymous label{
+  color: #666;
+  font-size: 32rpx;
+  flex: 1;
+  line-height: 70rpx;
+}
+
+button {
+  margin: 30rpx 20rpx;
+  background: transparent;
+  background-color: rgba(221, 157, 19, 0.864);
+  color:rgb(104, 99, 85);
+  border: 1rpx solid #e28b08c2;
+  box-shadow: 2rpx 3rpx 10rpx rgba(140, 97, 5, 0.686);
+}
+.btfa{
+  margin:200rpx;
+  color: rgb(249, 230, 209);
+}
+.table{
+  padding: 50rpx;
+  background-color: rgba(245, 196, 106, 0.912);
+}
+.input{
+  background-color: rgba(221, 157, 19, 0.864);
+  /* color: white; */
+  width:667rpx ;
+  height: 50rpx;
+  border: 1rpx solid #e28b08c2;
+  box-shadow: 2rpx 3rpx 10rpx rgba(209, 196, 167, 0.686);
+}

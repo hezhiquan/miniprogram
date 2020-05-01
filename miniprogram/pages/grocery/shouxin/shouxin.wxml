@@ -1,0 +1,31 @@
+<!--pages/postbox2/postbox2.wxml-->
+<view class="title">
+	<text style='padding-left: 17px;' >擦肩而过的瞬间，灯火阑珊</text>
+</view>
+
+<view >
+	<view>
+		<swiper class='swiper-item' previous-margin="40px" next-margin="40px" circular bindchange="bindchange">
+			<block wx:for="{{dataList}}" wx:key="{{index}}" class="">
+				<swiper-item class="" >
+				<view class="type-line">
+					<view class="swiperClass  {{swiperIndex == index ? 'active' : 'quiet'}}">
+          <view class="">
+            <view class="hello">你好，陌生人：</view>
+          </view>
+						<text class="center">{{item.content}}</text>
+						<view class="namebox">
+						<text class="name">By  {{item.NickName}}</text></view>
+						<view>{{item.date}}</view>
+					</view>
+				</view>
+				</swiper-item>
+			</block>
+		</swiper>
+	
+		<button class="btn" bindtap="update">收邮件</button>
+		<!-- <button class="btn" bindtap="hideView">try</button> -->
+		
+	</view>
+	<mp-toptips msg="{{tips}}" type="{{type}}" show="{{tips}}"></mp-toptips>
+</view>

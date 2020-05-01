@@ -91,6 +91,62 @@
 					"pathName": "pages/tree/singleTree/addGoal/addGoal",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/grocery/grocery",
+					"pathName": "pages/grocery/grocery",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/grocery/postbox1/postbox1",
+					"pathName": "pages/grocery/postbox1/postbox1",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/grocery/writeAnnoy/writeAnnoy",
+					"pathName": "pages/grocery/writeAnnoy/writeAnnoy",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/tree/singleTree/addGoal/addGoal",
+					"pathName": "pages/tree/singleTree/addGoal/addGoal",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "pages/grocery/postbox2/postbox2",
+					"pathName": "pages/grocery/postbox2/postbox2",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/grocery/postbox2/postbox2",
+					"pathName": "pages/grocery/postbox2/postbox2",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/grocery/postbox1/huixin1/huixin1",
+					"pathName": "pages/grocery/postbox1/huixin1/huixin1",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/grocery/shouxin/shouxin",
+					"pathName": "pages/grocery/shouxin/shouxin",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

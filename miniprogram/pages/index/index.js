@@ -34,10 +34,9 @@ Page({
       },
       {
         value:"解忧杂货铺",
-        footer:"你说，我听",
+        footer:"心绪漂流，解我苦忧",
         src:"../../images/icons/mail.png",
-        url:"../tree/singleTree/singleTree"
-        //../tree/singleTree/singleTree
+        url:"../grocery/grocery"
       }
       
       

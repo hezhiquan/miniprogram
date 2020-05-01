@@ -1,0 +1,41 @@
+<!--pages/grocery/writeAnnoy/writeAnnoy.wxml-->
+<form bindsubmit="formSubmit" class="table">
+
+<view>
+<textarea bindinput="content" maxlength="500" placeholder="这里是忘忧箱，你可以写下烦恼，也可以分享快乐，这个安静的时间留给你自己~" />
+</view>
+	
+	<!-- maxlength="500"设定字符最大数量 -->
+    <view class="photo-list">
+        <view class="photo-block" wx:for="{{tempFilePaths}}" wx:key="*this" wx:for-item="fileUrl">
+            <image mode="aspectFit" class="photo" src="{{fileUrl}}" data-file-url="{{fileUrl}}" bindtap="doPreviewImage"></image>
+            <view class="del-btn" data-url="{{fileUrl}}" catchtap="doDelImage">x</view>
+        </view>
+        <view class="photo-block">
+            <view id="upload-img-btn" class="photo" bindtap="doUpload">
+                <image src="../../../images/icons/tubiaolunkuo-.png"></image>
+            </view>
+             <mp-dialog title="图片数量有误" show="{{showOneButtonDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
+             <view>{{title}}</view>
+            </mp-dialog>
+        </view>
+    </view>
+    <!-- <view id="is-anoymous">
+        <label>是否匿名</label><switch color="#54c51c" checked="true" name="anoymous"/>
+    </view> -->
+    <view id="is-anoymous">
+        <view> 
+             <textarea class='input' bindinput='textInput' placeholder-class="placeholder-input" placeholder-style='margin-left:20rpx;' maxlength='500' placeholder='输入昵称' value='{{text}}' auto-focus ></textarea>
+        </view>
+    </view>
+      <view class="select">
+            <view class="text2">请选择漂流方向</view>
+            <radio-group bindchange="radiochange">
+                <label wx:for='{{items}}' class="or">
+                    <radio value='{{item.value}}' checked="{{item.checked}}"></radio>
+                    {{item.value}}
+                </label>
+                </radio-group>
+        </view>
+    <button formType="submit" disabled="{{disabledSubmitBtn}}" class="btfa" >发送</button>
+</form>
