@@ -18,7 +18,7 @@ Page({
     loadAll:false,
     dataList:[],
     currentPage:0,
-    pageSize:20,
+    pageSize:5,
     nickName:"",
     content:"",
     contents:[],//空数组用于存放获取的内容

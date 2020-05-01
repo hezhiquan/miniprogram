@@ -60,7 +60,9 @@ Page({
            avatarUrl: userInfo.avatarUrl,
            nickName: userInfo.nickName,
            signature : '', //寄语          
-           friendList : []
+           friendList : [],
+           gray:[],
+           times:0
          }
        }).then((res)=>{
           db.collection('users').doc(res._id).get().then((res)=>{

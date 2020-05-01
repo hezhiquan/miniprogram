@@ -147,3 +147,14 @@ white-space:nowrap;
   width: 80rpx;
   height: 80rpx;
 }
+.writeback{
+  color: rgb(121, 67, 5);
+  position: absolute;
+  margin-top: 40rpx;
+  margin-left: 100rpx;
+  display: block;
+   /* 向右对齐 */
+   text-align:right;
+   /* 强制不换行 */
+   white-space:nowrap; 
+}

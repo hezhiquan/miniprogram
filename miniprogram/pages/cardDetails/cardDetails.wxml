@@ -1,0 +1,8 @@
+<!--pages/cardDetails/cardDetails.wxml-->
+<view class="container">
+<image class="show" src="{{SelectedPath}}" mode="widthFix" >
+</image>
+<view style="text-align: center">{{Selectedword}}</view>
+</view>
+
+

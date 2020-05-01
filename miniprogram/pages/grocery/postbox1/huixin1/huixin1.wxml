@@ -2,14 +2,14 @@
 <form bindsubmit="formSubmit" class="table">
 
 <view>
-<textarea bindinput="content" maxlength="500" placeholder-class="placeholder-input" placeholder="亲爱的陌生人，感谢你的温暖回信，祝愿善良的你好运加满，生活也像糖果一样甜甜哦~" />
+<textarea bindinput="content" maxlength="500" placeholder-class="placeholder-input" placeholder="亲爱的陌生人，感谢你的温暖回信，祝愿善良的你好运加满，生活也像糖果一样甜甜哦~" auto-focus />
 </view>
 	
 	<!-- maxlength="500"设定字符最大数量 -->
 
     <view id="is-anoymous">
         <view> 
-             <textarea class='input' bindinput='textInput' placeholder-class="placeholder-input" placeholder-style='margin-left:20rpx;' maxlength='500' placeholder='输入昵称' value='{{text}}' auto-focus ></textarea>
+             <textarea class='input' bindinput='textInput' placeholder-class="placeholder-input" placeholder-style='margin-left:20rpx;' maxlength='500' placeholder='输入昵称' value='{{text}}' ></textarea>
         </view>
     </view>
     <button formType="submit" disabled="{{disabledSubmitBtn}}" class="btfa" >发送</button>

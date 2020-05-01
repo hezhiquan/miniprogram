@@ -1,0 +1,9 @@
+ <swiper class='swiperClass'  indicator-color="#a39f99" indicator-active-color="#f49641"    previous-margin="40px" next-margin="40px" circular bindchange="bindchange" style='height: {{swiperHeight}}px'>
+ <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+ <swiper-item>
+ <image src="{{item}}" class="slide-image {{swiperIndex == index ? 'active' : 'quiet'}}" mode='aspectFill'>
+ </image>
+ </swiper-item>
+ </block>
+ </swiper>
+

@@ -6,6 +6,7 @@
   border-radius: 10rpx;
   padding: 10rpx 5rpx;
   color: rgb(238, 234, 220);
+  width: 50rpx;
 }
 .container{
   background-color: rgb(242, 205, 126);
@@ -60,9 +61,18 @@
 
 .bt-word{
   /* 外边界 */
-  margin: 30px 0;
+  margin: 100rpx -40rpx;
   border-radius: 10%;
-  overflow: hidden;
   box-shadow: 2rpx 1rpx 15rpx 1rpx rgba(189, 152, 96, 0.4);
+  width: 115rpx;
+  
+}
+.jieyou{
+  display: flex;
+justify-content: center;
+align-items: center;
+font-size: 25px;
+width: 50rpx;
+/* margin-left: -7rpx; */
 
 }

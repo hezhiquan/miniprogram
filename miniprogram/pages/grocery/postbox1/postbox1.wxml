@@ -16,6 +16,7 @@
 						<!-- 回信 -->
 						<view class="btn-area">
 						<navigator hover-class="navigator-hover" url="huixin1/huixin1?openid={{item._openid}}">
+							<view class="writeback">写回信</view>
 							<image class="huixin" src="https://s1.ax1x.com/2020/04/19/JKRdE9.png" ></image>
 						</navigator>
 						</view>

@@ -1,12 +1,14 @@
     <!-- 侧边栏内容 -->
     <view class="page-slidebar">
-		<view  class="image11">
-		<image src="{{avatarUrl}}" mode="widthFix" class="image1"></image>
-		<!-- <text>{{nickName}}</text> -->
-		</view>
+    	<view class="image11">
+    		<image src="{{avatarUrl}}" mode="widthFix" class="image1"></image>
+    		<!-- <text>{{nickName}}</text> -->
+    	</view>
     	<view class="page-content" wx:for="{{sidebars}}" wx:key="item">
-		
-    		<navigator url="{{item.url}}" class="sidebar-content">	<image src="{{item.src}}"  ></image>{{item.text}}</navigator>
+
+    		<navigator url="{{item.url}}" class="sidebar-content">
+    			<image src="{{item.src}}"></image>{{item.text}}
+    		</navigator>
     	</view>
     </view>
 
@@ -20,7 +22,7 @@
     <view bindtouchmove="tap_drag" bindtouchend="tap_end" bindtouchstart="tap_start" class="page-top {{open ? ['c-state','cover'] : ''}} ">
     	<image class="more" bindtap="tap_ch" src="../../../images/tree/goal2.png"></image>
 
-    	<view class="page">
+    	<view wx:if="{{top10.length<10}}" class="page">
     		<!-- 浮动的云 -->
     		<view class="flowingCloud">
     			<image src="../../../images/tree/cloud1.png" mode="widthFix" style="width:40%;">
@@ -33,10 +35,39 @@
     		</view>
     		<!-- 树苗 -->
     		<view class="tree">
-    			<image src="{{treeUrl}}" mode="widthFix" style="width:20%;" bindtap='touchTree' animation="{{animTreeSwingData}}">
+    			<image src="{{treeUrl[0]}}" mode="widthFix" style="width:20%;" bindtap='touchTree' animation="{{animTreeSwingData}}">
     			</image>
     			<!-- 树苗对话框 -->
     			<view class="treeOut {{dialogue1}}">{{talk}}</view>
     		</view>
     	</view>
+
+    	<!-- 大树 -->
+
+    	<view wx:else class="gradients">
+    		<!-- 在大树上方加空白，避免苹果直接跑到最顶上 -->
+    		<view style="padding-top: 300rpx;"></view>
+    		<view class="bigTree">
+    			<image src="{{treeUrl[1]}}" class="imageBigTree"></image>
+    			<view wx:for="{{dropApple}}" wx:key="item">
+    				<image src="{{appleSrc[0]}}" id="apple{{index}}" class="apples {{dropApple[index] ? [drop[index]]:''}}" bindtap="drop" data-index="{{index}}"></image>
+    			</view>
+    		</view>
+    	</view>
+    	<!-- 遮罩层 -->
+    	<view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+    	<view class="myGoal" bindtap='hideview' style='display:{{display}}'>
+    		<image  src="{{bgUrl}}"></image>
+
+    		<view class="goal">
+    			<view>达成成就</view>
+    			<view><text>{{myGoal}}</text></view>
+    			<view class="time"><text>完成时间：{{finishedTime}}</text></view>
+
+    		</view>
+
+
+
+    	</view>
     </view>
+   

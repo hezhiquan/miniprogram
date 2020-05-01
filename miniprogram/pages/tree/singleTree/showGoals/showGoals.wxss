@@ -16,3 +16,9 @@ background-color: white;
 .color2{
 background-color: #F8F8F8;
 }
+/* ????? */
+.bgGreen{
+  color:  rgba(73, 251, 100, 0.922)!important;
+  background-color: rgba(73, 251, 100, 0.922)!important;
+  
+}

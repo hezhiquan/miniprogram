@@ -2,7 +2,7 @@
 <form bindsubmit="formSubmit" class="table">
 
 <view>
-<textarea bindinput="content" maxlength="500" placeholder="这里是忘忧箱，你可以写下烦恼，也可以分享快乐，这个安静的时间留给你自己~" />
+<textarea bindinput="content" maxlength="500" placeholder="这里是忘忧箱，你可以写下烦恼，也可以分享快乐，这个安静的时间留给你自己~" auto-focus />
 </view>
 	
 	<!-- maxlength="500"设定字符最大数量 -->
@@ -25,7 +25,7 @@
     </view> -->
     <view id="is-anoymous">
         <view> 
-             <textarea class='input' bindinput='textInput' placeholder-class="placeholder-input" placeholder-style='margin-left:20rpx;' maxlength='500' placeholder='输入昵称' value='{{text}}' auto-focus ></textarea>
+             <textarea class='input' bindinput='textInput' placeholder-class="placeholder-input" placeholder-style='margin-left:20rpx;' maxlength='500' placeholder='输入昵称' value='{{text}}'  ></textarea>
         </view>
     </view>
       <view class="select">

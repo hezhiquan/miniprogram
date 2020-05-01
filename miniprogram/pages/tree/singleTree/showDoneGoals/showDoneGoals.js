@@ -24,10 +24,10 @@ Page({
   },
   onReachBottom:function(e){
     console.log("触底了")
-    console.log(this.data.loadMore)
+    
     let that = this
-    console.log("that is ",that)
-    console.log(that.data.loadMore)
+  
+    console.log("that.data.loadMore is ",that.data.loadMore)
     if (that.data.loadMore) {
       //加载更多
       that.getData();     
@@ -52,7 +52,7 @@ Page({
       .limit(that.data.pageSize)
       .get({
         success(res) {
-          if (res.data.length > 0) {
+          
             console.log("请求成功", res.data)
             
             //把新请求到的数据添加到dataList里  
@@ -61,20 +61,23 @@ Page({
               dataList: list, //获取数据数组    
               currentPage:that.data.currentPage+1
             });
-            if (res.data.length < pageSize) {
+            console.log("res.data.length is ",res.data.length)
+            if (res.data.length < that.data.pageSize) {
               that.setData({
-                loadMore: false, //隐藏加载中。。
-                loadAll: true //所有数据都加载完了
+                loadAll: true, //所有数据都加载完了
+                loadMore: false, //隐藏加载中
+              });
+              console.log("数据长度少于每页要求的大小");
+            }
+            else {
+              that.setData({
+                loadAll: false, //把“没有数据”设为true，显示  
+                loadMore: true //把"上拉加载"的变量设为false，隐藏  
               });
             }
-          } else {
-            that.setData({
-              loadAll: true, //把“没有数据”设为true，显示  
-              loadMore: false //把"上拉加载"的变量设为false，隐藏  
-            });
-          }
-          //隐藏加载动画
-          wx.hideLoading()
+            //隐藏加载动画
+            wx.hideLoading()
+          
         },
         fail(res) {
           console.log("请求失败", res)

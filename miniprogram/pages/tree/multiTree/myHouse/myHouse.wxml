@@ -1,0 +1,3 @@
+<!--miniprogram/pages/tree/multiTree/myHouse/myHouse.wxml-->
+<text>miniprogram/pages/tree/multiTree/myHouse/myHouse.wxml</text>
+<view>页面传过来的树屋id为 {{id}}</view>

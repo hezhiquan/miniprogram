@@ -20,10 +20,10 @@
       </mp-cell>
     </view>
     <view class="title" style="font-size=50rpx;">
-      <view style="display:flex;justify-content:center;align-items:center;font-size:50rpx;">解忧杂货铺</view>
+      <view class="jieyou">解忧杂货铺</view>
     </view>
 
-    <view style="font-size:45rpx;margin-left:5rpx;color:#2ea1ca;" > 
+    <view style="font-size:45rpx;margin-left:20rpx;color:#2ea1ca;width:50rpx" > 
       <view wx:for="{{lists}}" wx:key="*this" class="bt-word">
 		      <mp-cell link url="{{item.url}}" hover value="{{item.value}}">		
 					<!-- <image slot="title" src="{{item.src}}" style="margin-right: 40rpx;vertical-align: middle;width:20px; height: 20px;"></image>				 -->

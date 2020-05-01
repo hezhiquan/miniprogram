@@ -1,14 +1,16 @@
 /* pages/grocery/writeAnnoy/writeAnnoy.wxss */
 /* pages/post/create.wxss */
 page {
-  background: rgb(140, 73, 1);
+  background-color: rgb(254, 214, 176);
 }
 textarea{
   height: 600rpx;
   color: rgb(0, 4, 7);
+  margin-left: 50rpx;
+  background-color: rgb(254, 214, 176);
 }
 .placeholder-input{
-  color:white
+  color:rgb(167, 160, 160)
 }
 #is-anoymous {
   margin:0 0rpx;
@@ -25,24 +27,25 @@ textarea{
 button {
   margin: 30rpx 20rpx;
   background: transparent;
-  background-color: rgba(221, 157, 19, 0.864);
+  background-color: rgb(254, 238, 210);
   color:rgb(104, 99, 85);
-  border: 1rpx solid #e28b08c2;
-  box-shadow: 2rpx 3rpx 10rpx rgba(140, 97, 5, 0.686);
+  border: 1rpx solid #d8b887c2;
+  box-shadow: 2rpx 3rpx 5rpx rgba(140, 97, 5, 0.686);
 }
 .btfa{
   margin:200rpx;
-  color: rgb(249, 230, 209);
+  color: rgb(160, 142, 125);
 }
 .table{
   padding: 50rpx;
-  background-color: rgba(245, 196, 106, 0.912);
+  /* background-color: rgba(245, 196, 106, 0.912); */
 }
 .input{
-  background-color: rgba(221, 157, 19, 0.864);
+  background-color: rgb(254, 238, 210);
+  border-radius: 5rpx;
   /* color: white; */
   width:667rpx ;
   height: 50rpx;
-  border: 1rpx solid #e28b08c2;
-  box-shadow: 2rpx 3rpx 10rpx rgba(209, 196, 167, 0.686);
+  border: 1rpx solid #e2b66ac2;
+  box-shadow: 2rpx 3rpx 10rpx rgba(249, 212, 132, 0.686);
 }

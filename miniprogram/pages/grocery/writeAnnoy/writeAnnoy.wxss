@@ -91,7 +91,7 @@ button {
 .select{
   background-color:  rgb(254, 238, 210);
   width:667rpx ;
-  margin:50rpx 0rpx;
+  margin:50rpx 50rpx;
   display: flex;
 }
 .or{
@@ -100,4 +100,7 @@ button {
 }
 .text2{
   color:  rgb(123, 119, 116);
+}
+textarea{
+  margin-left: 50rpx;
 }

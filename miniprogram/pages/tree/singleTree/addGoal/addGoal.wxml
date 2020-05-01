@@ -1,7 +1,7 @@
 <!--miniprogram/pages/tree/singleTree/addGoal/addGoal.wxml-->
 <view class="my-goal" >
 	<view class="my-goal-content">
-  <image src="https://s1.ax1x.com/2020/04/15/JCvVHA.th.jpg" mode="widthFix" style="width:100%;padding-bottom:10rpx"></image>
+  <image src="https://s1.ax1x.com/2020/04/18/JmjcNT.md.png" mode="widthFix" style="width:100%;padding-bottom:10rpx"></image>
 		<text>我的目标</text>
 		<input bindinput="bindGoal" placeholder="给自己定个小目标吧"></input>
 		<text>预计完成时间</text>

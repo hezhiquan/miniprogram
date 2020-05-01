@@ -1,0 +1,12 @@
+<!--miniprogram/pages/tree/multiTree/allMyHouse/allMyHouse.wxml-->
+<view class="myHouses"><text>我的树屋</text></view>
+<!-- 展示结果列表 -->
+<view wx:for="{{dataList}}" wx:key="item">
+
+	<view class="treeHouse-item" bindtap="enterHouse" data-index="{{index}}" data-id="{{item._id}}" data-password="{{item.password}}">
+		<view class="treeHouse-name"> <text>{{item.name}}</text> </view>
+		<view class="treeHouse-introduction"> <text>{{item.introduction}}</text> </view>
+		<view class="treeHouse-footer"> <text>由 {{item.memberList[0]}} 创建于 {{item.createdDate}}</text> </view>
+	</view>
+
+</view>
