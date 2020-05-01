@@ -4,14 +4,13 @@
 .timing 
 { 
   position: absolute; 
-  top:170rpx;
-  left: 210rpx;  
+  font-size: 35px;
+  width: 220px;
+  height: 220px;
+  padding-top: 65px;
 }
 
-.marright
-{
-   font-size: 80rpx;
-}
+
 
 .drawer_screen {
   width: 100%;
@@ -103,27 +102,28 @@ input {
 }
 
 .progress_box{
-  position: absolute;
-  width: 750rpx;
-  height: 500rpx;
-  display: flex;
+  position: relative;
+  width: 220px;
+  height: 220px;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 .progress_canvas
 {
   position: absolute; 
-  top:40rpx;
-  left: 140rpx;  
+  top:0;
+  left: 0;  
+  
 }
 .progress_bg{
   position: absolute; 
-  top:40rpx;
-  left: 140rpx;  
+  top:0;
+  left: 0;  
 }
 canvas{
-  width: 450rpx;
-  height: 450rpx;
+  width: 220px;
+  height: 220px;
 }
 
 .goal
@@ -208,9 +208,14 @@ canvas{
 }
 
 .setTime{
-  margin: 30px;
+  /* margin: 30px; */
   position: relative;
-  left: 125px;
+  /* left: 105px; */
   height: 70px;
   width: 70px;
 } 
+.center{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  }

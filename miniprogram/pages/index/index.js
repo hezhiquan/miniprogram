@@ -43,9 +43,9 @@ Page({
     ],
     cakeArr:null,
     info:"",//生日提示
+    isFirst:true,
   },
   onLoad: function (options) {
-    
   },
   getcake:function(i){
     //掉落时间
@@ -135,16 +135,16 @@ Page({
   //生辰钟
   getBirthday:function() {
     console.log("getBirthday")
-    
+    clearInterval(this.data.timer);
     this.setData({
-      timer:setInterval(this.getTime(),1000)
+      timer:setInterval(this.getTime,1000)
     })
   },
   getTime:function(){//将对应的时间转换月，周，日，时，分，秒
       //出生时间    
     let that=this;
     let birthday = new Date(that.data.date);
-    console.log("that.data.date is " + that.data.date);
+    // console.log("that.data.date is " + that.data.date);
     //获取当前时间
     let today = new Date();
     let allMilliseconds = (today.getTime() - birthday.getTime()); //总毫秒数
@@ -159,10 +159,11 @@ Page({
     let date2 = today.getFullYear() * 12 + today.getMonth();
 
     //彩蛋，当当前月份与生辰钟的月份相同时，掉落生日蛋糕
-    if(today.getMonth()==birthday.getMonth()){
+    if(today.getMonth()==birthday.getMonth()&&this.data.isFirst){
       this.getcake(1);
       this.setData({
-        info:"本月生日快乐！"
+        info:"本月生日快乐！",
+        isFirst:false,
       })
     }
 

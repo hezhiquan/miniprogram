@@ -3,6 +3,7 @@ const db = wx.cloud.database();
 const app = getApp();
 let id;
 let rightPassword;
+let index;
 Page({
 
   /**
@@ -57,7 +58,7 @@ Page({
   },
   enterHouse: function (e) {
     //如果是该树屋的成员，则进入树屋
-    let index = e.currentTarget.dataset['index'];
+     index = e.currentTarget.dataset['index'];
     id = e.currentTarget.dataset['id'];
 
     if (this.data.resultList[index].openidList.indexOf(app.userInfo._openid) > -1) {
@@ -67,6 +68,7 @@ Page({
     } else {
       rightPassword = e.currentTarget.dataset['password'];
       this.showView();
+      
     }
 
 
@@ -111,6 +113,19 @@ Page({
         },
         success: function (res) {
           console.log("已将该用户加入树屋", res)
+          console.log("已将该用户加入树屋", res)
+          //加入树屋成功之后，除了在云端更新数据，也要在本地更新数据
+          let openidList1=that.data.resultList[index].openidList;
+          openidList1.push(app.userInfo._openid);
+          let memberList1=that.data.resultList[index].memberList;
+          memberList1.push(app.userInfo.nickName);
+          console.log(" add ",memberList1,openidList1)
+          let temp1="that.data.resultList["+index+"].openidList";
+          let temp2="that.data.resultList["+index+"].memberList";
+          that.setData({
+            [temp1]:openidList1,
+            [temp2]:memberList1,
+          })
           that.hideView();
           wx.navigateTo({
             url: '../myHouse/myHouse?id=' + id
