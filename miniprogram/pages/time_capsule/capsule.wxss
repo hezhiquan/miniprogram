@@ -1,0 +1,67 @@
+/* miniprogram/pages/time_capsule/capsule.wxss */
+.bg{
+
+  position: absolute;
+/*   left: 15rpx; */
+  width: 100%;
+  height: 100%;
+  background-image:url('https://s1.ax1x.com/2020/04/23/JwLBZR.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  z-index: -1;
+}
+.pen-image{
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  left: 70rpx;
+  top: 30rpx;
+  z-index: 1;
+  border-radius: 10%;
+  box-shadow: 10rpx 10rpx 10rpx #888888;
+}
+.setting-image{
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  right: 70rpx;
+  top: 30rpx;
+  z-index: 1;
+  border-radius: 10%;
+  box-shadow: 10rpx 10rpx 10rpx #888888;
+}
+.text1{
+  position:absolute;
+  top: 140rpx;
+  left:86rpx;
+}
+.text2{
+  position:absolute;
+  top: 140rpx;
+  right: 87rpx;
+}
+.settingTime{
+  position:absolute;
+  width:100%;
+  height: 100%;
+ /*  align-items: center; */
+/*   justify-content: center; */
+  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+  z-index: 2;
+ 
+}
+.inputEmail{
+  border:0;
+  border-radius:5px;
+  background-color:rgba(241,241,241,.98);
+  width: 355px;
+  height:700rpx;
+  padding: 10px;
+  resize: none;
+}
+.pickerview{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

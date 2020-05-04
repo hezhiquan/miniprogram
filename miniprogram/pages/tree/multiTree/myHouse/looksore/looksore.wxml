@@ -1,0 +1,14 @@
+<!--pages/looksore/looksore.wxml-->
+<view class="item">
+<view class="head">自己的目标：</view>
+<view class="goals" wx:for="{{list}}" wx:key="*this">
+<text>{{item.goal}}</text>
+<view class="look">是否完成：<radio disabled="{{item.isAchieve?false:true}}" checked="{{item.isAchieve}}"></radio> 自己是否通过：<radio disabled="{{item.myCheck?false:true}}" checked="{{item.myCheck}}"></radio><text class="text" data-id="{{item._id}}" data-check="{{item.myCheck}}" style="display:{{item.myCheck?'none':'inline'}};" bindtap="myCheck">确认</text></view>
+</view> 
+<view class="head">别人的：</view>
+<view class="goals" wx:for="{{list2}}"  wx:key="*this">
+{{item.goal}} 
+<view class="look">是否完成：<radio disabled="{{item.isAchieve?false:true}}" checked="{{item.isAchieve}}"></radio> 等待确认：<radio disabled="{{item.myCheck?false:true}}" checked="{{item.myCheck}}"></radio><text class="text" data-id="{{item._id}}" data-checklist="{{item.checkOtherList}}" bindtap="Checkothers">确认</text></view>  
+</view> 
+</view>
+ 

@@ -83,6 +83,7 @@
 					"id": -1,
 					"name": "pages/timing/timing",
 					"pathName": "pages/timing/timing",
+					"query": "",
 					"scene": null
 				},
 				{
@@ -139,6 +140,12 @@
 					"name": "pages/grocery/shouxin/shouxin",
 					"pathName": "pages/grocery/shouxin/shouxin",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/tree/multiTree/myHouse/looksore/looksore",
+					"pathName": "pages/tree/multiTree/myHouse/looksore/looksore",
 					"scene": null
 				}
 			]

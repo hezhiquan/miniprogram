@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/my/my",
     "pages/timing/timing",
+    
     "pages/cardDetails/cardDetails",
     "pages/tree/singleTree/singleTree",
     "pages/tree/singleTree/addGoal/addGoal",
@@ -24,6 +25,7 @@
     "pages/tree/multiTree/searchHouse/searchHouse",
     "pages/tree/multiTree/allMyHouse/allMyHouse",
     "pages/tree/multiTree/myHouse/myHouse"
+   
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

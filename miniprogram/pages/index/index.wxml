@@ -2,7 +2,7 @@
 <view style="overflow:hidden;position:relative;">
 	<view class='content'>
 		<view class="cakeView">
-			<block wx:for="{{cakeArr}}" wx:for-item="item">
+			<block wx:for="{{cakeArr}}" wx:key="*this" wx:for-item="item">
 				<image style="transform:rotate({{item.angle}}deg);margin-left:{{item.marginleft}}rpx;width:{{item.width}}rpx;height:{{item.height}}rpx;animation: dropdown {{item.animation}}s;animation-fill-mode:forwards;" class="cake" src='https://s1.ax1x.com/2020/04/30/JLYh6K.png' data-id='{{item.id}}' id="cake_{{item.id}}"></image>
 			</block>
 		</view>

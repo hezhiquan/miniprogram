@@ -5,17 +5,46 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id:""
+    id: "",
+    bgSrc:"",
+    createdDate:"",
+    name:"",
+    memberList:"",
+    introduction:"",
+    password:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("页面传过来的树屋id为 "+options.id)
+    console.log("页面传过来的树屋id为 " + options.id)
     this.setData({
-      id:options.id
+      id: options.id
     })
+    console.log(this.data.id)
+    const db = wx.cloud.database()
+    const banner = db.collection('treeHouse')
+    var that=this
+    banner.where({
+      _id: this.data.id
+    }).get()
+      .then(res => {
+        console.log(res)
+        that.setData({
+          bgSrc:res.data[0].bgSrc,
+          createdDate:res.data[0].createdDate,
+          name:res.data[0].name,
+          memberList:res.data[0].memberList,
+          introduction:res.data[0].introduction,
+          password:res.data[0].password
+        })
+        console.log(that.data.introduction)
+    })
+      .catch(err => {
+        console.log(err)
+    })
+  
   },
 
   /**
@@ -65,5 +94,20 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  secondbind: function () {
+    wx.navigateTo({
+      url: '../myHouse/setgoal/setgoal?houseID=' + this.data.id,
+    })
+  },
+  thirdbind: function () {
+    wx.navigateTo({
+      url: '../myHouse/looksore/looksore?houseID='+this.data.id,
+    })
+  }, 
+  fourthbind: function () {
+    wx.navigateTo({
+      url: '留给值全的',
+    })
   }
 })

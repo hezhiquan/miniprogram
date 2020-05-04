@@ -1,0 +1,38 @@
+
+page{
+  /* 铺满整个屏幕 */
+  height:100%
+}
+.my-goal{
+  padding-top: 90rpx;
+  width:100%;
+  
+  
+  display:flex;
+  justify-content: center;
+  
+}
+.my-goal-content{
+
+  background-color: white;
+  box-shadow:4px 4px 16px #b4b1b1 ;
+  width: 85%;
+  height: auto;
+  
+}
+text{
+  margin:0 10px;
+}
+.my-goal-content input{
+  margin:0 20rpx;
+  margin-bottom: 30rpx;
+  border-bottom: 1rpx solid grey;
+  /* box-shadow: 0 1px 1px grey; */
+}
+.my-goal-content button{
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+  color: white;
+  background-color: rgb(91,192,222);
+  border:0px;
+}

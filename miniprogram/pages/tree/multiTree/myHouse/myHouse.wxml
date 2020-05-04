@@ -1,3 +1,28 @@
 <!--miniprogram/pages/tree/multiTree/myHouse/myHouse.wxml-->
-<text>miniprogram/pages/tree/multiTree/myHouse/myHouse.wxml</text>
-<view>页面传过来的树屋id为 {{id}}</view>
+<view>
+	<view class="tabar">
+		<image src="../../../../images/tree/mutilTree/jianjie.png" class="icons"></image>
+		<image src="../../../../images/tree/mutilTree/settings.png" class="icons" bindtap="secondbind"></image>
+		<image src="../../../../images/tree/mutilTree/icon-test.png" class="icons" bindtap="thirdbind"></image>
+		<image src="../../../../images/tree/mutilTree/shu.png" class="icons" bindtap="fourthbind"></image>
+	</view>
+	<view class="tabar">
+		<text style="color:red">树屋简介</text>
+		<text bindtap="secondbind">设定目标</text>
+		<text  bindtap="thirdbind">查看目标</text>
+		<text  bindtap="fourthbind">成就树</text>
+	</view>
+	<image src="{{bgSrc}}" class="bgimage" mode="widthFix"></image>
+	<view class="bg" >
+		<view class="infor"><text style="color:red" >树屋名：</text><text>{{name}}</text>
+		</view>
+		<view class="infor"><text style="color:red" >创建时间：</text><text>{{createdDate}}</text>
+		</view>
+		<view class="infor"><text style="color:red" >成员列表：</text><text wx:for="{{memberList}}" wx:for-item="item">{{item}}、</text>
+		</view>
+		<view class="infor"><text style="color:red" >树屋简介：</text><text>{{introduction}}</text>
+		</view>
+		<view class="infor"><text style="color:red" >树屋密码：</text><text>{{password}}</text>
+		</view>
+	</view>
+</view>
