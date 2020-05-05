@@ -19,7 +19,7 @@
 
 	</view>
 	<view class="head">
-		<navigator class="allMyHouse" url="./allMyHouse/allMyHouse"><text>我的树屋</text>
+		<navigator class="allMyHouse" url="./allMyHouse/allMyHouse"><text class="housebox">我的树屋</text>
 		</navigator>
 		<navigator url="./searchHouse/searchHouse">
 			<image src="https://s1.ax1x.com/2020/04/28/JhfPpR.png" mode="widthFIx"></image>

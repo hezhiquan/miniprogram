@@ -3,14 +3,29 @@
 @import "../../../app.wxss";
 page{
   height: 100%;
+  /* background-image: url(https://s1.ax1x.com/2020/05/05/YkMM5V.jpg); */
+  background-image: url(https://s1.ax1x.com/2020/05/05/YkM2VI.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute;
+ background-position-y: center;
 }
 /* 顶部的搜索栏和我的树屋 */
 .head{
   text-align: center;
   display: flex;
-  
-  background-color:#fbfcdb;
- 
+  border-radius: 10rpx;
+  /* background-color:#9cf5a8; */
+  background-image: url(https://s1.ax1x.com/2020/05/05/YkijPA.jpg);
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 100%;
+}
+
+.housebox{
+  border-radius: 10rpx;
+  width: 500rpx;
+  /* box-shadow: 10rpx 10rpx 10rpx 2rpx rgba(0, 0, 0, 0.4); */
 }
 
 .allMyHouse{
@@ -42,6 +57,12 @@ page{
   font-size: 40rpx;
   padding:20rpx 0rpx;
   text-align: center;
+}
+
+.treeHouse-item{
+  background-image: url(https://s1.ax1x.com/2020/05/05/Ykm0XR.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 /* 中间的树屋样式 */
 /* .treeHouse-item{
