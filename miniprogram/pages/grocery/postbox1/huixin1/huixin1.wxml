@@ -1,8 +1,8 @@
 <!--pages/grocery/postbox1/huixin1/huixin1.wxml-->
-<form bindsubmit="formSubmit" class="table">
+<form bindsubmit="formSubmit">
 
 <view>
-<textarea bindinput="content" maxlength="500" placeholder-class="placeholder-input" placeholder="亲爱的陌生人，感谢你的温暖回信，祝愿善良的你好运加满，生活也像糖果一样甜甜哦~" auto-focus />
+<textarea bindinput="content" maxlength="5000"  style="border:0;border-radius:5px;background-color:rgba(241,241,241,.98);width: 355px;height:550rpx;padding: 10px;resize: none;" placeholder-class="placeholder-input" placeholder="亲爱的陌生人，感谢你的温暖回信，祝愿善良的你好运加满，生活也像糖果一样甜甜哦~" auto-focus />
 </view>
 	
 	<!-- maxlength="500"设定字符最大数量 -->

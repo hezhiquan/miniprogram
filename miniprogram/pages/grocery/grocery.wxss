@@ -32,9 +32,8 @@
   color: beige;
   width: 20rpx;
   background-color: rgb(232, 192, 133);
-  position: absolute;
-  left:270rpx;
-  top:740rpx;
+  margin-bottom: 50rpx;
+  margin-right: 1rpx;
 }
 .imgA{
   width:120rpx;
@@ -52,9 +51,11 @@
   height:120rpx;
   border-radius: 50%;
   overflow: hidden;
-  position: absolute;
-  right:50rpx;
-  bottom:-100rpx;
+  /* position: absolute; */
+  /* margin-top:120rpx; */
+  margin-right: 10rpx;
+  /* right:50rpx;
+  bottom:-100rpx; */
   background-color:rgb(114, 65, 0) ;
   box-shadow: 10rpx 10rpx 10rpx 2rpx rgba(0, 0, 0, 0.4);
 }
@@ -75,4 +76,11 @@ font-size: 25px;
 width: 50rpx;
 /* margin-left: -7rpx; */
 
+}
+.shouxin{
+  height: 500rpx;
+  width:150rpx;
+  position: absolute;
+  right:20rpx;
+  bottom:-200rpx;
 }

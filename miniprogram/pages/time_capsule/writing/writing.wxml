@@ -1,0 +1,14 @@
+<!--miniprogram/pages/time_capsule/writing/writing.wxml-->
+<view class="bg">
+	<view>
+		<view>
+        <textarea maxlength="5000" style="border:0;border-radius:5px;width: 355px;height:700px;padding: 10px;resize: none;" placeholder="写一封给未来的信吧~" bindinput="getTextareaData" > </textarea>
+		</view>
+	</view>
+    <view class="buttonview">
+          <button bindtap="finished" >
+            <image src="../../../images/timeCapsule/wanchengfa.png" class="zhifeiji"> </image>
+          </button>
+    </view>
+
+</view>

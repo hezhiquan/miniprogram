@@ -23,7 +23,7 @@
 			</block>
 		</swiper>
 	
-		<button class="btn" bindtap="update">收邮件</button>
+		<button class="btn" bindtap="update">收新邮件</button>
 		<!-- <button class="btn" bindtap="hideView">try</button> -->
 		
 	</view>

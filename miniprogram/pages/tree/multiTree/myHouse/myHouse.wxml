@@ -1,3 +1,49 @@
 <!--miniprogram/pages/tree/multiTree/myHouse/myHouse.wxml-->
-<text>miniprogram/pages/tree/multiTree/myHouse/myHouse.wxml</text>
-<view>页面传过来的树屋id为 {{id}}</view>
+<view>
+	<view class="tabar">
+		<image  bindtap="firstbind" class="choose bg1" src="../../../../images/timeCapsule/juanzi.png" class="icons"></image>
+		<image bindtap="secondbind" class="choose bg1" src="../../../../images/timeCapsule/tubiao-.png" class="icons" bindtap="secondbind"></image>
+		<image bindtap="thirdbind" class="choose bg1" src="../../../../images/timeCapsule/iconmingchengpaixu68.png" class="icons" bindtap="thirdbind"></image>
+		<image bindtap="fourthbind" class="choose bg1" src="../../../../images/timeCapsule/shu.png" class="icons" bindtap="fourthbind"></image>
+	</view>
+	<!-- 点击该文字时，会触发showView函数，弹出遮罩层 -->
+	<!-- <view style="display:flex;">
+		<view bindtap="bindImage" class="choose bg1">选择背景图片</view>
+		<view bindtap="bindSubmit" class="choose bg2">提交</view>
+	</view> -->
+
+	<view class="tabar" style="display:flex;">
+		<text  bindtap="firstbind" class="choose bg1">树屋简介</text>
+		<text bindtap="secondbind" class="choose bg1">设定目标</text>
+		<text  bindtap="thirdbind" class="choose bg1">查看目标</text>
+		<text  bindtap="fourthbind" class="choose bg1">成就树</text>
+	</view>
+
+	<image src="{{bgSrc}}" class="bgimage" mode="widthFix"></image>
+	<view class="bg">
+
+		<!-- 遮罩层 -->
+		<view class="bgs" style='display:{{display}}'></view>
+		<view class="myContent" style='display:{{display}}'>
+			<view class="contents">
+				<view class="infor"><text style="color:red" >树屋名称：</text><text>{{name}}</text>
+				</view>
+				<view class="infor"><text style="color:red" >创建时间：</text><text>{{createdDate}}</text>
+				</view>
+				<view class="member">
+					<view class="infor"><text style="color:red" >成员列表：</text>
+						<view class="item" wx:for="{{memberList}}" wx:for-item="item">{{item}}</view>
+					</view>
+				</view>
+				<view class="infor"><text style="color:red" >树屋简介：</text>
+					<view class="jianjie">{{introduction}}</view>
+				</view>
+				<view class="infor"><text style="color:red" >树屋密码：</text><text>{{password}}</text>
+				</view>
+			</view>
+			<view class="btbox">
+				<image src="../../../../images/timeCapsule/shanchu.png" class="btn" bindtap="hideView">确定</image>
+			</view>
+		</view>
+	</view>
+</view>

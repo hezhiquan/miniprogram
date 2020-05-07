@@ -1,7 +1,27 @@
 .item{
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 .myhover{
   cursor: pointer;
+  height:300rpx;
+  width:176rpx;
+ 
+}
+
+.jinbi{
+  width:35rpx;
+  height:35rpx;
+  position: absolute;
+  margin-top: 10rpx;
+  margin-left: 5rpx;
+}
+.top{
+  height: 50rpx;
+  margin-bottom: 50rpx;
+}
+.font{
+  font-size: 35rpx;
 }

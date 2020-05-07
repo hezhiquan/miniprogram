@@ -1,17 +1,61 @@
 /* pages/grocery/writeAnnoy/writeAnnoy.wxss */
 /* pages/post/create.wxss */
-page {
-  background-color: rgb(254, 214, 176);
-}
-textarea{
-  height: 600rpx;
-  color: rgb(0, 4, 7);
-  margin-left: 50rpx;
-  background-color: rgb(254, 214, 176);
-}
 .placeholder-input{
-  color:rgb(167, 160, 160)
+  color: rgb(87, 81, 81);
 }
+
+.photo-list {
+  margin: 0 20rpx;
+}
+
+.photo-list .photo-block {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 20rpx;
+  margin-right: 30rpx;
+  background-color:  rgb(254, 238, 210);
+  box-shadow: 2rpx 3rpx 10rpx rgba(0, 0, 0, 0.4);
+  margin: 0 30rpx 50rpx;
+}
+
+.photo-list .photo-block .del-btn {
+  display: inline-table;
+  position: absolute;
+  right: -20rpx;
+  top: -20rpx;
+  font-weight: bolder;
+  color: white;
+  font-size: 32rpx;
+  border-radius: 50%;
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background: red;
+  text-align: center;
+}
+
+.photo {
+  margin:20rpx;
+  display: inline-block;
+  color: #dbdbdb;
+  border: 2rpx solid #ddd;
+  font-weight: 300;
+  width: 140rpx;
+  height: 140rpx;
+  font-size: 250rpx;
+  position: relative;
+}
+
+#upload-img-btn image {
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -40rpx;
+  margin-top: -40rpx;
+}
+
 #is-anoymous {
   margin:0 0rpx;
   display: flex;
@@ -25,27 +69,37 @@ textarea{
 }
 
 button {
-  margin: 30rpx 20rpx;
   background: transparent;
-  background-color: rgb(254, 238, 210);
-  color:rgb(104, 99, 85);
-  border: 1rpx solid #d8b887c2;
-  box-shadow: 2rpx 3rpx 5rpx rgba(140, 97, 5, 0.686);
+  background-image: url(https://s1.ax1x.com/2020/05/05/YkFhdg.jpg);
+  background-color: gainsboro;
+  opacity:0.8;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:rgb(77, 74, 66);
+  border: 1rpx solid #c6c6c6;
+  box-shadow: 2rpx 3rpx 10rpx rgba(0, 0, 0, 0.4);
 }
 .btfa{
   margin:200rpx;
-  color: rgb(160, 142, 125);
 }
 .table{
   padding: 50rpx;
-  /* background-color: rgba(245, 196, 106, 0.912); */
+  width: 100%;
+  /* background-color: rgb(254, 214, 176); */
 }
 .input{
+  border-radius: 10rpx;
+  margin-top: 50rpx;
   background-color: rgb(254, 238, 210);
-  border-radius: 5rpx;
-  /* color: white; */
-  width:667rpx ;
+  width:375px ;
   height: 50rpx;
-  border: 1rpx solid #e2b66ac2;
-  box-shadow: 2rpx 3rpx 10rpx rgba(249, 212, 132, 0.686);
+}
+textarea{
+  /* margin-left: 50rpx; */
+  /* width: 100%; */
+  background-image: url(https://s1.ax1x.com/2020/05/05/YkFhdg.jpg);
+  background-color: gainsboro;
+  opacity:0.8;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

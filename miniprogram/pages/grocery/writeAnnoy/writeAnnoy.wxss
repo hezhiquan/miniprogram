@@ -1,7 +1,7 @@
 /* pages/grocery/writeAnnoy/writeAnnoy.wxss */
 /* pages/post/create.wxss */
-page {
-  background: rgb(249, 216, 181);
+.placeholder-input{
+  color: rgb(87, 81, 81);
 }
 
 .photo-list {
@@ -69,10 +69,13 @@ page {
 }
 
 button {
-  margin: 30rpx 20rpx;
   background: transparent;
-  background-color: rgb(254, 238, 210);
-  color:rgb(104, 99, 85);
+  background-image: url(https://s1.ax1x.com/2020/05/05/YkFhdg.jpg);
+  background-color: gainsboro;
+  opacity:0.8;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:rgb(77, 74, 66);
   border: 1rpx solid #c6c6c6;
   box-shadow: 2rpx 3rpx 10rpx rgba(0, 0, 0, 0.4);
 }
@@ -81,26 +84,41 @@ button {
 }
 .table{
   padding: 50rpx;
-  background-color: rgb(254, 214, 176);
+  width: 100%;
+  /* background-color: rgb(254, 214, 176); */
 }
 .input{
+  border-radius: 10rpx;
+  margin-top: 50rpx;
   background-color: rgb(254, 238, 210);
-  width:667rpx ;
+  width:375px ;
   height: 50rpx;
 }
 .select{
+  border-radius: 10rpx;
   background-color:  rgb(254, 238, 210);
-  width:667rpx ;
-  margin:50rpx 50rpx;
+  width:375px ;
+  margin-top: 30rpx;
   display: flex;
+  background-image: url(https://s1.ax1x.com/2020/05/05/YkFhdg.jpg);
+  background-color: gainsboro;
+  opacity:0.8;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .or{
   padding: 0 20rpx;
-  color: rgb(123, 119, 116);
+  color: rgb(61, 57, 54);
 }
 .text2{
-  color:  rgb(123, 119, 116);
+  color:  rgb(61, 57, 54);
 }
 textarea{
-  margin-left: 50rpx;
+  /* margin-left: 50rpx; */
+  /* width: 100%; */
+  background-image: url(https://s1.ax1x.com/2020/05/05/YkFhdg.jpg);
+  background-color: gainsboro;
+  opacity:0.8;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

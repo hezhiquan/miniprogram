@@ -1,10 +1,34 @@
 <!--miniprogram/pages/tree/singleTree/showDoneGoals/showDoneGoals.wxml-->
-<view class="text1">已完成列表</view>
+<!-- <view class="text1">已完成列表</view>
 <scroll-view scroll-y = true class="scroll" bindscrolltolower="onReachBottom">
 	<view class="title {{(index%2)==0?'color1':'color2'}}" wx:for="{{dataList}}" wx:key="item" wx:for-index="index">
 		<mp-cell hover value="{{item.goal}}"> </mp-cell>
 </view>
 	<view class="text1" hidden="{{!loadMore}}">正在载入更多...</view>
-	<view class="text1" hidden="{{!loadAll}}">已加载全部</view>
+	<view class="text1" hidden="{{!loadAll}}">已加载全部</view> -->
 
-</scroll-view>
+<view class="title">
+	<text style='padding-left: 17px;'>已完成任务</text>
+</view>
+
+<view >
+	<view>
+		<swiper class='swiper-item' previous-margin="40px" next-margin="40px" circular bindchange="bindchange">
+				<view  wx:for="{{dataList}}" wx:key="item" wx:for-index="index">
+				<swiper-item class="" >
+				<view class="type-line">
+					<view class="swiperClass  {{swiperIndex == index ? 'active' : 'quiet'}}">
+							<mp-cell hover class="center" value="{{item.goal}}"> </mp-cell>
+						<view>{{item.date}}</view>
+					</view>
+				</view>
+				</swiper-item>
+			</view>
+		</swiper>
+		
+	</view>
+	<mp-toptips msg="{{tips}}" type="{{type}}" show="{{tips}}"></mp-toptips>
+</view>
+
+
+<!-- </scroll-view> -->

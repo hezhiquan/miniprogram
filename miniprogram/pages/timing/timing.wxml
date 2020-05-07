@@ -23,12 +23,15 @@
    <view bindtouchmove="tap_drag" bindtouchend="tap_end" bindtouchstart="tap_start" class="page-top {{open ? ['c-state','cover'] : ''}} ">
    	<!-- 点击出现侧边栏的图片 -->
    	<image class="more" bindtap="tap_ch" src="../../images/tree/goal2.png"></image>
-   	<view class="clock" >
+   	<view class="clock center" >
    		<view class="progress_box" style="display:{{display}}">
    			<canvas canvas-id="progress_bg" class="progress_bg" style="display:{{display}}"></canvas>
    			<canvas canvas-id="progress_canvas" class="progress_canvas" style="display:{{display}}"></canvas>
    			<view class="timing marright">
-   				<text >{{hours}}:{{minute}}:{{second}}</text>
+				 <view style="text-align:center ">
+				 <text >{{hours}}:{{minute}}:{{second}}</text>
+				 </view>
+   				
    				<view style="text-align:center ">
    					<text >{{centisecond}}</text>
    				</view>
@@ -39,7 +42,7 @@
    		<view class="goal">
    			<text>{{goal}}</text>
    		</view>
-   		<view>
+   		<view class=" center">
    			<image class="setTime" wx:if="{{flag}}" src="../../images/icons/add.png" bindtap="powerDrawer" data-statu="open"></image>
    			<image class="setTime" wx:else src="../../images/icons/ontime.png" bindtap="changeT"></image>
 

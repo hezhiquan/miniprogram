@@ -70,6 +70,12 @@ Page({
         src:"https://s1.ax1x.com/2020/04/28/J5vvM6.jpg", 
         gray:0.8,
         price:17
+      },
+      {
+        id:11,
+        src:"https://s1.ax1x.com/2020/05/06/YEJAY9.jpg", 
+        gray:0.8,
+        price:17
       }
       ]
   },

@@ -3,7 +3,7 @@
 <!-- 展示结果列表 -->
 <view wx:for="{{dataList}}" wx:key="item">
 
-	<view class="treeHouse-item" bindtap="enterHouse" data-index="{{index}}" data-id="{{item._id}}" data-password="{{item.password}}">
+	<view class="treeHouse-item" bindtap="enterHouse" data-index="{{index}}" data-id="{{item._id}}" data-password="{{item.password}}"  style="background-image: url(https://s1.ax1x.com/2020/05/05/Ykm0XR.jpg);">
 		<view class="treeHouse-name"> <text>{{item.name}}</text> </view>
 		<view class="treeHouse-introduction"> <text>{{item.introduction}}</text> </view>
 		<view class="treeHouse-footer"> <text>由 {{item.memberList[0]}} 创建于 {{item.createdDate}}</text> </view>

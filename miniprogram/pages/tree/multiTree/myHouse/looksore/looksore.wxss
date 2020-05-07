@@ -1,0 +1,43 @@
+/* pages/looksore/looksore.wxss */
+page{
+  background-color: #80a3d1;
+}
+.goals{
+  width: 100%;
+  height: 150rpx;
+  position: relative;
+  border-top: 1px solid #dadada;
+  border-bottom:1px solid #dadada;
+  padding: 30rpx;
+  font-size: 20px;
+}
+.look{
+   position: relative;
+   top:30rpx;
+   font-size: 15px;
+}
+.head{
+  background-color: rgb(168, 194, 243);
+  position: relative;
+  height: 30px;
+  width: 100%;
+  border-bottom: 1px solid #dadada;
+  font-size: 23px;
+  text-align: center;
+  padding: 20rpx;
+  color: #737c88;
+}
+.text{
+  right: 20px;
+  border-radius: 5px;
+  padding: 10rpx;
+  margin: 30rpx;
+  font-size: 20px;
+  background-color:rgb(26, 167, 73) ;
+  border:1px solid #dadada; 
+  color: white;
+}
+.mycontain{
+  height: 500rpx;
+  overflow: scroll;
+}

@@ -1,5 +1,8 @@
 /* pages/postbox2/postbox2.wxss */
-
+page{
+  height: 100%;
+  overflow: hidden;
+}
 .title{
   margin: 50rpx;
   display: flex;    /*设置显示样式**/

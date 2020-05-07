@@ -1,34 +1,33 @@
 <!--pages/grocery/grocery.wxml-->
-  <view class="container">
-  <!-- <view>心绪有三千，倾诉我一言</view> -->
-    <view class="writerA">
-    <navigator url="{{xinxiang.url2}}">
-    <image class="imgA" src="https://s1.ax1x.com/2020/04/19/JKRdE9.png" ></image>
-    </navigator>
-      <mp-cell  style="width:40rpx">
-      <text class="wordstyle" decode="{{true}}">书写烦恼 &nbsp; 分享快乐</text>
-      
-      </mp-cell>
-    </view>
-    <!-- 收件箱 -->
-     <view class="shouxin">
-    <navigator url="{{xinxiang.shouurl}}">
-    <image class="shouimag" src="https://s1.ax1x.com/2020/05/01/JLzGDJ.png" ></image>
-    </navigator>
-      <mp-cell  style="width:40rpx">
-      <text class="wordshou" decode="{{true}}">收件箱</text>
-      </mp-cell>
-    </view>
-    <view class="title" style="font-size=50rpx;">
-      <view class="jieyou">解忧杂货铺</view>
-    </view>
+<view class="container">
+	<!-- <view>心绪有三千，倾诉我一言</view> -->
+	<view class="writerA">
+		<navigator url="{{xinxiang.url2}}">
+			<image class="imgA" src="https://s1.ax1x.com/2020/04/19/JKRdE9.png"></image>
+		</navigator>
+		<mp-cell style="width:40rpx">
+			<text class="wordstyle" decode="{{true}}">书写烦恼 &nbsp; 分享快乐</text>
+		</mp-cell>
+	</view>
+	<!-- 收件箱 -->
+	<view class="shouxin">
+		<mp-cell style="width:40rpx">
+			<text class="wordshou" decode="{{true}}">收件箱</text>
+		</mp-cell>
+		<navigator url="{{xinxiang.shouurl}}">
+			<image class="shouimag" src="https://s1.ax1x.com/2020/05/01/JLzGDJ.png"></image>
+		</navigator>
+	</view>
+	<view class="title" style="font-size=50rpx;">
+		<view class="jieyou">解忧杂货铺</view>
+	</view>
 
-    <view style="font-size:45rpx;margin-left:20rpx;color:#2ea1ca;width:50rpx" > 
-      <view wx:for="{{lists}}" wx:key="*this" class="bt-word">
-		      <mp-cell link url="{{item.url}}" hover value="{{item.value}}">		
-					<!-- <image slot="title" src="{{item.src}}" style="margin-right: 40rpx;vertical-align: middle;width:20px; height: 20px;"></image>				 -->
-		</mp-cell> 
+	<view style="font-size:45rpx;margin-left:20rpx;color:#2ea1ca;width:50rpx">
+		<view wx:for="{{lists}}" wx:key="*this" class="bt-word">
+			<mp-cell link url="{{item.url}}" hover value="{{item.value}}">
+				<!-- <image slot="title" src="{{item.src}}" style="margin-right: 40rpx;vertical-align: middle;width:20px; height: 20px;"></image>				 -->
+			</mp-cell>
+		</view>
+
+	</view>
 </view>
-
-    </view>
-  </view>
