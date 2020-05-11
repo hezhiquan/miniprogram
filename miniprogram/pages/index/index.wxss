@@ -54,5 +54,5 @@
  
 @keyframes dropdown {
   from{margin-top: -50rpx;}
-  to{margin-top: 1200rpx;}
+  to{margin-top: 1800rpx;}
 }

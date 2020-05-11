@@ -1,7 +1,7 @@
 <!--miniprogram/pages/tree/multiTree/myHouse/myHouse.wxml-->
 <view>
 	<view class="tabar">
-		<image  bindtap="firstbind" class="choose bg1" src="../../../../images/timeCapsule/juanzi.png" class="icons"></image>
+		<image bindtap="firstbind" class="choose bg1" src="../../../../images/timeCapsule/juanzi.png" class="icons"></image>
 		<image bindtap="secondbind" class="choose bg1" src="../../../../images/timeCapsule/tubiao-.png" class="icons" bindtap="secondbind"></image>
 		<image bindtap="thirdbind" class="choose bg1" src="../../../../images/timeCapsule/iconmingchengpaixu68.png" class="icons" bindtap="thirdbind"></image>
 		<image bindtap="fourthbind" class="choose bg1" src="../../../../images/timeCapsule/shu.png" class="icons" bindtap="fourthbind"></image>
@@ -31,9 +31,15 @@
 				<view class="infor"><text style="color:red" >创建时间：</text><text>{{createdDate}}</text>
 				</view>
 				<view class="member">
-					<view class="infor"><text style="color:red" >成员列表：</text>
-						<view class="item" wx:for="{{memberList}}" wx:for-item="item">{{item}}</view>
+					<view class="infor"><text style="color:red" >成员列表：</text></view>
+
+					<view class="item">
+						<view  wx:for="{{memberList}}" wx:for-item="item">
+							<view>{{item}}</view>
+						</view>
 					</view>
+
+
 				</view>
 				<view class="infor"><text style="color:red" >树屋简介：</text>
 					<view class="jianjie">{{introduction}}</view>

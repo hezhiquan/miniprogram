@@ -37,7 +37,21 @@ Page({
         footer:"心绪漂流，解我苦忧",
         src:"../../images/icons/mail.png",
         url:"../grocery/grocery"
-      }
+      },
+      {
+        value:"我的树苗",
+        footer:"过去未去，未来已来",
+        src:"https://s1.ax1x.com/2020/05/09/YMaFdH.png",
+        url:"../tree/singleTree/singleTree"
+
+      },
+      {
+        value:"树屋世界",
+        footer:"愿你多年后不负所期",
+        src:"https://s1.ax1x.com/2020/05/09/YMUSbQ.png",
+        url:"../tree/multiTree/multiTree"
+
+      },
       
       
     ],
@@ -173,7 +187,7 @@ Page({
       hours: hours,
       days: days,
       weeks: weeks,
-      months: (date2 - date1),
+      months: (date2 - date1+1),
       years: today.getFullYear() - birthday.getFullYear()
     })
   }

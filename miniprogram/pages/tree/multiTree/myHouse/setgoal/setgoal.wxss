@@ -1,19 +1,18 @@
-
 page{
   /* 铺满整个屏幕 */
   height:100%
 }
 .my-goal{
-  padding-top: 90rpx;
+ 
   width:100%;
-  
+  height: 100%;
   
   display:flex;
   justify-content: center;
-  
+  align-items: center;
 }
 .my-goal-content{
-
+  position: relative;
   background-color: white;
   box-shadow:4px 4px 16px #b4b1b1 ;
   width: 85%;

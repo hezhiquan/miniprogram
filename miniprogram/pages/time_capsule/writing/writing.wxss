@@ -14,7 +14,7 @@ textarea {
   top: 1rpx;
   right:10rpx;
   height: 120rpx;
-  
+  width:120rpx;
 }
 
 .iconview {

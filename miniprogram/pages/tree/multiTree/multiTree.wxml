@@ -29,7 +29,7 @@
 	<!-- 我的树屋 -->
 	<view>
 	<navigator url="./allMyHouse/allMyHouse">
-		<image  class="myhouses" src="https://s1.ax1x.com/2020/05/06/YA2aEd.jpg" mode="="widthFIx></image>
+		<image  class="myhouses" src="https://s1.ax1x.com/2020/05/06/YA2aEd.jpg" mode="="widthFit></image>
 		</navigator>
 	</view>
 	<!-- 所有树屋列表，先展示最新的 -->

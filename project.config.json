@@ -53,22 +53,22 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/timing/timing",
-					"pathName": "pages/timing/timing",
+					"name": "pages/tree/singleTree/showGoals/showGoals",
+					"pathName": "pages/tree/singleTree/showGoals/showGoals",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": 1,
-					"name": "pages/tree/multiTree/multiTree",
-					"pathName": "pages/tree/multiTree/multiTree",
+					"name": "pages/tree/singleTree/singleTree",
+					"pathName": "pages/tree/singleTree/singleTree",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": 2,
-					"name": "pages/tree/singleTree/demo3/demo3",
-					"pathName": "pages/tree/singleTree/demo3/demo3",
+					"name": "pages/tree/singleTree/showGoals/showGoals",
+					"pathName": "pages/tree/singleTree/showGoals/showGoals",
 					"query": "",
 					"scene": null
 				},
@@ -80,7 +80,7 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 4,
 					"name": "pages/timing/timing",
 					"pathName": "pages/timing/timing",
 					"query": "",
@@ -192,9 +192,9 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/time_capsule/capsule",
-					"pathName": "pages/time_capsule/capsule",
+					"id": 20,
+					"name": "pages/grocery/writeAnnoy/writeAnnoy",
+					"pathName": "pages/grocery/writeAnnoy/writeAnnoy",
 					"query": "",
 					"scene": null
 				},
@@ -251,6 +251,7 @@
 					"id": -1,
 					"name": "pages/time_capsule/capsule",
 					"pathName": "pages/time_capsule/capsule",
+					"query": "",
 					"scene": null
 				}
 			]

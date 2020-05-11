@@ -11,8 +11,8 @@ Page({
     pageSize:10,//每一页的大小
     dataList: [], //放置返回数据的数组  
     loadMore: true, //"上拉加载"的变量，默认true，隐藏  
-    loadAll: false //“没有数据”的变量，默认false，隐藏  
-
+    loadAll: false, //“没有数据”的变量，默认false，隐藏  
+    swiperIndex:0,
   },
 
   /**
@@ -54,11 +54,8 @@ Page({
         success(res) {
           
             console.log("请求成功", res.data)
-            
-            //把新请求到的数据添加到dataList里  
-            let list = that.data.dataList.concat(res.data)
             that.setData({
-              dataList: list, //获取数据数组    
+              dataList: res.data, //获取数据数组    
               currentPage:that.data.currentPage+1
             });
             console.log("res.data.length is ",res.data.length)
@@ -88,6 +85,11 @@ Page({
         }
       })
   },
+  bindchange(e) {
+    this.setData({
+         swiperIndex: e.detail.current
+    })
+    },
   
 
 })

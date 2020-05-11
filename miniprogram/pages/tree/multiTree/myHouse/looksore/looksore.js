@@ -21,8 +21,8 @@ Page({
     const that = this
     if (!e.currentTarget.dataset.check)
       wx.showModal({
-        title: "为你的目标打分",
-        content: "你觉得你的目标完成了吗？",
+        title: "通过小目标",
+        content: "小目标完成了吗？",
         success: res => {
           if (res.confirm) {
             console.log('确定')
@@ -59,7 +59,7 @@ Page({
     else {
       wx.showModal({
         title: "提醒",
-        content: "你已经给目标通过了"
+        content: "小目标已经完成了哦"
       })
     }
   },
@@ -68,8 +68,8 @@ Page({
     const banner = db.collection("treeHouseGoal")
     const that = this
       wx.showModal({ 
-        title: "为你队友的目标打分", 
-        content: "你觉得你队友的目标完成了吗？",
+        title: "为队友的目标打分", 
+        content: "队友的目标完成了吗？",
         success: res => {
           if (res.confirm) {
             console.log('确定')

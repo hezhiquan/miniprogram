@@ -2,5 +2,5 @@
   "usingComponents": {
     "mp-cell": "../../../../weui/cell/cell"
   },
-  "onReachBottomDistance":100
+  "onReachBottomDistance":20
 }

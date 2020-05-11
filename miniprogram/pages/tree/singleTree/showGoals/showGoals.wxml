@@ -1,5 +1,5 @@
 <!--miniprogram/pages/tree/singleTree/showGoals/showGoals.wxml-->
-<view>
+<!-- <view>
 	<view class="text1">未完成列表</view>
 
 	<view wx:for="{{goals}}" wx:key="item" wx:for-index="index">
@@ -15,4 +15,33 @@
 		</mp-cells>
 	</view>
 
+</view> -->
+<view class="all">
+	<view class="text1">待完成的小目标</view>
+	<view class="text1" wx:if="{{goals.length==0}}" >还没有小目标哦，快去设定一个小目标吧</view>
+	<view wx:for="{{goals}}" wx:key="item" wx:for-index="index">
+		<view class="goal" bindtap="showDetail" data-index="{{index}}">
+			<!-- <image src="{{bgSrc[0]}}"></image> -->
+
+			<view class="goal-text">{{item.goal}}</view>
+			<view class="more">更多</view>
+			<!-- <view class="text2">预计完成时间：{{item.expectedTime}}</view> -->
+
+		</view>
+	</view>
+
+	<view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+	<view class="myContent" bindtap='hideview' style='display:{{display}}'>
+		<!-- <image src="https://s1.ax1x.com/2020/04/24/JDrg8P.jpg" mode="widthFix"></image> -->
+		<view class="detail">
+			<view class="t1"> <text>{{detail.goal}}</text></view>
+			<view class="t2"><text>预计完成时间：{{detail.expectedTime}}</text></view>
+		</view>
+
+		<view style="display:flex;">
+			<view bindtap="bindDelete" class="choose bg1">删除</view>
+			<view bindtap="bindFinish" class="choose bg2">完成</view>
+		</view>
+	</view>
+<mp-toptips msg="{{info}}" type="success" show="{{info}}"></mp-toptips>
 </view>

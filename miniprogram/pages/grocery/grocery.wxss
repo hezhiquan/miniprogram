@@ -1,54 +1,55 @@
 /* pages/grocery/grocery.wxss */
 
 
-.title{
+.title {
   background-color: rgb(151, 88, 5);
   border-radius: 10rpx;
   padding: 10rpx 5rpx;
   color: rgb(238, 234, 220);
   width: 50rpx;
 }
-.container{
+
+.container {
   background-color: rgb(242, 205, 126);
   padding: 350rpx;
 }
 
-.box{
-  border-radius:10rpx ;
+.box {
+  border-radius: 10rpx;
   border-color: rgb(19, 19, 18);
   padding: 10rpx;
 }
-.wordstyle{
+
+.wordstyle {
   font-size: 45rpx;
   color: beige;
   width: 20rpx;
   background-color: rgb(232, 192, 133);
   position: absolute;
-  left:-275rpx;
-  top:400rpx
+  left: -275rpx;
+  top: 400rpx
 }
-.wordshou{
+
+.wordshou {
   font-size: 45rpx;
   color: beige;
   width: 20rpx;
   background-color: rgb(232, 192, 133);
-  margin-bottom: 50rpx;
+  
   margin-right: 1rpx;
 }
-.imgA{
-  width:120rpx;
-  height:120rpx;
+
+.imgA {
+  
+  width: 120rpx;
+  height: 120rpx;
   border-radius: 50%;
-  overflow: hidden;
-  position: absolute;
-  left:50rpx;
-  top:600rpx;
   box-shadow: 10rpx 10rpx 10rpx 2rpx rgba(0, 0, 0, 0.4);
 }
 
-.shouimag{
-  width:120rpx;
-  height:120rpx;
+.shouimag {
+  width: 120rpx;
+  height: 120rpx;
   border-radius: 50%;
   overflow: hidden;
   /* position: absolute; */
@@ -56,31 +57,93 @@
   margin-right: 10rpx;
   /* right:50rpx;
   bottom:-100rpx; */
-  background-color:rgb(114, 65, 0) ;
+  background-color: rgb(114, 65, 0);
   box-shadow: 10rpx 10rpx 10rpx 2rpx rgba(0, 0, 0, 0.4);
 }
 
-.bt-word{
+.bt-word {
   /* 外边界 */
   margin: 100rpx -40rpx;
   border-radius: 10%;
   box-shadow: 2rpx 1rpx 15rpx 1rpx rgba(189, 152, 96, 0.4);
   width: 115rpx;
-  
-}
-.jieyou{
-  display: flex;
-justify-content: center;
-align-items: center;
-font-size: 25px;
-width: 50rpx;
-/* margin-left: -7rpx; */
 
 }
-.shouxin{
+
+.jieyou {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  width: 50rpx;
+  /* margin-left: -7rpx; */
+
+}
+
+.shouxin {
   height: 500rpx;
-  width:150rpx;
+  width: 150rpx;
   position: absolute;
-  right:20rpx;
-  bottom:-200rpx;
+  right: 20rpx;
+  bottom: -200rpx;
+}
+
+page {
+  background-color: rgb(242, 205, 126);
+  height: 100%;
+  
+}
+.all{
+  display: flex;
+  height: inherit;
+}
+.write {
+  padding-top: 30%;
+  padding-left: 40rpx;
+  width: 150rpx;
+}
+.write text{
+  
+  margin-left: 30rpx;
+}
+
+
+text{
+  color: beige;
+  writing-mode:vertical-lr;
+  letter-spacing:8px;
+}
+
+.items {
+  padding-top: 10%;
+  width: 400rpx;
+}
+.item1{
+  padding-top: 5px;
+  text-align: center;
+  width: 80rpx;
+  background-color:rgb(159, 93, 5); 
+  margin:20rpx auto;
+  border-radius: 5px;
+}
+
+
+.item2_1{
+  font-size:45rpx;
+  writing-mode:vertical-lr;
+  margin: auto;
+  color: rgba(74, 152, 173, 0.847);
+  border-radius: 10px;
+  box-shadow: 2rpx 1rpx 15rpx 1rpx rgba(189, 152, 96, 0.4);
+  letter-spacing:8px;
+}
+
+.inbox {
+  padding-top: 60%;
+  width: 200rpx;
+ 
+}
+.inbox_1{
+  margin-left: 23rpx;
+ 
 }

@@ -64,12 +64,12 @@ Page({
             tips:"提交成功"
           })
           console.log("开始跳转")
-          //两秒后跳转回上一页
+          //一秒半后跳转回上一页
           setTimeout(function(){
             wx.navigateBack({
               delta:1
             })
-          },2000) 
+          },1500) 
         },
         fail:function(err){
           console.log("提交失败",err)

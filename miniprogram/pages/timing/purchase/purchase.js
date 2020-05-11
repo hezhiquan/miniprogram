@@ -77,7 +77,8 @@ Page({
         gray:0.8,
         price:17
       }
-      ]
+      ],
+      info:""//购买失败的通知
   },
 
   /**
@@ -92,7 +93,7 @@ Page({
     if(that.data.list[e.currentTarget.dataset.id].gray>0)
     wx.showModal({
        title:'兑换卡片',
-       content:'你确定要买这张图片吗？',
+       content:'确定要购买这张图片吗？',
        success (res) {
         if (res.confirm) {   
         const banner=db.collection("users")
@@ -100,10 +101,13 @@ Page({
         .then(res=>{
                    if(res.data.times<that.data.list[e.currentTarget.dataset.id].price)
                    {
-                     wx.showModal({
-                       title:'余额不足',
-                       content:'通过完成任务获取'
-                     })
+                    //  wx.showModal({
+                    //    title:'余额不足',
+                    //    content:'通过完成任务获取'
+                    //  })
+                    that.setData({
+                      info:"哎呀，当前余额不足，快去做点小任务吧(๑¯∀¯๑)"
+                    })
                    }
                  else
                  {

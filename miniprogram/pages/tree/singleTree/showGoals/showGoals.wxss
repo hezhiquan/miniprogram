@@ -1,4 +1,11 @@
 /* miniprogram/pages/tree/singleTree/showGoals/showGoals.wxss */
+page{
+  height:100%;
+}
+.all{
+  height: 100%;
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
 .showGoal{
   background-color: white;
   height: auto;
@@ -16,9 +23,95 @@ background-color: white;
 .color2{
 background-color: #F8F8F8;
 }
-/* ????? */
-.bgGreen{
-  color:  rgba(73, 251, 100, 0.922)!important;
-  background-color: rgba(73, 251, 100, 0.922)!important;
+
+
+
+.goal-text{
+  padding-right: 30rpx;
+}
+.goal{
+  padding: 40rpx 0 50rpx  30rpx;
+  border-bottom: 1px solid wheat;
+}
+text2{
+  font-size: 30px;
+
+}
+.more{
+  float: right;
+  font-size: 8px;
+  background-color: rgba(14, 186, 11, 0.881);
+  color: whitesmoke;
+  border-radius: 30%;
+  padding:10rpx;
+}
+.bg {
+  /* 一开始设为不可见 */
+  display: none;
+  /* 使用绝对定位，将该遮罩层放在距离其父元素顶部0%，左边0%的位置 */
+  position: fixed;top: 0%;left: 0%;
+  /*设置大小为整个父元素的大小  */
+  width: 100%;  height: 100%;
+  /* 设置背景色 */
+  background-color: rgba(143, 134, 134, 0.744);
+  /* 设置所处的z轴高度，一般元素的z-index为1左右，将遮罩层设置为1001是为了确保将遮罩层放在一般元素的上
+  方，遮罩层的内容必须放在遮罩层的上方，即z-index至少为1002，当然，只要确保遮罩层的z-index比一般元素大，把遮罩层设为5，9，等等之类也行 */
+  z-index: 1001;
+  /* 设置遮罩层透明度 */
+  opacity: 0.70;
+}
+
+.myContent {
+   /* 一开始设为不可见 */
+  display: none;
+  text-align: center;
+   /* 使用绝对定位，将该遮罩层放在距离其父元素顶部10%，左边10%的位置 */
+  position: absolute; top: 10%; left: 10%;
+   /*设置宽度为整个父元素宽度的80%，长度大小为整个父元素长度的80%  */
+  width: 80%; height: 80%;
+ /*设置背景色  */
+  background-color: white;
+  /* 见上文 */
+  z-index: 1002;
+  /* 添加缩放动画，动画的关键帧为myContent1，持续时长2s，速度曲线为ease(动画以低速开始，然后加快，在结束前变慢)，执行一次 */
+  animation: myContent1 2s ease 1;
+  background-image: url(https://s1.ax1x.com/2020/04/24/JDrg8P.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+/* 设定动画的关键帧，一开始时大小变为原来的0.3，最后缩放成原来的大小 */
+@keyframes myContent1{
+  from{scale: 0.3;}
+  to{scale: 1;}
+}
+.choose{
+  text-align: center;
+  color: white;
+  
+  width: 300rpx;
+  margin: 40rpx;
+  border-radius: 5px;
+  padding:20rpx 0;
+  display: inline-block;
+}
+.bg1{
+  background-color:rgb(236, 32, 32) ;
+}
+.bg2{
+  background-color:rgba(9, 239, 116, 0.799) ;
+}
+.detail{
+  
+  padding-right: 20rpx;
+  padding-left: 20rpx;
+  height: 40%;
+  padding-top: 65%;
+}
+.t1{
+  height: 30%;
+}
+.t2{
+  text-align: left;
+  font-size: 10px;
   
 }

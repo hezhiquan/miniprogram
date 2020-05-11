@@ -88,16 +88,16 @@ button {
   /* background-color: rgb(254, 214, 176); */
 }
 .input{
-  border-radius: 10rpx;
+  border-radius: 20rpx;
   margin-top: 50rpx;
   background-color: rgb(254, 238, 210);
-  width:375px ;
+  width:750rpx ;
   height: 50rpx;
 }
 .select{
-  border-radius: 10rpx;
+  border-radius: 20rpx;
   background-color:  rgb(254, 238, 210);
-  width:375px ;
+  /* width:375px ; */
   margin-top: 30rpx;
   display: flex;
   background-image: url(https://s1.ax1x.com/2020/05/05/YkFhdg.jpg);

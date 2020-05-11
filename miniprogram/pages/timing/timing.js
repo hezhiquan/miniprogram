@@ -41,8 +41,8 @@ Page({
   
 countInterval: function(){
     this.data.countTimer = setInterval(()=>{
-      if(this.data.count <= 60){
-        this.progress_canvas(this.data.count/(60/2));
+      if(this.data.count <= 30){
+        this.progress_canvas(this.data.count/(30/2));
         this.data.count++;
       }else{
         this.data.count=0;
@@ -264,7 +264,7 @@ countInterval: function(){
   onLoad: function (options) {
     // 调用函数
     this.Initi() 
-    // this.smile();
+    this.smile();
   },  
   
   startTime()

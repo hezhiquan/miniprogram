@@ -183,14 +183,15 @@ canvas{
 
 /* 左上角图标的样式 */
 .more {
-  position: absolute;
-  top:4%;
-  left: 4%;
+  position: fixed;
+  bottom:4%;
+  right: 4%;
   width: 100rpx;
   height: 100rpx;
   z-index: 4;
+ 
   border-radius: 50%;
-  box-shadow: 10rpx 10rpx 5rpx #888888;
+ 
 }
 
 

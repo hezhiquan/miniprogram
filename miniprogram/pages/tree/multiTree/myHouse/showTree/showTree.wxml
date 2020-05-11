@@ -1,0 +1,48 @@
+<view wx:if="{{top10.length<100}}" class="page1">
+	<!-- 浮动的云 -->
+	<view class="flowingCloud">
+		<image src="../../../../../images/tree/cloud1.png" mode="widthFix" style="width:40%;">
+		</image>
+	</view>
+	<!-- 静止的云 -->
+	<view>
+		<image class="staticCloud" src="../../../../../images/tree/cloud1.png" mode="widthFix" style="width:20%;">
+		</image>
+	</view>
+	<!-- 树苗 -->
+	<view class="tree">
+	<!-- 树苗对话框 -->
+		<view wx:if="{{dialogue1}}" class=" org_box {{dialogue1}}"> <text class="org_bot_cor "></text>{{talk}}</view>
+		<image src="{{treeUrl[0]}}" mode="widthFix" style="width:20%;" bindtap='touchTree' animation="{{animTreeSwingData}}">
+		</image>
+
+	</view>
+</view>
+
+<!-- 大树 -->
+
+<view wx:else class="gradients">
+	<!-- 在大树上方加空白，避免苹果直接跑到最顶上 -->
+	<view style=""></view>
+	<view class="bigTree">
+		<image src="{{treeUrl[1]}}" class="imageBigTree"></image>
+		<view wx:for="{{dropApple}}" wx:key="item">
+			<image src="{{appleSrc[0]}}" id="apple{{index}}" class="apples {{dropApple[index] ? [drop[index]]:''}}" bindtap="drop" data-index="{{index}}"></image>
+		</view>
+	</view>
+</view>
+<!-- 遮罩层 -->
+<view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+<view class="myGoal" bindtap='hideview' style='display:{{display}}'>
+	<image src="{{bgUrl}}"></image>
+
+	<view class="goal">
+		<view>达成成就</view>
+		<view><text>{{myGoal}}</text></view>
+		<view class="time"><text>完成时间：{{finishedTime}}</text></view>
+
+	</view>
+
+
+
+</view>

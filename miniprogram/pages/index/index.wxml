@@ -1,5 +1,5 @@
 <!-- 该style是为了隐藏溢出的蛋糕 -->
-<view style="overflow:hidden;position:relative;">
+<view style="overflow:hidden;position:relative;height:100%;">
 	<view class='content'>
 		<view class="cakeView">
 			<block wx:for="{{cakeArr}}" wx:key="*this" wx:for-item="item">
@@ -59,7 +59,7 @@
 	<mp-cells style="padding-top:30rpx">
 		<view wx:for="{{lists}}" wx:key="*this">
 			<mp-cell link url="{{item.url}}" hover value="{{item.value}}" footer="{{item.footer}}">
-				<image slot="title" src="{{item.src}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+				<image slot="title" src="{{item.src}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;padding:10px;"></image>
 			</mp-cell>
 		</view>
 	</mp-cells>

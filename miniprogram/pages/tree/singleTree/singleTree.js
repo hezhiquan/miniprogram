@@ -16,7 +16,7 @@ Page({
     mark: 0,
     // nweMark 是指移动的最新点的x轴坐标 
     nweMark: 0,
-    istoright: true,
+    istoright: false,
     sidebars:
     [
     {text:"成就列表",url:"./showDoneGoals/showDoneGoals",src:"https://s1.ax1x.com/2020/04/16/JizRnU.png"},
@@ -26,8 +26,8 @@ Page({
 
     //下面五个属性针对小树苗
     animTreeSwingData: {}, //设定树苗动画所需的动画对象
-    talk: "听说生辰树，与学习更配哦",
-    talkList: ["爱种树的人，运气都不会太差", "今天，你种树了么", "你好啊", "听说生成树,与学习更配哦"],
+    talk: "听说种树，与学习更配哦",
+    talkList: ["爱种树的人，运气都不会太差", "今天，你种树了么", "你好啊", "听说种树,与学习更配哦"],
     dialogue1: "", //给对话框添加的动态属性，一开始为无，之后添加dialogue类的css，使对话框能够显示
     treeUrl: ["../../../images/tree/tree_1.png","https://s1.ax1x.com/2020/04/18/JnMP8e.md.png","https://s1.ax1x.com/2020/04/18/JnEjFH.md.png",
     "https://s1.ax1x.com/2020/04/18/JnVnlq.md.png"],
@@ -41,7 +41,10 @@ Page({
     isDisplay:'',
     myGoal:"",
     bgUrl:"",
-    finishedTime:''
+    finishedTime:'',//完成时间
+    createdTime:"",//创建时间
+    expectedTime:"",//预计完成时间
+
   },
 
   /**
@@ -91,9 +94,9 @@ Page({
     console.log("点击小图标");
     
     this.setData({
-      open:!this.data.open
+      open:true
     })
-
+    
   },
 
   tap_start: function (e) {
@@ -163,7 +166,7 @@ Page({
 
     //该值不为零，说明对话框还存在，则应取消上一次点击时设置的取消对话框行为
     if(clearTimeOut!=0){
-      clearTimeOut(clearTimeout);
+      clearTimeout(clearTimeOut);
     }
 
     setTimeout(function () {
@@ -189,12 +192,18 @@ Page({
    //e.currentTarget.dataset['goal'],得到点击果子的成就
    let index2=e.currentTarget.dataset['index'];
    let time=that.data.top10[index2].finishedTime.getFullYear()+"-"+that.data.top10[index2].finishedTime.getMonth()+"-"+that.data.top10[index2].finishedTime.getDate();
-   let url='https://s1.ax1x.com/2020/04/19/Jur24O.md.png';
+   let time1=that.data.top10[index2].createdDate.getFullYear()+"-"+that.data.top10[index2].createdDate.getMonth()+"-"+that.data.top10[index2].createdDate.getDate();
+   let time2=that.data.top10[index2].expectedTime;
+  
+  //  https://s1.ax1x.com/2020/04/19/Jur24O.md.png
+   let url='https://i.loli.net/2020/05/10/el36kFItYfMwOmU.jpg';
     this.setData({
       [temp]:true,
       myGoal:this.data.top10[index].goal,
       bgUrl:url,
-      finishedTime:time
+      finishedTime:time,
+      createdTime:time1,
+      expectedTime:time2
     })
     console.log("修改后，data ",this.data);
     setTimeout(function(){

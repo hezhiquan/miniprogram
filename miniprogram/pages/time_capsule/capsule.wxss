@@ -1,6 +1,7 @@
 /* miniprogram/pages/time_capsule/capsule.wxss */
 .box{
   width: 100%;
+ 
 }
 .title{
   /* margin-left: 70rpx; */
@@ -10,15 +11,16 @@
   align-items: center;
   color:#013950;
   background-color: #d1ac80;
+  border-radius: 25rpx;
   height: 70rpx;
 }
 .bg{
-
+  /* background-color: #e8e3dd; */
   position: absolute;
 /*   left: 15rpx; */
   width: 100%;
   height: 100%;
-  background-image:url('https://s1.ax1x.com/2020/05/06/YE7I58.jpg');
+  background-image:url('https://s1.ax1x.com/2020/05/10/Y8k5m6.png');
   background-size:cover;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -86,4 +88,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.left{
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  writing-mode: vertical-lr;
+  letter-spacing: 4px;
+}
+.right{
+  position: absolute;
+  top: 30%;
+  right: 5%;
+  writing-mode: vertical-lr;
+  letter-spacing: 4px;
+
 }

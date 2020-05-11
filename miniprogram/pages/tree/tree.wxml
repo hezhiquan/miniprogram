@@ -1,2 +1,8 @@
 <!--miniprogram/pages/tree/tree.wxml-->
 <text>miniprogram/pages/tree/tree.wxml</text>
+<view class="org_box"> <text class="org_bot_cor"></text>你好啊</view>
+
+<div class="org_box">
+    <span class="org_bot_cor"></span>
+    边框法实现底部90度尖角对话框
+</div>

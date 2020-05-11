@@ -1,9 +1,11 @@
 <!--miniprogram/pages/time_capsule/capsule.wxml-->
 <view class="bg" style="opacity:{{0.65}}">
-	<view class="box">
+	<!-- <view class="box">
 		<text class="title">时光的沙漏啊，许我多年以后邮寄一份过往</text>
-	</view>
+	</view> -->
 	<!-- <view class="imag"></view> -->
+	<!-- <view class="left ">愿你出走半生</view>
+	<view class="right ">归来仍是少年</view> -->
 	<navigator url="../time_capsule/writing/writing">
 		<image class="pen-image" src='../../images/tabbar/xiexin.png'></image>
 		<text class="text1">写信</text>

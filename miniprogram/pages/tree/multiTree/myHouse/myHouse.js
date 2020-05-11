@@ -114,7 +114,7 @@ firstbind:function () {
   }, 
   fourthbind: function () {
     wx.navigateTo({
-      url: '留给值全的',
+      url: './showTree/showTree',
     })
   },
   //遮罩层部分

@@ -56,18 +56,18 @@ page{
 .myhouses{
   position: fixed;
   border-radius: 50%;
-  width: 15%;
-  height: 8%;
+  width: 100rpx;
+  height: 100rpx;
   opacity: 0.9;
-  right: 50rpx;
+  right: 30rpx;
   top: 110rpx;
   box-shadow:2rpx 2rpx 3rpx 9rpx rgb(113, 161, 143);
 }
 /* 加载情况的文本 */
 .text1{
   color: grey;
-  font-size: 40rpx;
-  padding:20rpx 0rpx;
+  font-size: 30rpx;
+  padding:10rpx 0rpx;
   text-align: center;
 }
 

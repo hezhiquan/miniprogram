@@ -1,4 +1,4 @@
-   <!-- 侧边栏内容 -->
+   <!-- 侧边栏内容
    <view class="page-slidebar">
    	<view wx:if="{{!isLogin}}">
    		<text>请到个人信息界面登录</text>
@@ -10,19 +10,14 @@
    	</view>
 
 
-   </view>
+   </view> -->
 
-   <!-- 主页内容 -->
-   <!-- （open ? 'c-state' : ''）三元运算符： -->
-   <!-- 1.默认情况下 open 为 false -->
-   <!-- 2.当点击左上角图标的时候或者屏幕向左滑动，open 变化 true -->
-   <!-- 3.当 open 为 true 时，会加上类名为 c-state 和 cover 的 css 样式 -->
-   <!-- bindtouchstart、 bindtouchmove、bindtouchend -->
-   <!-- 当手指触摸屏幕并滑动时，所触发的三个函数 -->
-
-   <view bindtouchmove="tap_drag" bindtouchend="tap_end" bindtouchstart="tap_start" class="page-top {{open ? ['c-state','cover'] : ''}} ">
+   <!-- <view bindtouchmove="tap_drag" bindtouchend="tap_end" bindtouchstart="tap_start" class="page-top {{open ? ['c-state','cover'] : ''}} "> -->
    	<!-- 点击出现侧边栏的图片 -->
-   	<image class="more" bindtap="tap_ch" src="../../images/tree/goal2.png"></image>
+		 <navigator url="./purchase/purchase" hover-class>
+		 <image class="more" bindtap="tap_ch" src="https://s1.ax1x.com/2020/05/10/Y3tYOf.png"></image>
+		 </navigator>
+   		
    	<view class="clock center" >
    		<view class="progress_box" style="display:{{display}}">
    			<canvas canvas-id="progress_bg" class="progress_bg" style="display:{{display}}"></canvas>
@@ -45,7 +40,7 @@
    		<view class=" center">
    			<image class="setTime" wx:if="{{flag}}" src="../../images/icons/add.png" bindtap="powerDrawer" data-statu="open"></image>
    			<image class="setTime" wx:else src="../../images/icons/ontime.png" bindtap="changeT"></image>
-
+			
    		</view>
    	</view>
 
@@ -74,4 +69,4 @@
    		<view class="btn_ok" bindtap="powerDrawer" data-statu="close1">开始</view>
    	</view>
 
-   </view>
+   <!-- </view> -->

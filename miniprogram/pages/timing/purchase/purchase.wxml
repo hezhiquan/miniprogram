@@ -16,3 +16,4 @@
 		</view>
 	</view>
 </view>
+<mp-toptips msg="{{info}}" type="info" show="{{info}}"></mp-toptips>

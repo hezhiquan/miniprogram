@@ -15,20 +15,20 @@ Page({
       {
         value:"帮助与技巧",
         
-        src:"../../images/icons/tree.png"
+        src:"https://s1.ax1x.com/2020/05/09/YMUlP1.png"
       },
       
      
       {
         value:"生辰树由来",
         footer:"",
-        src:"../../images/icons/xin.png"
+        src:"https://s1.ax1x.com/2020/05/09/YMUUVH.png"
 
       },
       {
         value:"联系我们",
         footer:"",
-        src:"../../images/icons/ziyuan.png"
+        src:"https://s1.ax1x.com/2020/05/09/YMUFCq.png"
       }
       
       

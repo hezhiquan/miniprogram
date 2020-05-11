@@ -1,6 +1,6 @@
 /* miniprogram/pages/tree/multiTree/myHouse/myHouse.wxss */
-.tabar{
-  background-color:rgb(226, 224, 217);
+.tabar {
+  background-color: rgb(226, 224, 217);
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -8,28 +8,32 @@
   justify-content: space-around;
 
 }
-.icons{
+
+.icons {
   position: relative;
   margin-top: 20rpx;
   width: 60rpx;
   height: 60rpx;
 }
-.bg{
+
+.bg {
   text-align: center;
 
   width: 100%;
-  height:90%; 
+  height: 90%;
 
-  position:fixed; 
-  overflow:hidden; 
-  background-size: 100% 100%; 
+  position: fixed;
+  overflow: hidden;
+  background-size: 100% 100%;
 }
-.infor{
-  margin-top:5%;
+
+.infor {
+  margin-top: 5%;
   width: 100%;
-  height:10%; 
+  height: 10%;
 }
-.bgimage{
+
+.bgimage {
   position: absolute;
   z-index: -2;
   height: 100%;
@@ -40,10 +44,13 @@
 .bgs {
   /* 一开始设为不可见 */
   display: none;
-  /* 使用绝对定位，将该遮罩层放在距离其父元素顶部0%，左边0%的位置 */
-  position: absolute;top: 0%;left: 0%;
+
+  position: fixed;
+  top: 0%;
+  left: 0%;
   /*设置大小为整个父元素的大小  */
-  width: 100%;  height: 100%;
+  width: 100%;
+  height: 100%;
   /* 设置背景色 */
   background-color: rgba(143, 134, 134, 0.744);
   /* 设置所处的z轴高度，一般元素的z-index为1左右，将遮罩层设置为1001是为了确保将遮罩层放在一般元素的上
@@ -54,38 +61,44 @@
 }
 
 .myContent {
-   /* 一开始设为不可见 */
+  /* 一开始设为不可见 */
   display: none;
   background-image: url(https://i.loli.net/2020/05/07/Sz7MGpRqlsOc5Yd.jpg);
   background-size: cover;
   background-repeat: repeat-y;
   border-radius: 10%;
-  width: 500rpx;
-  height: 900rpx;
-   /* 使用绝对定位，将该遮罩层放在距离其父元素顶部10%，左边0%的位置 */
-  position: absolute; top: 7%; left: 0%;
-   /*设置宽度为整个父元素宽度的80% */
-  
-  width: 100%;
- /*设置背景色  */
+
+  position: fixed;
+  top: 10%;
+  left: 5%;
+  width: 90%;
+  height: 80%;
+  /*设置背景色  */
   /* background-color: white; */
   /* 见上文 */
   z-index: 1002;
   /* 添加缩放动画，动画的关键帧为myContent1，持续时长2s，速度曲线为ease(动画以低速开始，然后加快，在结束前变慢)，执行一次 */
   animation: myContent1 2s ease 1;
 }
+
 /* 设定动画的关键帧，一开始时大小变为原来的0.3，最后缩放成原来的大小 */
-@keyframes myContent1{
-  from{scale: 0.3;}
-  to{scale: 1;}
+@keyframes myContent1 {
+  from {
+    scale: 0.3;
+  }
+
+  to {
+    scale: 1;
+  }
 }
 
-.btbox{
+.btbox {
   position: absolute;
   top: 1rpx;
   right: 80rpx;
 }
-.btn{
+
+.btn {
   /* margin-bottom: 30rpx; */
   position: fixed;
   width: 70rpx;
@@ -94,23 +107,29 @@
   opacity: 0.8;
 }
 
-.contents{
+.contents {
   margin-top: 100rpx;
   margin-left: 150rpx;
   margin-right: 50rpx;
   overflow: scroll;
-  text-align:justify;
+  text-align: justify;
 }
-.item{
-  margin-left: 160rpx;
-  
+
+.item {
+  margin-left: 173rpx;
+  overflow: scroll;
+  height: 180rpx;
+  margin-top: 20rpx;
+
 }
-.jianjie{
+
+.jianjie {
   height: 200rpx;
   margin-left: 160rpx;
   overflow: scroll;
 }
-.member{
+
+.member {
   height: 220rpx;
-  overflow: scroll;
+
 }

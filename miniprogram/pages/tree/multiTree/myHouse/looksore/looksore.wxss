@@ -1,43 +1,59 @@
 /* pages/looksore/looksore.wxss */
-page{
-  background-color: #80a3d1;
+page {
+  /* background-color: #b4e0c1; */
+  
+  height: fit-content;
+  /* background-color: #80a3d1; */
+  line-height: 150%;
 }
-.goals{
+.item{
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+.goals {
   width: 100%;
   height: 150rpx;
   position: relative;
   border-top: 1px solid #dadada;
-  border-bottom:1px solid #dadada;
+  border-bottom: 1px solid #dadada;
   padding: 30rpx;
   font-size: 20px;
 }
-.look{
-   position: relative;
-   top:30rpx;
-   font-size: 15px;
+
+.look {
+  padding-top: 20rpx;  
+  padding-left: 30rpx;
+  height: 150rpx;
+  border-bottom: 1px solid wheat;
 }
-.head{
-  background-color: rgb(168, 194, 243);
-  position: relative;
-  height: 30px;
+
+.head {
+  /* background-color: #e1c5bb; */
+
+  
   width: 100%;
-  border-bottom: 1px solid #dadada;
+  border-bottom: 1px solid wheat;
   font-size: 23px;
   text-align: center;
-  padding: 20rpx;
-  color: #737c88;
-}
-.text{
-  right: 20px;
-  border-radius: 5px;
-  padding: 10rpx;
-  margin: 30rpx;
-  font-size: 20px;
-  background-color:rgb(26, 167, 73) ;
-  border:1px solid #dadada; 
+  padding-top: 15px;
+  padding-bottom: 10px;
+
   color: white;
 }
-.mycontain{
+
+.text {
+  
+  border-radius: 5px;
+  padding: 10rpx;
+  margin-left: 30rpx;
+  font-size: 20px;
+  background-color: rgb(46, 230, 107);
+  
+
+  color: white;
+}
+
+.mycontain {
   height: 500rpx;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
