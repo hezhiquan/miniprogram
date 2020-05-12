@@ -24,7 +24,7 @@
 			<!-- <image src="{{bgSrc[0]}}"></image> -->
 
 			<view class="goal-text">{{item.goal}}</view>
-			<view class="more">更多</view>
+			<view class="more">查看</view>
 			<!-- <view class="text2">预计完成时间：{{item.expectedTime}}</view> -->
 
 		</view>
@@ -34,7 +34,7 @@
 	<view class="myContent" bindtap='hideview' style='display:{{display}}'>
 		<!-- <image src="https://s1.ax1x.com/2020/04/24/JDrg8P.jpg" mode="widthFix"></image> -->
 		<view class="detail">
-			<view class="t1"> <text>{{detail.goal}}</text></view>
+			<view class="t1"> <text>任务： {{detail.goal}}</text></view>
 			<view class="t2"><text>预计完成时间：{{detail.expectedTime}}</text></view>
 		</view>
 

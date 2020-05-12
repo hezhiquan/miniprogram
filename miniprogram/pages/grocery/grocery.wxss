@@ -43,6 +43,7 @@
   
   width: 120rpx;
   height: 120rpx;
+  opacity: 0.9;
   border-radius: 50%;
   box-shadow: 10rpx 10rpx 10rpx 2rpx rgba(0, 0, 0, 0.4);
 }
@@ -52,6 +53,7 @@
   height: 120rpx;
   border-radius: 50%;
   overflow: hidden;
+  opacity: 0.9;
   /* position: absolute; */
   /* margin-top:120rpx; */
   margin-right: 10rpx;
@@ -130,11 +132,16 @@ text{
 
 .item2_1{
   font-size:45rpx;
+  /* background-image: url(https://i.loli.net/2020/05/12/qZyLAwnSYoM2X1W.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: -20rpx 50rpx 10rpx; */
   writing-mode:vertical-lr;
   margin: auto;
   color: rgba(74, 152, 173, 0.847);
   border-radius: 10px;
-  box-shadow: 2rpx 1rpx 15rpx 1rpx rgba(189, 152, 96, 0.4);
+  box-shadow: 5rpx 8rpx 15rpx 7rpx rgba(189, 152, 96, 0.4);
+  /* box-shadow: 6rpx 6rpx 6rpx 2rpx rgba(189, 152, 96, 0.57); */
   letter-spacing:8px;
 }
 

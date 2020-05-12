@@ -11,9 +11,13 @@ Page({
     hisopenid:"",
     content:"",
     NickName:"",
+    display:"none",
+    swiperIndex: 0 ,//这里不写第一次启动展示的时候会有问题
+    select:0,//选择遮罩层内容
+    hidetextarea:"",
   },
 
-  formSubmit:function(){
+  submit:function(){
     var that=this;
     console.log("传值")
     if(this.data.mycontent!=""){
@@ -77,6 +81,33 @@ Page({
     })
     console.log(this.data.hisopenid)
   },
+
+  firstbind:function () {
+    this.showView();
+  },
+    //遮罩层部分
+    // bindImage:function(){//展示内容
+    //   this.showView();
+    // },
+    bindChange(e) {
+      this.setData({
+           swiperIndex: e.detail.current
+      })
+      },
+    showView: function() { //展示遮罩层
+      this.setData({
+        display: "block",
+        hidetextarea:"none"
+      })
+    },
+    hideView: function() {
+      //关闭遮罩层，display：none的意思是隐藏该元素，其他的display：block or inline都默认设置为元素可见
+      // inline预览貌似没用
+      this.setData({
+        display: "none",
+        hidetextarea:"block"
+      })
+    },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -5,7 +5,7 @@ const db=wx.cloud.database()
 
 Page({
   data:{
-    
+    hidetextarea:"",
     tempFilePaths: [],
     mycontent:"",
     disabledSubmitBtn: false,
@@ -99,7 +99,7 @@ Page({
     });
   },
 
-  formSubmit:function(){
+  submit:function(){
     var that=this;
     console.log("传值")
     if(this.data.mycontent!=""){
@@ -150,6 +150,31 @@ Page({
     }
 
   },
-
+  firstbind:function () {
+    this.showView();
+  },
+    //遮罩层部分
+    // bindImage:function(){//展示内容
+    //   this.showView();
+    // },
+    bindChange(e) {
+      this.setData({
+           swiperIndex: e.detail.current
+      })
+      },
+    showView: function() { //展示遮罩层
+      this.setData({
+        display: "block",
+        hidetextarea:"none"
+      })
+    },
+    hideView: function() {
+      //关闭遮罩层，display：none的意思是隐藏该元素，其他的display：block or inline都默认设置为元素可见
+      // inline预览貌似没用
+      this.setData({
+        display: "none",
+        hidetextarea:"block"
+      })
+    },
   
 });

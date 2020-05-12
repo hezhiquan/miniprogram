@@ -253,6 +253,12 @@
 					"pathName": "pages/time_capsule/capsule",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/tree/singleTree/showGoals/showGoals",
+					"pathName": "pages/tree/singleTree/showGoals/showGoals",
+					"scene": null
 				}
 			]
 		}

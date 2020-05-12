@@ -1,41 +1,45 @@
-<!--pages/grocery/writeAnnoy/writeAnnoy.wxml-->
-<form bindsubmit="formSubmit" class="table">
-
-	<view>
-		<textarea bindinput="content"  placeholder-class="placeholder-input" maxlength="5000" style="border:0;border-radius:5px;background-color:rgba(241,241,241,.98);width: 355px;height:550rpx;padding: 10px;resize: none;" placeholder="这里是忘忧箱，你可以写下烦恼，也可以分享快乐，这个安静的时间留给你自己~" auto-focus />
-		</view>
-	
-	<!-- maxlength="500"设定字符最大数量，不写的话会默认字数，貌似挺少的 -->
-    <view class="photo-list">
-        <view class="photo-block" wx:for="{{tempFilePaths}}" wx:key="*this" wx:for-item="fileUrl">
-            <image mode="aspectFit" class="photo" src="{{fileUrl}}" data-file-url="{{fileUrl}}" bindtap="doPreviewImage"></image>
-            <view class="del-btn" data-url="{{fileUrl}}" catchtap="doDelImage">x</view>
+<!--pages/grocery/postbox1/huixin1/huixin1.wxml-->
+<view class="imatop">
+    <view class="selbox">
+        <view class="select">
+            <radio-group bindchange="radiochange">
+                <label wx:for='{{items}}' class="or">
+                    <radio color="#9c7951" value='{{item.value}}' checked="{{item.checked}}"></radio>
+                    {{item.value}}
+                </label>
+            </radio-group>
         </view>
-        <!-- <view class="photo-block">
-            <view id="upload-img-btn" class="photo" bindtap="doUpload">
-                <image src="../../../images/icons/tubiaolunkuo-.png"></image>
-            </view>
-             <mp-dialog title="图片数量有误" show="{{showOneButtonDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
-             <view>{{title}}</view>
-            </mp-dialog>
-        </view> -->
     </view>
-    <!-- <view id="is-anoymous">
-        <label>是否匿名</label><switch color="#54c51c" checked="true" name="anoymous"/>
-    </view> -->
-    <view id="is-anoymous">
-        <view> 
-             <textarea class='input' bindinput='textInput' placeholder-class="placeholder-input" placeholder-style='margin-left:20rpx;' maxlength='500' placeholder='输入昵称' value='{{text}}'  ></textarea>
+	<image bindtap="firstbind" src="../../../images/timeCapsule/nicheng.png" class="icons"></image>
+	<!--发送  -->
+	<image bindtap="submit" disabled="{{disabledSubmitBtn}}" src="../../../images/timeCapsule/wanchengfa.png" class="zhifeiji"></image>
+
+	<view class="tabar" style="display:flex;">
+     <view class="text2">漂流箱</view>
+		<text>昵称</text>
+		<text class="fa">发送</text>
 	</view>
+</view>
+
+	<view class="size">
+		<textarea bindinput="content" maxlength="5000" style="display:{{hidetextarea}} ;border:0;border-radius:5px;width: 355px;height:700px;padding: 10px;resize: none;" placeholder="亲爱的陌生人，感谢你的温暖回信，祝愿善良的你好运加满，生活也像糖果一样甜甜哦~" auto-focus />
 	</view>
-	<view class="select">
-		<view class="text2">请选择漂流方向</view>
-		<radio-group bindchange="radiochange">
-			<label wx:for='{{items}}' class="or">
-				<radio value='{{item.value}}' checked="{{item.checked}}"></radio>
-				{{item.value}}
-			</label>
-		</radio-group>
-	</view>
-	<button formType="submit" disabled="{{disabledSubmitBtn}}" class="btfa">发送</button>
-</form>
+	
+	<!-- maxlength="500"设定字符最大数量 -->
+			
+		<view class="bg">
+				<!-- 遮罩层 -->
+				<view class="bgs" style='display:{{display}}'></view>
+				<view class="myContent" style='display:{{display}}'>
+					<view class="contents">
+						<view id="is-anoymous">
+							<view> 
+								<input class='input' bindinput='textInput'  placeholder-style='margin-left:20rpx;' maxlength='500' placeholder='输入昵称' value='{{text}}' ></input>
+							</view>
+						</view>
+					</view>
+					<view class="btbox">
+							<image src="../../../images/timeCapsule/queren.png" class="btn" bindtap="hideView">确定</image>
+					</view>
+		</view>
+</view>

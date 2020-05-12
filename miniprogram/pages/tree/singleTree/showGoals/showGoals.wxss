@@ -75,7 +75,8 @@ text2{
   z-index: 1002;
   /* 添加缩放动画，动画的关键帧为myContent1，持续时长2s，速度曲线为ease(动画以低速开始，然后加快，在结束前变慢)，执行一次 */
   animation: myContent1 2s ease 1;
-  background-image: url(https://s1.ax1x.com/2020/04/24/JDrg8P.jpg);
+  /* background-image: url(https://s1.ax1x.com/2020/04/24/JDrg8P.jpg); */
+  background-image: url(https://i.loli.net/2020/05/12/w2Pm4GYiM6IeHZu.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -109,9 +110,15 @@ text2{
 }
 .t1{
   height: 30%;
+  font-size: 35rpx;
+  color: #3094a4;
+  font-weight: bold;
+  margin-top: -50rpx;
 }
 .t2{
-  text-align: left;
-  font-size: 10px;
-  
+  margin-top: 5rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #5c6c79 ;
+  font-weight: bold;
 }
