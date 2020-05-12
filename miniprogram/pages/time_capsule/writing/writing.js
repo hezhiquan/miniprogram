@@ -24,26 +24,34 @@ Page({
   finished: function (event) {
     var that = this;
     console.log(that.data.textareaData);
-    var mydate = new Date();
-    var myyear = mydate.getFullYear();
-    var myday = mydate.getDate();
-    var mymonth = mydate.getMonth() + 1;
-    var mycreateTime = myyear + '-' + mymonth + '-' + myday
-    console.log(mycreateTime);
-    that.setData({
-      createTime: mycreateTime
-    })
-    console.log(that.data.createTime)
-    wx.showModal({
-      title: '完成编辑！',
-      showCancel: false,
-      confirmText: '去发送~',
-      success: function (res) {
-        wx.redirectTo({
-          url: '../capsule?finished=' + "true" + '&textareaData=' + that.data.textareaData + '&createTime=' + that.data.createTime,
-        })
-      }
-    })
+    if (that.data.textareaData == "") {
+      wx.showModal({
+        title: '信件不能为空哦~',
+      })
+    } else {
+      var mydate = new Date();
+      var myyear = mydate.getFullYear();
+      var myday = mydate.getDate();
+      var mymonth = mydate.getMonth() + 1;
+      var mycreateTime = myyear + '-' + mymonth + '-' + myday
+      console.log(mycreateTime);
+      that.setData({
+        createTime: mycreateTime
+      })
+      console.log(that.data.createTime)
+      wx.showModal({
+        title: '完成编辑！',
+        showCancel: false,
+        confirmText: '去发送~',
+        success: function (res) {
+          wx.redirectTo({
+            url: '../capsule?finished=' + "true" + '&textareaData=' + that.data.textareaData + '&createTime=' + that.data.createTime,
+          })
+        }
+      })
+
+
+    }
 
   }
 })

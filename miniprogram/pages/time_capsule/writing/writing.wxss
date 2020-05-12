@@ -1,12 +1,13 @@
 /* miniprogram/pages/time_capsule/writing/writing.wxss */
 
 page{
-  background-color: rgb(237, 225, 199);
+  background-color: rgb(218, 216, 210);
 }
 
 textarea {
   margin-top: 100rpx;
-  background-color: rgb(237, 225, 199);
+  background-color: rgb(218, 216, 210);  
+  line-height:150%;
 }
 
 .buttonview{
