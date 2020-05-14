@@ -2,4 +2,10 @@
 {
   height: 100%;
   width: 100%;
+ 
+}
+
+.sentence
+{
+   font-size: 40rpx;
 }

@@ -10,50 +10,99 @@ page {
   background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
 }
 
-.goals {
+.goals{
+  padding-top: 20rpx;
+  width: 100%; 
+  border-top: 1px solid rgb(244, 210, 153);
+  border-bottom:1px solid rgb(244, 210, 153);
+  font-size: 20px;
+}
+.goals1{
   width: 100%;
   height: 150rpx;
   position: relative;
-  border-top: 1px solid #dadada;
-  border-bottom: 1px solid #dadada;
+  border-top:1px solid rgb(244, 210, 153);
+  border-bottom:1px solid rgb(244, 210, 153);
   padding: 30rpx;
   font-size: 20px;
 }
-
-.look {
-  padding-top: 20rpx;  
-  padding-left: 30rpx;
-  height: 150rpx;
-  border-bottom: 1px solid wheat;
+.look{
+   margin-bottom: 20rpx;
+   margin-left: 30rpx;
+   position: relative;
+   top:30rpx;
+   font-size: 15px;
+   margin-right: 40rpx;
 }
-
-.head {
-  /* background-color: #e1c5bb; */
-
-  
+.look1{
+  margin-bottom: 10rpx;
+  margin-top:20rpx;
+  position: relative;
+  top:20rpx;
+  font-size: 15px;
+  margin-right: 40rpx;
+}
+.head{
+  /*background-color: rgb(168, 194, 243);*/
+  position: relative;
+  height: 30px;
   width: 100%;
-  border-bottom: 1px solid wheat;
+  border-top: 1px solid rgb(244, 210, 153);
+  border-bottom: 1px solid rgb(244, 210, 153);
   font-size: 23px;
   text-align: center;
-  padding-top: 15px;
-  padding-bottom: 10px;
-
-  color: white;
+  padding: 20rpx;
+  color: #737c88;
 }
-
-.text {
-  
+.text0{
+  margin-top:40rpx;
+  margin-bottom: 20rpx;
+  margin-left:30rpx;
+}
+.text00{
+  margin-top:40rpx;
+  margin-bottom: 20rpx;
+  margin-left:50rpx;
+}
+.text{
+  right: 20px;
   border-radius: 5px;
   padding: 10rpx;
-  margin-left: 30rpx;
   font-size: 20px;
-  background-color: rgb(46, 230, 107);
-  
-
+  background-color:rgb(26, 167, 73) ;
+  border:1px solid #dadada; 
+  color: white;
+}
+.text1{
+  right: 20px;
+  border-radius: 5px;
+  padding: 10rpx;
+  margin-left: 80rpx;
+  font-size: 20px;
+  background-color:red ;
+  border:1px solid #dadada; 
+  color: white;
+}
+.text2{
+  right: 20px;
+  border-radius: 5px;
+  padding: 10rpx;
+  margin-top: 10rpx;
+  margin-left: 50rpx;
+  font-size: 20px;
+  background-color:rgb(26, 167, 73) ;
+  border:1px solid #dadada; 
   color: white;
 }
 
 .mycontain {
-  height: 500rpx;
-  /* overflow: scroll; */
+    height: 700rpx;
+   overflow: scroll; 
+}
+
+.check{
+  position: relative;
+  margin-top: 60rpx;
+  margin-bottom: 30rpx;
+  margin-left:30rpx;
 }

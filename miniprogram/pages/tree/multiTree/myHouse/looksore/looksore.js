@@ -63,6 +63,43 @@ Page({
       })
     }
   },
+ 
+  myCancel(e)
+  {
+    const banner = db.collection("treeHouseGoal")
+    const that = this
+    wx.showModal({
+      title: '放弃任务',
+      content: '你确定放弃当前任务吗？',
+      success: res=>{
+        if(res.confirm)
+        {
+          banner.doc(e.currentTarget.dataset.id).remove()
+          .then(res=>{
+            console.log(res)
+            banner.where({
+              treeHouseID: that.data.treehouseId,
+              _openid: that.data.openid
+            }).get().then(res => {
+              console.log(res.data)
+              that.setData({
+                list: res.data,
+              })
+              console.log(that.data.list)
+            }).catch(err => {
+              console.log(err) 
+            }) 
+            wx.showModal({
+              title: '提醒',
+              content: '任务已移除'
+            })
+            
+          })
+        }
+      },
+    })
+  },
+
   Checkothers(e) {
     console.log(e.currentTarget.dataset.checklist)
     const banner = db.collection("treeHouseGoal")
