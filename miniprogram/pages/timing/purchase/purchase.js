@@ -7,21 +7,22 @@ Page({
       list:
       [{
         id:0,
-        src:"https://s1.ax1x.com/2020/04/28/J5XIS0.png",
+        src:"https://s1.ax1x.com/2020/05/14/YBBjyR.jpg",
         gray:0.8,
         price:15
       },
       {
         id:1,
-        src:"https://s1.ax1x.com/2020/04/28/J5jl7Q.png", 
+        src:"https://s1.ax1x.com/2020/05/14/YB0lE8.jpg",
         gray:0.8,
-        price:5
+        price:20  
+        
       },
       {
         id:2,
-        src:"https://s1.ax1x.com/2020/04/28/J5jMnS.png",
+        src:"https://s1.ax1x.com/2020/04/28/J5jl7Q.png", 
         gray:0.8,
-        price:20  
+        price:5
       },
       {
         id:3,

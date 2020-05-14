@@ -41,17 +41,7 @@ exports.main = async (event, context) => {
       received: false
     }).get()
   console.log("result is",result);
-  const update=await db.collection("capsules").where({
-    recordedTime: nowdate,
-    received: false
-  }).update({
-    data:{
-      received: true
-    },
-    success: function(res) {
-      console.log("update success ",res.data)
-    }
-  })
+
 
   let data=result.data;
   for (let i = 0; i < data.length; i++) {
@@ -66,10 +56,21 @@ exports.main = async (event, context) => {
       // 邮件内容，text或者html格式
       text: data[i].recordedText //可以是链接，也可以是验证码
     }
-    let res =transporter.sendMail(mail);
+    let res =await transporter.sendMail(mail);
     console.log('OK' + res.response)
   }
   console.log("777")
+  const update=await db.collection("capsules").where({
+    recordedTime: nowdate,
+    received: false
+  }).update({
+    data:{
+      received: true
+    },
+    success: function(res) {
+      console.log("update success ",res.data)
+    }
+  })
   return "send sucess ";
 
 

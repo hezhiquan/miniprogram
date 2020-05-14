@@ -53,8 +53,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/tree/singleTree/showGoals/showGoals",
-					"pathName": "pages/tree/singleTree/showGoals/showGoals",
+					"name": "pages/timing/timing",
+					"pathName": "pages/timing/timing",
 					"query": "",
 					"scene": null
 				},
@@ -258,6 +258,7 @@
 					"id": -1,
 					"name": "pages/tree/singleTree/showGoals/showGoals",
 					"pathName": "pages/tree/singleTree/showGoals/showGoals",
+					"query": "",
 					"scene": null
 				}
 			]

@@ -6,6 +6,7 @@
 }
 /* 自制表格 */
 .table{
+  border-collapse:collapse; 
   border:1px solid #080808;
   border-right:0;
   border-bottom: 0;
@@ -31,10 +32,12 @@
 }
 .td{
   font-size: 20rpx;
-  width: 30%;
+ 
 }
+
 .birthday{
   padding-left:100rpx;
+  padding-top: 20rpx;
 }
 .center{
   display:flex;
@@ -42,6 +45,7 @@
   align-items:center;
   }
 .btn{
+
   background-color:#8bf7ee;
   height:80rpx;
   width:600rpx;
@@ -55,4 +59,15 @@
 @keyframes dropdown {
   from{margin-top: -50rpx;}
   to{margin-top: 1800rpx;}
+}
+.clock2{
+  border:1px solid rgb(167, 163, 163);
+  padding:5px;
+  
+  font-size: 13px;
+}
+.td2{
+  border:1px solid gray;
+  font-size: 20rpx;
+  display: inline;
 }

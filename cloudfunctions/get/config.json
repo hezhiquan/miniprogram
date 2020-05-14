@@ -10,7 +10,7 @@
      
       "type": "timer",
       
-      "config": "0 0 10 * * MON-SUN *"
+      "config": "0 0 10,17 * * * *"
     }
   ]
 }

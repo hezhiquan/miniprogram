@@ -10,8 +10,8 @@
 		  是否通过：<radio disabled="{{item.myCheck?false:true}}" checked="{{item.myCheck}}"></radio>
 			</view>		
 			<view class="check">	
-			<text class="text" data-id="{{item._id}}" data-check="{{item.myCheck}}" style="display:{{item.myCheck?'none':'inline'}};" bindtap="myCheck">确认</text>
-			<text class="text1" data-id="{{item._id}}" data-check="{{item.myCheck}}" style="display:{{item.myCheck?'none':'inline'}};" bindtap="myCancel">放弃</text>
+			<text class="text" data-id="{{item._id}}" data-check="{{item.myCheck}}" style="display:{{item.myCheck?'none':'inline'}};" bindtap="myCancel">放弃</text>
+			<text class="text1" data-id="{{item._id}}" data-check="{{item.myCheck}}" style="display:{{item.myCheck?'none':'inline'}};" bindtap="myCheck">确认</text>
 			</view>
 		</view>
 	</view>

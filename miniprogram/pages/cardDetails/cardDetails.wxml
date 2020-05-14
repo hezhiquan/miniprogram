@@ -2,7 +2,7 @@
 <view class="container">
 <image class="show" src="{{SelectedPath}}" mode="widthFix" >
 </image>
-<view class="sentence" style="text-align: center">{{Selectedword}}</view>
 </view>
+<view class="sentence" style="text-align: center"><text>{{Selectedword}}</text></view>
 
 
