@@ -33,4 +33,5 @@
 			<image class="shouimag" src="https://s1.ax1x.com/2020/05/01/JLzGDJ.png"></image>
 		</navigator>
 	</view>
+	<view bindtap='closeThis'>{{msg}}</view>
 </view>

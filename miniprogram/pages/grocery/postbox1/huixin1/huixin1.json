@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "mp-toptips": "../../../../weui/toptips/toptips"
+  }
+  
 }

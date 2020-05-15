@@ -260,6 +260,26 @@
 					"pathName": "pages/tree/singleTree/showGoals/showGoals",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/time_capsule/capsule",
+					"pathName": "pages/time_capsule/capsule",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/tree/singleTree/addGoal/addGoal",
+					"pathName": "pages/tree/singleTree/addGoal/addGoal",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "/tips",
+					"pathName": "uniti/tips/tips",
+					"scene": null
 				}
 			]
 		}

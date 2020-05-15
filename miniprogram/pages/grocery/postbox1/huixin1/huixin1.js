@@ -10,17 +10,24 @@ Page({
   data: {
     hisopenid:"",
     content:"",
-    NickName:"",
+    mycontent:"",
+    Nickname:"",
     display:"none",
     swiperIndex: 0 ,//这里不写第一次启动展示的时候会有问题
     select:0,//选择遮罩层内容
     hidetextarea:"",
+    type:"error",
+    tips:"" //用户输入错误的提示
   },
-
+  contentfun:function (e) {
+    this.setData({
+      mycontent:e.detail.value
+    })
+  },
   submit:function(){
     var that=this;
     console.log("传值")
-    if(this.data.mycontent!=""){
+    if(this.data.mycontent!=""&& this.data.Nickname!=""){
       db.collection("Back").add({
         data:{
           Hisopenid:that.data.hisopenid,
@@ -49,21 +56,29 @@ Page({
         }
         
       })
-    }else {
+    }
+    else {
       console.log("输入不符合条件")
-      this.setData({
-      
-        tips:"输入不能为空"
-      })
+      if(this.data.mycontent==""&&this.data.Nickname==""){
+        this.setData({
+          tips:"请输入内容并填写昵称",
+          // title:"输入不能为空"
+        })
+      }
+      else if(this.data.mycontent==""&&this.data.Nickname!=""){
+        this.setData({
+          tips:"输入不能为空"
+        })
+      }
+      else if(this.data.mycontent!=""&&this.data.Nickname==""){
+        this.setData({
+          tips:"请输入昵称"
+        })
+      }
     }
 
   },
 
-  content:function (e) {
-    this.setData({
-      mycontent:e.detail.value
-    })
-  },
   textInput:function (e) {
     this.setData({
       Nickname:e.detail.value

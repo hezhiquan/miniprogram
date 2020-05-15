@@ -31,7 +31,7 @@
   position: absolute;
   width: 100rpx;
   height: 100rpx;
-  left: 70rpx;
+  right: 70rpx;
   bottom: 120rpx;
   z-index: 1;
   border-radius: 50%;
@@ -50,7 +50,7 @@
 .text1{
   position:absolute;
   bottom: 75rpx;
-  left:86rpx;
+  right:86rpx;
   margin-top: 100rpx;
 }
 .text2{

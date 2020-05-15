@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "mp-dialog": "../../../weui/dialog/dialog"
+    "mp-dialog": "../../../weui/dialog/dialog",
+    "mp-toptips": "../../../../weui/toptips/toptips"
   }
 }

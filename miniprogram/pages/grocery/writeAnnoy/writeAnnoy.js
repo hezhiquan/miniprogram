@@ -8,6 +8,7 @@ Page({
     hidetextarea:"",
     tempFilePaths: [],
     mycontent:"",
+    Nickname:"",
     disabledSubmitBtn: false,
     dialogShow: false,
     showOneButtonDialog: false,
@@ -15,7 +16,6 @@ Page({
     title:"只能插入一张图片",
     num:0,
     // change:false
-    Nickname:"",
     type:"error",
     tips:"" ,//用户输入错误的提示,
     items:[
@@ -102,7 +102,7 @@ Page({
   submit:function(){
     var that=this;
     console.log("传值")
-    if(this.data.mycontent!=""){
+    if(this.data.mycontent!=""&&this.data.Nickname!=""){
       if(this.data.emotion==="烦恼"){
         this.setData({
           selectdb:"Annoy"
@@ -143,10 +143,22 @@ Page({
       })
     }else {
       console.log("输入不符合条件")
-      this.setData({
-      
-        tips:"输入不能为空"
-      })
+      if(this.data.mycontent==""&&this.data.Nickname==""){
+        this.setData({
+          tips:"请输入内容并填写昵称",
+          // title:"输入不能为空"
+        })
+      }
+      else if(this.data.mycontent==""&&this.data.Nickname!=""){
+        this.setData({
+          tips:"输入不能为空"
+        })
+      }
+      else if(this.data.mycontent!=""&&this.data.Nickname==""){
+        this.setData({
+          tips:"请输入昵称"
+        })
+      }
     }
 
   },

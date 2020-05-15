@@ -128,6 +128,9 @@ text{
   margin:20rpx auto;
   border-radius: 5px;
 }
+.bottom{
+  background-color: aliceblue;
+}
 
 
 .item2_1{
