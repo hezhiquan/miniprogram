@@ -5,14 +5,14 @@
 		<image bindtap="secondbind" class="choose bg1" src="../../../../images/timeCapsule/tubiao-.png" class="icons" bindtap="secondbind"></image>
 		<image bindtap="thirdbind" class="choose bg1" src="../../../../images/timeCapsule/iconmingchengpaixu68.png" class="icons" bindtap="thirdbind"></image>
 		<image bindtap="fourthbind" class="choose bg1" src="../../../../images/timeCapsule/shu.png" class="icons" bindtap="fourthbind"></image>
-	</view>
+	</view><!--这是导航栏的设置，点击图片可以跳转到各个页面-->
 
 	<view class="tabar" style="display:flex;">
 		<text  bindtap="firstbind" class="choose bg1">树屋简介</text>
 		<text bindtap="secondbind" class="choose bg1">设定目标</text>
 		<text  bindtap="thirdbind" class="choose bg1">查看目标</text>
 		<text  bindtap="fourthbind" class="choose bg1">成就树</text>
-	</view>
+	</view><!--这是导航栏的设置，点击文字也可以跳转到各个页面-->
 
 	<image src="{{bgSrc}}" class="bgimage" mode="widthFix"></image>
 	<view class="bg">

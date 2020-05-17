@@ -1,3 +1,5 @@
+//这个页面的主要内容是用户往输入框输入内容，判断用户输入的是否为空，不为空则存入数据库，为空则给用户提示
+
 const db = wx.cloud.database();
 const app = getApp();
 Page({
