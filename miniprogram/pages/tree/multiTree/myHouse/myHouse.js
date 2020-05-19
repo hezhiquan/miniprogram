@@ -42,6 +42,9 @@ Page({
           introduction:res.data[0].introduction,
           password:res.data[0].password
         })
+        wx.setNavigationBarTitle({
+          title: that.data.name
+        })
         console.log(that.data.introduction)
     })
       .catch(err => {

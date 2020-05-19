@@ -36,6 +36,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: '成就树'
+    })
 console.log("options is ",options);
 
     let that = this;

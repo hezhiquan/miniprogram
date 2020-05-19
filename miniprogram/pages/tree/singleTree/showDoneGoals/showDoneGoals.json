@@ -2,5 +2,6 @@
   "usingComponents": {
     "mp-cell": "../../../../weui/cell/cell"
   },
-  "onReachBottomDistance":20
+  "onReachBottomDistance":20,
+  "navigationBarTitleText": "成就列表"
 }

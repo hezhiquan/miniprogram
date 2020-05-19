@@ -37,6 +37,22 @@
   from{scale: 0.3;}
   to{scale: 1;}
 }
+/* 未登录时的样式 */
+.content2 {
+  display: block;
+  background-image: url("https://s1.ax1x.com/2020/05/18/YhLWeP.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.content2 button {
+  position: absolute;
+  top: 78%;
+  left: 20%;
+  width: 60%;
+  background-color: rgba(53, 216, 241, 0.963);
+  color: white;
+}
 /* 中间的树屋样式 */
 .treeHouse-item{
 

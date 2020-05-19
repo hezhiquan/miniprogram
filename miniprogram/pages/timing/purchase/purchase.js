@@ -90,8 +90,13 @@ Page({
     const that=this
     var up="list["+e.currentTarget.dataset.id+"].gray"
     //console.log(that.data.list[e.currentTarget.dataset.id].gray)
-    let index=e.currentTarget.dataset.id
-    if(that.data.list[e.currentTarget.dataset.id].gray>0)
+    let index=e.currentTarget.dataset.id;
+   if(!app.userInfo.nickName){
+    that.setData({
+      info:"登录之后才能购买哦(๑¯∀¯๑)"
+    })
+   }
+    else if(that.data.list[e.currentTarget.dataset.id].gray>0)
     wx.showModal({
        title:'兑换卡片',
        content:'确定要购买这张图片吗？',
@@ -150,7 +155,7 @@ Page({
         } else if (res.cancel) {
         console.log('用户点击取消')
           }
-        }  
+        }
      })
      else
      wx.navigateTo({
@@ -159,21 +164,25 @@ Page({
   },
 
   onLoad: function (options) {
-    const banner=db.collection("users")
-    banner.doc(app.userInfo._id).get()
-    .then(res=>{
-      this.setData({
-        Balance:res.data.times,
-      })
-      var i,len;
-      for(i=0,len=res.data.gray.length;i<len;i++)
-      {
-        var up="list["+res.data.gray[i]+"].gray"
+    // 登录状况下才更新本地余额
+    if(app.userInfo.nickName){
+      const banner=db.collection("users")
+      banner.doc(app.userInfo._id).get()
+      .then(res=>{
         this.setData({
-          [up]:0
+          Balance:res.data.times,
         })
-      }
-    })
+        var i,len;
+        for(i=0,len=res.data.gray.length;i<len;i++)
+        {
+          var up="list["+res.data.gray[i]+"].gray"
+          this.setData({
+            [up]:0
+          })
+        }
+      })
+    }
+
   },
 
   /**

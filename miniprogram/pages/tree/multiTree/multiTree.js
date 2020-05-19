@@ -17,29 +17,10 @@ Page({
     password: "", //树屋的密码
     tips: "", //提示信息
     type: "error", //提示类型
-
+    nickName:"",//用户昵称，用来判断用户是否登录
   },
   onLoad: function (options) {
     this.getData();
-
-    //刚进入页面时，调用云函数尝试登录
-    wx.cloud.callFunction({
-        name: 'login',
-        data: {}
-      }).then((res) => {
-        db.collection('users').where({
-          _openid: res.result.openid
-        }).get().then((res) => {
-          if (res.data.length) {
-            console.log("login函数调用结果为", res)
-            app.userInfo = Object.assign(app.userInfo, res.data[0]);
-
-          }
-        });
-      })
-      .catch((err) => {
-        console.log(err)
-      })
   },
   onShow: function () {
     console.log("onShow begin")
@@ -67,7 +48,7 @@ Page({
     console.log("openid is",app.userInfo._openid)
     //云数据的请求
     db.collection("treeHouse")
-      .orderBy("createdDate", "desc")
+      .orderBy("date", "desc")//date主要用来降序排列
       .skip(that.data.currentPage * that.data.pageSize) //从第几个数据开始
       .limit(that.data.pageSize)
       
@@ -192,5 +173,31 @@ Page({
       })
     }
   },
+  getUserInfo(event){
+    //console.log(ev);
+    let userInfo = event.detail.userInfo;
+    if(  userInfo ){
+      db.collection('users').add({
+        data : {
+          avatarUrl: userInfo.avatarUrl,
+          nickName: userInfo.nickName,
+          signature : '', //寄语          
+          friendList : [],
+          gray:[],
+          times:0
+        }
+      }).then((res)=>{
+         db.collection('users').doc(res._id).get().then((res)=>{
+           //console.log(res.data);
+           app.userInfo = Object.assign( app.userInfo , res.data );
+           this.setData({
+            
+             nickName : app.userInfo.nickName
+                      
+           });
+         });
+      });
+    }
+ }
 
 })

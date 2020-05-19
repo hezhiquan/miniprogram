@@ -2,5 +2,6 @@
   "usingComponents": {
     "mp-dialog": "../../../weui/dialog/dialog",
     "mp-toptips": "../../../../weui/toptips/toptips"
-  }
+  },
+  "navigationBarTitleText": "忘忧箱"
 }

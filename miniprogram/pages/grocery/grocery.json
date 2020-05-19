@@ -3,5 +3,6 @@
     "mp-cells": "../../weui/cells/cells",
     "mp-cell": "../../weui/cell/cell",
     "mp-slideview": "../../weui/slideview/slideview"   
-  }
+  },
+  "navigationBarTitleText": "解忧杂货铺"
 }

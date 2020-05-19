@@ -1,12 +1,16 @@
 <!--miniprogram/pages/tree/multiTree/multiTree.wxml-->
 <!-- 我的树屋 -->
+<view wx:if="{{!nickName}}" class="mask-bg" style="display:block;opacity:1;">
+	<view class="mask-myContent content2">
+		<button open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录 </button>
+	</view>
+</view>
 
-
-<view >
+<view>
 	<!-- 遮罩层 -->
-	
+
 	<view class="mask-bg" bindtap='hideView' style='display:{{display}}; '></view>
-	
+
 	<view class="mask-myContent myContent2" style='display:{{display}};  '>
 		<!-- 输入口令加入树屋 -->
 		<view>
@@ -28,8 +32,8 @@
 
 	<!-- 我的树屋 -->
 	<view>
-	<navigator url="./allMyHouse/allMyHouse">
-		<image  class="myhouses" src="https://s1.ax1x.com/2020/05/06/YA2aEd.jpg" mode="="widthFit></image>
+		<navigator url="./allMyHouse/allMyHouse">
+			<image class="myhouses" src="https://s1.ax1x.com/2020/05/06/YA2aEd.jpg" mode="=" widthFit></image>
 		</navigator>
 	</view>
 	<!-- 所有树屋列表，先展示最新的 -->
@@ -54,4 +58,3 @@
 	</navigator>
 
 </view>
-

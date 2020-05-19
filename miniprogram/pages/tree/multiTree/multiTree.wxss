@@ -5,7 +5,7 @@ page{
   height: 100%;
   /* background-image: url(https://s1.ax1x.com/2020/05/05/YkMM5V.jpg); */
   background-image: url(https://s1.ax1x.com/2020/05/05/YkM2VI.jpg);
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   background-size: 100%;
   position: absolute;
  background-position-y: center;

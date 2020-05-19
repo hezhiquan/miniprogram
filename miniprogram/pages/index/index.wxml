@@ -103,7 +103,7 @@
 	<mp-cells style="padding-top:30rpx">
 		<view wx:for="{{lists}}" wx:key="*this">
 			<mp-cell link url="{{item.url}}" hover value="{{item.value}}" footer="{{item.footer}}">
-				<image slot="title" src="{{item.src}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;padding:10px;"></image>
+				<image slot="title" src="{{item.src}}" style="margin-right: 10px;vertical-align: middle;width:25px; height:25px;padding:10px;"></image>
 			</mp-cell>
 		</view>
 	</mp-cells>

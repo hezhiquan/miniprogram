@@ -1,6 +1,6 @@
 /* pages/grocery/grocery.wxss */
 
-
+@import "../../app.wxss";
 .title {
   background-color: rgb(151, 88, 5);
   border-radius: 10rpx;

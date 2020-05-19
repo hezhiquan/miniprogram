@@ -1,4 +1,10 @@
+@import "../../../app.wxss";
+
 /* 侧边栏样式 */
+page {
+  height: 100%;
+}
+
 .page-slidebar {
   height: 100%;
   width: 750rpx;
@@ -585,7 +591,7 @@
 }
 
 .org_box {
-/* display: none; */
+  /* display: none; */
   width: 300rpx;
   color: white;
   line-height: 30px;
@@ -611,3 +617,4 @@
   left: 20px;
   bottom: -30px;
 }
+

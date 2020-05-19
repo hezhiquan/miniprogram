@@ -2,5 +2,6 @@
   "usingComponents": {
     "mp-searchbar": "../../../../weui/searchbar/searchbar",
     "mp-toptips": "../../../../weui/toptips/toptips"
-  }
+  },
+  "navigationBarTitleText": "查找树屋"
 }

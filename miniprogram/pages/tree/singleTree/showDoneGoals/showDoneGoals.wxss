@@ -45,14 +45,14 @@ page {
   /* 子view排列方式row--水平 column--垂直 */
   color: rgb(241, 221, 193);
   /* text-shadow:5px 1px 6px rgb(133, 113, 94); */
-  background-color: rgb(229, 148, 41);
+  background-color: rgb(151, 88, 5);
   padding: 10rpx 0 10rpx;
   border-radius: 8rpx;
   margin-top: 0rpx;
 }
 
 .swiper-item {
-  background-color: rgb(229, 148, 41);
+  background-color: rgb(151, 88, 5);
   width: 750rpx;
   height: 800rpx;
 

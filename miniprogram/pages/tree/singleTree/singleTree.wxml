@@ -1,77 +1,83 @@
-    <!-- 侧边栏内容 -->
-    <view class="page-slidebar">
-    	<view class="image11">
-    		<image src="{{avatarUrl}}" mode="widthFix" class="image1"></image>
-    		<!-- <text>{{nickName}}</text> -->
-    	</view>
-    	<view class="page-content" wx:for="{{sidebars}}" wx:key="item">
+   <!-- 未登录时要求登录 -->
+   <view wx:if="{{!nickName}}" class="mask-bg" style="display:block;opacity:1;">
+   	<view class="mask-myContent content2">
+		 <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录 </button>
+   	</view>
+   </view>
+   <!-- 侧边栏内容 -->
+   <view class="page-slidebar">
+   	<view class="image11">
+   		<image src="{{avatarUrl}}" mode="widthFix" class="image1"></image>
+   		<!-- <text>{{nickName}}</text> -->
+   	</view>
+   	<view class="page-content" wx:for="{{sidebars}}" wx:key="item">
 
-    		<navigator url="{{item.url}}" class="sidebar-content">
-    			<image src="{{item.src}}"></image>{{item.text}}
-    		</navigator>
-    	</view>
-    </view>
-    <!-- 主页内容 -->
-    <view bindtouchmove="tap_drag" bindtouchend="tap_end" bindtouchstart="tap_start" class="page-top {{open ? ['c-state','cover'] : ''}} ">
-    	<image class="more" bindtap="tap_ch" src="https://s1.ax1x.com/2020/04/27/JRuzJU.png"></image>
+   		<navigator url="{{item.url}}" class="sidebar-content">
+   			<image src="{{item.src}}"></image>{{item.text}}
+   		</navigator>
+   	</view>
+   </view>
+   <!-- 主页内容 -->
+   <view bindtouchmove="tap_drag" bindtouchend="tap_end" bindtouchstart="tap_start" class="page-top {{open ? ['c-state','cover'] : ''}} ">
+   	<image class="more" bindtap="tap_ch" src="https://s1.ax1x.com/2020/04/27/JRuzJU.png"></image>
 
-    	<view wx:if="{{top10.length<10}}" class="page ">
-    		<image src="https://s1.ax1x.com/2020/04/14/JpyRMj.md.png" mode="widthFit"></image>
-    		<!-- 浮动的云 -->
-    		<view class="flowingCloud">
-    			<image src="../../../images/tree/cloud1.png" mode="widthFix" style="width:40%;">
-    			</image>
-    		</view>
-    		<!-- 静止的云 -->
-    		<view>
-    			<image class="staticCloud" src="../../../images/tree/cloud1.png" mode="widthFix">
-    			</image>
-    		</view>
+   	<view wx:if="{{top10.length<10}}" class="page ">
+   		<image src="https://s1.ax1x.com/2020/04/14/JpyRMj.md.png" mode="widthFit"></image>
+   		<!-- 浮动的云 -->
+   		<view class="flowingCloud">
+   			<image src="../../../images/tree/cloud1.png" mode="widthFix" style="width:40%;">
+   			</image>
+   		</view>
+   		<!-- 静止的云 -->
+   		<view>
+   			<image class="staticCloud" src="../../../images/tree/cloud1.png" mode="widthFix">
+   			</image>
+   		</view>
 
-    	</view>
+   	</view>
 
-    	<!-- 大树 -->
+   	<!-- 大树 -->
 
-    	<view wx:else class="gradients">
-    		<!-- 在大树上方加空白，避免苹果直接跑到最顶上 -->
-    		<view style="padding-top: 300rpx;"></view>
-    		<view class="bigTree">
-    			<image src="{{treeUrl[1]}}" class="imageBigTree"></image>
-    			<view wx:for="{{dropApple}}" wx:key="item">
-    				<image src="{{appleSrc[0]}}" id="apple{{index}}" class="apples {{dropApple[index] ? [drop[index]]:''}}" bindtap="drop" data-index="{{index}}"></image>
-    			</view>
-    		</view>
-    	</view>
-    	<!-- 遮罩层 -->
-    	<view class="bg" bindtap='hideview' style='display:{{display}}'></view>
-    	<view class="myGoal" bindtap='hideview' style='display:{{display}}'>
-    		<image src="{{bgUrl}}" mode="widthFit"></image>
+   	<view wx:else class="gradients">
+   		<!-- 在大树上方加空白，避免苹果直接跑到最顶上 -->
+   		<view style="padding-top: 300rpx;"></view>
+   		<view class="bigTree">
+   			<image src="{{treeUrl[1]}}" class="imageBigTree"></image>
+   			<view wx:for="{{dropApple}}" wx:key="item">
+   				<image src="{{appleSrc[0]}}" id="apple{{index}}" class="apples {{dropApple[index] ? [drop[index]]:''}}" bindtap="drop" data-index="{{index}}"></image>
+   			</view>
+   		</view>
+   	</view>
+   	<!-- 遮罩层 -->
+   	<view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+   	<view class="myGoal" bindtap='hideview' style='display:{{display}}'>
+   		<image src="{{bgUrl}}" mode="widthFit"></image>
 
-    		<view class="goal">
+   		<view class="goal">
 
-    			<view >
-    				<text>{{myGoal}} √ </text>    	
-    			</view>
-    			<view class="time0">
-    				<view class="time"><text>设定时间：{{createdTime}}</text></view>
-    				<view class="time"><text>预计完成时间：{{expectedTime}}</text></view>
-    				<view class="time"> <text>完成时间：{{finishedTime}}</text></view>
-    			</view>
+   			<view>
+   				<text>{{myGoal}} √ </text>
+   			</view>
+   			<view class="time0">
+   				<view class="time"><text>设定时间：{{createdTime}}</text></view>
+   				<view class="time"><text>预计完成时间：{{expectedTime}}</text></view>
+   				<view class="time"> <text>完成时间：{{finishedTime}}</text></view>
+   			</view>
 
-    		</view>
+   		</view>
 
 
 
-    	</view>
-    	<!-- 树苗 -->
+   	</view>
+   	<!-- 树苗 -->
 
-    	<view wx:if="{{top10.length<10}}" class="tree">
-				<!-- 树苗对话框 -->
-			<view wx:if="{{dialogue1}}" class=" org_box {{dialogue1}}"> <text class="org_bot_cor "></text>{{talk}}</view>
-    		<image src="{{treeUrl[0]}}" mode="widthFix" style="width:20%;" bindtap='touchTree' animation="{{animTreeSwingData}}">
-    		</image>
-    	
-    		<!-- <view class=""></view> -->
-				
-    	</view>
-    </view>
+   	<view wx:if="{{top10.length<10}}" class="tree">
+   		<!-- 树苗对话框 -->
+   		<view wx:if="{{dialogue1}}" class=" org_box {{dialogue1}}"> <text class="org_bot_cor "></text>{{talk}}</view>
+   		<image src="{{treeUrl[0]}}" mode="widthFix" style="width:20%;" bindtap='touchTree' animation="{{animTreeSwingData}}">
+   		</image>
+
+   		<!-- <view class=""></view> -->
+
+   	</view>
+   </view>

@@ -44,7 +44,7 @@ Page({
     finishedTime:'',//完成时间
     createdTime:"",//创建时间
     expectedTime:"",//预计完成时间
-
+    isLogin:false,//是否登录
   },
 
   /**
@@ -57,6 +57,8 @@ Page({
       avatarUrl:app.userInfo.avatarUrl,
       nickName:app.userInfo.nickName
     })
+    console.log("name is",this.data.nickName)
+    console.log(!this.data.nickName)
     this.getGoals();
 
   },
@@ -227,5 +229,31 @@ Page({
     this.setData({
       display: "none"
     })
-  }
+  },
+  getUserInfo(event){
+    //console.log(ev);
+    let userInfo = event.detail.userInfo;
+    if(  userInfo ){
+      db.collection('users').add({
+        data : {
+          avatarUrl: userInfo.avatarUrl,
+          nickName: userInfo.nickName,
+          signature : '', //寄语          
+          friendList : [],
+          gray:[],
+          times:0
+        }
+      }).then((res)=>{
+         db.collection('users').doc(res._id).get().then((res)=>{
+           //console.log(res.data);
+           app.userInfo = Object.assign( app.userInfo , res.data );
+           this.setData({
+            
+             nickName : app.userInfo.nickName,
+                         
+           });
+         });
+      });
+    }
+ }
 })

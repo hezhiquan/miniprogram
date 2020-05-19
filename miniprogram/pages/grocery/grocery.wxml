@@ -1,37 +1,43 @@
-<!--pages/grocery/grocery.wxml-->
-<view class="all">
-	<!-- <view>心绪有三千，倾诉我一言</view> -->
-	<view class="write">
-		<navigator url="{{xinxiang.url2}}">
-			<image class="imgA" src="https://s1.ax1x.com/2020/04/19/JKRdE9.png"></image>
-		</navigator>
-		<text space decode class="wordshou" style="padding-left:5rpx;">&nbsp;书写烦恼&nbsp; 分享快乐</text>
-	</view>
+   <!-- 未登录时要求登录 -->
+   <view wx:if="{{!nickName}}" class="mask-bg" style="display:block;opacity:1;">
+   	<view class="mask-myContent content2">
+   		<button open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录 </button>
+   	</view>
+   </view>
+   <!--pages/grocery/grocery.wxml-->
+   <view class="all">
+   	<!-- <view>心绪有三千，倾诉我一言</view> -->
+   	<view class="write">
+   		<navigator url="{{xinxiang.url2}}">
+   			<image class="imgA" src="https://s1.ax1x.com/2020/04/19/JKRdE9.png"></image>
+   		</navigator>
+   		<text space decode class="wordshou" style="padding-left:5rpx;">&nbsp;书写烦恼&nbsp; 分享快乐</text>
+   	</view>
 
-	<!-- font-size:45rpx;margin-left:20rpx;color:#2ea1ca;width:50rpx -->
-	<view class="items">
-		<view class="item1" style="">
-			<text>解忧杂货铺</text>
-		</view>
-		 <view>
-			<view wx:for="{{lists}}" wx:key="*this" class="item2_1">
-				<mp-cell link url="{{item.url}}" hover value="{{item.value}}">
-				
-				</mp-cell>
-			</view>
-		</view>
-	</view>
-	<!-- 收件箱 -->
-	<view class="inbox">
-	<view class="inbox_1">
-	<mp-cell style="width:40rpx;padding-left: 100rpx;">
-			<text class="wordshou" decode="{{true}}">收件箱</text>
-		</mp-cell>
-	</view>
-		
-		<navigator url="{{xinxiang.shouurl}}">
-			<image class="shouimag" src="https://s1.ax1x.com/2020/05/01/JLzGDJ.png"></image>
-		</navigator>
-	</view>
-	<view bindtap='closeThis'>{{msg}}</view>
-</view>
+   	<!-- font-size:45rpx;margin-left:20rpx;color:#2ea1ca;width:50rpx -->
+   	<view class="items">
+   		<view class="item1" style="">
+   			<text>解忧杂货铺</text>
+   		</view>
+   		 <view>
+   			<view wx:for="{{lists}}" wx:key="*this" class="item2_1">
+   				<mp-cell link url="{{item.url}}" hover value="{{item.value}}">
+
+   				</mp-cell>
+   			</view>
+   		</view>
+   	</view>
+   	<!-- 收件箱 -->
+   	<view class="inbox">
+   		<view class="inbox_1">
+   			<mp-cell style="width:40rpx;padding-left: 100rpx;">
+   				<text class="wordshou" decode="{{true}}">收件箱</text>
+   			</mp-cell>
+   		</view>
+
+   		<navigator url="{{xinxiang.shouurl}}">
+   			<image class="shouimag" src="https://s1.ax1x.com/2020/05/01/JLzGDJ.png"></image>
+   		</navigator>
+   	</view>
+   	<!-- <view bindtap='closeThis'>{{msg}}</view> -->
+   </view>

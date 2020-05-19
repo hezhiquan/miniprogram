@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "mp-toptips": "../../../weui/toptips/toptips"   
-  }
+  },
+  "navigationBarTitleText": "树屋商店"
 }
