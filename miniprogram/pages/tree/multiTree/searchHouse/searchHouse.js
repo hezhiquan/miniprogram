@@ -16,6 +16,56 @@ Page({
     password: "", //树屋的密码
     tips: "", //提示信息
     type: "error", //提示类型
+    bgSrcList:[
+      {
+        bgColor:"#E5A454",
+        bgSrc:"https://s1.ax1x.com/2020/05/19/Y4MUX9.png"
+      },
+      {
+        bgColor:"#35A8BA",
+        bgSrc:"https://s1.ax1x.com/2020/05/19/Y4MGfU.jpg"
+      },
+      {
+        bgColor:"#AECF78",
+        bgSrc:"https://s1.ax1x.com/2020/05/19/Y47OfJ.jpg"
+      },
+      {
+        bgColor:"#3196FF",
+        bgSrc:"https://s1.ax1x.com/2020/05/19/Y4MN6J.png"
+      },
+      {
+        bgColor:"#E86A41",
+        bgSrc:"https://s1.ax1x.com/2020/05/19/Y4MYpF.png"
+      },
+      {
+        bgColor:"#E58E09",
+        bgSrc:"https://s1.ax1x.com/2020/05/19/Y4MdmR.jpg"
+      },
+      {
+        bgColor:"#EBDB3E",
+        bgSrc:"https://s1.ax1x.com/2020/05/19/Y4hYdJ.jpg"
+      },
+      {
+        bgColor:"#E77F86",
+        bgSrc:"https://s1.ax1x.com/2020/05/19/Y4hto9.jpg"
+      },
+      {
+        bgColor:"#B3A5C9",
+        bgSrc:"https://s1.ax1x.com/2020/05/19/Y4hJZ4.png"
+      },
+      {
+        bgColor:"#E86A41",
+        bgSrc:"https://s1.ax1x.com/2020/05/19/Y4h3sU.jpg"
+      },
+      {
+        bgColor:"#7969EE",
+        bgSrc:"https://s1.ax1x.com/2020/05/19/Y4h8LF.jpg"
+      },
+      {
+        bgColor:"#027F7B",
+        bgSrc:"https://s1.ax1x.com/2020/05/19/Y4hUiR.png"
+      }
+    ]//每个树屋的背景图片
   },
 
   /**

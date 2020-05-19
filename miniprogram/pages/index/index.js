@@ -3,7 +3,8 @@
 const ctx = wx.createCanvasContext('myCanvas')
 const app = getApp()
 const db = wx.cloud.database()
-
+let timeId=0;
+const ctx1 = wx.createCanvasContext('canvasArcCir')
 Page({
   data: {
     endTime:"",
@@ -181,7 +182,7 @@ Page({
     if(today.getMonth()==birthday.getMonth()&&this.data.isFirst){
       this.getcake(1);
       this.setData({
-        info:"本月生日快乐！",
+        info:"Happy Birthday ！！！",
         isFirst:false,
       })
     }
@@ -207,24 +208,20 @@ Page({
     this.setData({
       toBall:true
     })
-    if(!this.data.isBallInit){
-
+ 
       let allMonth=900;//人的平均寿命为900个月
-     
+
       console.log("months is"+this.data.months);
-      let rate=Math.ceil((1-(this.data.months/900))*100);
+      let rate=Math.ceil((1-(this.data.months/allMonth))*100);
       rate=rate>100?100:rate;
       this.setData({
         remainMonth:900-this.data.months
       })
       //创建并返回绘图上下文context对象。
-    const ctx = wx.createCanvasContext('canvasArcCir')
-    wave(ctx, rate);
-      this.setData({
-        isBallInit:true
-      })
-    }
-    
+      clearTimeout(timeId);
+      ctx1.clearRect(0,0,150,150)
+      wave(ctx1, rate);
+
   }
 
 })
@@ -325,7 +322,7 @@ var wave = function (ctx, oRange){
   var xoffset = 8 * lineWidth; // x 轴偏移量
  
   var data = ~~(oRange) / 100;   // 数据量
- 
+
   var sp = 0; // 周期偏移量
   var nowdata = 0;
   var waveupsp = 0.006; // 水波上涨速度
@@ -442,6 +439,7 @@ var wave = function (ctx, oRange){
     //  data = ~~(oRange.value) / 100;
     //  console.log("data=" + data)
     //}, 0);
+    console.log("data is ",data)
     if (data >= 0.85) {
       if (nowrange > range / 4) {
         var t = range * 0.01;
@@ -471,12 +469,14 @@ var wave = function (ctx, oRange){
     sp += 0.07;
     // 开始水波动画
     drawSine();
+    // console.log("before text, nowdata and data  is", nowdata,data)
     // 写字
     drawText();
  
     ctx.draw();
  
     tid = doAnimationFrame(render);
+    timeId=tid;
   }
  
   var lastFrameTime = 0;

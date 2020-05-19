@@ -28,7 +28,9 @@ page {
 
 .page {
   height: 100%;
-  background-color: rgb(239, 226, 208);
+  /* background-color: rgb(239, 226, 208); */
+  opacity: 0.7;
+  background-color: rgba(143, 134, 134, 0.744);
 }
 
 .title {
@@ -43,16 +45,17 @@ page {
   /**内容居中*/
   flex-direction: row;
   /* 子view排列方式row--水平 column--垂直 */
-  color: rgb(241, 221, 193);
+  color:white;
   /* text-shadow:5px 1px 6px rgb(133, 113, 94); */
-  background-color: rgb(151, 88, 5);
+  /* rgb(151, 88, 5); */
+  background-color: rgb(51, 200, 51);
   padding: 10rpx 0 10rpx;
   border-radius: 8rpx;
   margin-top: 0rpx;
 }
 
 .swiper-item {
-  background-color: rgb(151, 88, 5);
+  /* background-color: rgb(151, 88, 5); */
   width: 750rpx;
   height: 800rpx;
 
@@ -62,11 +65,32 @@ page {
   position: absolute;
   width: 100%;
   height: 100%;
-
-
   /* margin-left: 130rpx; */
   border-radius: 10rpx;
-  background-color: rgb(244, 220, 188);
+  /* background-color: rgb(244, 220, 188); */
+}
+.swiperClass-img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.swiperClass2{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0.8;
+  background-color: rgb(118, 217, 43);
+}
+.swiperClass3{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  color: white;
+  font-weight: bold;
+  font-size: larger;
 }
 
 

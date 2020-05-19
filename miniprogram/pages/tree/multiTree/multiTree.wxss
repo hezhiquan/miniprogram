@@ -4,7 +4,7 @@
 page{
   height: 100%;
   /* background-image: url(https://s1.ax1x.com/2020/05/05/YkMM5V.jpg); */
-  background-image: url(https://s1.ax1x.com/2020/05/05/YkM2VI.jpg);
+  /* background-image: url(https://s1.ax1x.com/2020/05/05/YkM2VI.jpg); */
   /* background-repeat: no-repeat; */
   background-size: 100%;
   position: absolute;
@@ -50,6 +50,7 @@ page{
   opacity: 0.5;
   right: 30rpx;
   bottom: 60rpx;
+  z-index: 100;
 }
 
 /* 跳转我的树屋 */
@@ -62,6 +63,7 @@ page{
   right: 30rpx;
   top: 110rpx;
   box-shadow:2rpx 2rpx 3rpx 9rpx rgb(113, 161, 143);
+  z-index: 100;
 }
 /* 加载情况的文本 */
 .text1{
@@ -71,30 +73,60 @@ page{
   text-align: center;
 }
 
-.treeHouse-item{
-  /* 展示 已经创建的树屋 */
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
 /* 中间的树屋样式 */
-/* .treeHouse-item{
+/* .treeHouse-item0{
+  height:150px;
+  margin: 50rpx 50rpx;
+  
+}
+.treeHouse-item{
+  position: absolute;
+  z-index: 3;
+  height:150px;
+  width:650rpx;
 
-  background-color:#fbfcdb;
- 
-  padding: 30rpx;
-  margin: 10rpx 0;
+}
+.bg_2{
+  height:150px;
+  width:650rpx;
+  position: absolute;
+  z-index: 2;
+  opacity: 0.7;
+  border-radius: 5%;
+}
+.img{
+  position: absolute;
+  width:650rpx;
+  z-index: 1;
+  height: 150px;
+  border-radius: 5%;
+}
+.treeHouse-text{
+  margin-top: 35px;
+  color: white;
+  text-align: center;
+  opacity: 1;
 }
 .treeHouse-name{
-  font-size: 40rpx;
+  font-weight: bold;
+  font-size: 50rpx;
+  color: white;
+  opacity: 1;
 }
 .treeHouse-introduction{
-  padding:20rpx 0;
+  padding:15rpx 0;
   font-size: 36rpx;
-  color: grey;
+  
 }
 .treeHouse-footer{
+ 
   font-size: 26rpx;
 } */
+
+
+
+
+
 .choose{
   text-align: center;
   color: white;
@@ -122,10 +154,12 @@ page{
   border-bottom: 1px solid rgb(106, 245, 130);
   margin: 20rpx 20rpx;
 }
-.treeHouse-item{
-  background-image: url(https://s1.ax1x.com/2020/05/05/Ykm0XR.jpg);
+
+/* .treeHouse-item2{ */
+  
+  /* background-image: url(https://s1.ax1x.com/2020/05/05/Ykm0XR.jpg); */
   /* background-color: rgb(238, 233, 221); */
   /* opacity: 0.8; */
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
+  /* background-size: 100%;
+  background-repeat: no-repeat; */
+/* } */

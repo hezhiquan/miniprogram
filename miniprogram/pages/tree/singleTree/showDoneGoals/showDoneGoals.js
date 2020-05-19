@@ -13,6 +13,48 @@ Page({
     loadMore: true, //"上拉加载"的变量，默认true，隐藏  
     loadAll: false, //“没有数据”的变量，默认false，隐藏  
     swiperIndex:0,
+    bgSrcList:[
+      {
+        bgColor:"#E5A454",
+        bgSrc:"https://s1.ax1x.com/2020/05/19/YIDMY8.jpg"
+      },
+      {
+        bgColor:"rgb(118, 217, 43)",
+        bgSrc:"https://s1.ax1x.com/2020/05/19/YIDQfS.jpg"
+      },
+      {
+        bgColor:"#027F7B",
+        bgSrc:"https://s1.ax1x.com/2020/05/19/YIDmwt.jpg"
+      },
+      {
+        bgColor:"#3196FF",
+        bgSrc:"https://s1.ax1x.com/2020/05/19/YIDKFf.jpg"
+      },
+      {
+        bgColor:"#E86A41",
+        bgSrc:"https://s1.ax1x.com/2020/05/19/YIDVOA.jpg"
+      },
+      {
+        bgColor:"#E58E09",
+        bgSrc:"https://s1.ax1x.com/2020/05/19/YID1Sg.jpg"
+      },
+      {
+        bgColor:"#7969EE",
+        bgSrc:"https://s1.ax1x.com/2020/05/19/YID3lQ.jpg"
+      },
+      {
+        bgColor:"#E77F86",
+        bgSrc:"https://s1.ax1x.com/2020/05/19/YID8yj.jpg"
+      },
+      {
+        bgColor:"#B3A5C9",
+        bgSrc:"https://s1.ax1x.com/2020/05/19/YIDGOs.jpg"
+      },
+      {
+        bgColor:"#E86A41",
+        bgSrc:"https://s1.ax1x.com/2020/05/19/YIDYmn.jpg"
+      }
+    ]//每个树屋的背景图片
   },
 
   /**

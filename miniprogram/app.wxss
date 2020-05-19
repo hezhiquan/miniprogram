@@ -53,27 +53,56 @@
   background-color: rgba(53, 216, 241, 0.963);
   color: white;
 }
-/* 中间的树屋样式 */
-.treeHouse-item{
 
-  background-color:#fbfcdb;
- 
-  padding: 30rpx;
-  margin: 10rpx 0;
-}
-.treeHouse-name{
-  font-size: 40rpx;
-}
-.treeHouse-introduction{
-  padding:20rpx 0;
-  font-size: 36rpx;
-  color: grey;
-}
-.treeHouse-footer{
-  font-size: 26rpx;
-}
+
 .center{
   display:flex;
   justify-content:center;
   align-items:center;
   }
+/* 中间的树屋样式 */
+  .treeHouse-item0{
+  height:150px;
+  margin: 50rpx 50rpx;
+  
+}
+.treeHouse-item{
+  position: absolute;
+  z-index: 3;
+  height:150px;
+  width:650rpx;
+  /* opacity: 0.4; */
+  
+}
+.bg_2{
+  height:150px;
+  width:650rpx;
+  position: absolute;
+  z-index: 2;
+  opacity: 0.7;
+  border-radius: 5%;
+}
+.img{
+  position: absolute;
+  width:650rpx;
+  z-index: 1;
+  height: 150px;
+  border-radius: 5%;
+}
+.treeHouse-text{
+  margin-top: 35px;
+  color: white;
+  text-align: center;
+  opacity: 1;
+}
+.treeHouse-name{
+  font-weight: bold;
+  font-size: 50rpx;
+  color: white;
+  opacity: 1;
+}
+.treeHouse-introduction{
+  padding:15rpx 0;
+  font-size: 36rpx;
+  
+}

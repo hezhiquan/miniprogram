@@ -53,8 +53,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/timing/timing",
-					"pathName": "pages/timing/timing",
+					"name": "pages/tree/singleTree/showDoneGoals/showDoneGoals",
+					"pathName": "pages/tree/singleTree/showDoneGoals/showDoneGoals",
 					"query": "",
 					"scene": null
 				},
@@ -279,6 +279,7 @@
 					"id": -1,
 					"name": "/tips",
 					"pathName": "uniti/tips/tips",
+					"query": "",
 					"scene": null
 				}
 			]

@@ -40,7 +40,11 @@ Page({
 /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
+  onLoad: function () {   
+      this.setData({
+        nickName:app.userInfo.nickName
+      })
+      
     console.log("亲爱的心绪漂流者，这里是解忧杂货铺，点击左侧按钮可以写漂流信，右侧收件箱中可以浏览回信，解我忧漂流箱中可以查看其他人的苦恼，享其乐漂流箱中可以查看其他人分享的快乐，浏览的过程中您还可以给对方写回信");
     let firstOpen = wx.getStorageSync("loadOpen")
     console.log("是否首次打开本页面==",firstOpen)
