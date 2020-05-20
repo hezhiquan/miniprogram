@@ -53,8 +53,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/tree/singleTree/showDoneGoals/showDoneGoals",
-					"pathName": "pages/tree/singleTree/showDoneGoals/showDoneGoals",
+					"name": "pages/tree/multiTree/searchHouse/searchHouse",
+					"pathName": "pages/tree/multiTree/searchHouse/searchHouse",
 					"query": "",
 					"scene": null
 				},

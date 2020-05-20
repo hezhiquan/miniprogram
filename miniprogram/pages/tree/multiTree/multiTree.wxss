@@ -168,6 +168,6 @@ page{
   width:80rpx;
   height:80rpx;
   z-index:1002;
-  bottom: 30rpx;
-  right: 30rpx;
+  bottom: 60rpx;
+  right: 40rpx;
 }

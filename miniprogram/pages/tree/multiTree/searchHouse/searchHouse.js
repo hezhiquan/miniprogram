@@ -65,7 +65,8 @@ Page({
         bgColor:"#027F7B",
         bgSrc:"https://s1.ax1x.com/2020/05/19/Y4hUiR.png"
       }
-    ]//每个树屋的背景图片
+    ],//每个树屋的背景图片
+    msg:false,//用户查询结果提示
   },
 
   /**
@@ -86,7 +87,8 @@ Page({
   startSearch: function (e) {
     console.log(e);
     this.setData({
-      name: e.detail.value
+      name: e.detail.value,
+      msg:false
     })
     if(this.data.name){//树屋名不为空才开始查询
       let that = this;
@@ -108,7 +110,8 @@ Page({
                 }
               }
             that.setData({
-              resultList: data
+              resultList: data,
+              msg:true
             })
   
           },
