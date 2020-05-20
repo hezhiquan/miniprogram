@@ -88,23 +88,36 @@ Page({
     this.setData({
       name: e.detail.value
     })
-    let that = this;
-    db.collection("treeHouse").where({
-        name: that.data.name
-      })
-      .get({
-        success: function (res) {
-
-          console.log("查询成功", res)
-          that.setData({
-            resultList: res.data
+    if(this.data.name){//树屋名不为空才开始查询
+      let that = this;
+      db.collection("treeHouse").where({
+          name: db.RegExp({
+            regexp: that.data.name,
+            options: 'i',
           })
-
-        },
-        fail: function (err) {
-          console.log("查询失败", err);
-        }
-      })
+        })
+        .get({
+          success: function (res) {
+  
+            console.log("查询成功", res)
+            let data=res.data;
+              for(let i=0;i<data.length;i++){
+                // console.log("introduction is",data[i].introduction)
+                if(data[i].introduction.length>10){
+                  data[i].introduction=data[i].introduction.substring(0,10)+"...";
+                }
+              }
+            that.setData({
+              resultList: data
+            })
+  
+          },
+          fail: function (err) {
+            console.log("查询失败", err);
+          }
+        })
+    }
+    
   },
   enterHouse: function (e) {
     //如果是该树屋的成员，则进入树屋

@@ -22,20 +22,20 @@
 		</view>
 
 	</view>
-	<view class="head">
+	<!-- <view class="head">
 		<navigator class="allMyHouse"><text class="housebox">树屋世界</text>
 		</navigator>
 		<navigator url="./searchHouse/searchHouse">
 			<image src="https://s1.ax1x.com/2020/04/28/JhfPpR.png" mode="widthFIx"></image>
 		</navigator>
-	</view>
+	</view> -->
 
 	<!-- 我的树屋 -->
-	<view>
+	<!-- <view>
 		<navigator url="./allMyHouse/allMyHouse">
 			<image class="myhouses" src="https://s1.ax1x.com/2020/05/06/YA2aEd.jpg" mode="=" widthFit></image>
 		</navigator>
-	</view>
+	</view> -->
 	<!-- 所有树屋列表，先展示最新的 -->
 	<view>
 		<view wx:for="{{dataList}}" wx:key="item" style="" class="treeHouse-item0">
@@ -58,8 +58,21 @@
 
 	<mp-toptips msg="{{tips}}" type="{{type}}" show="{{tips}}"></mp-toptips>
 	<!-- 加号，跳转到创建树屋界面 -->
-	<navigator url="./addHouse/addHouse">
+	<!-- <navigator url="./addHouse/addHouse">
 		<image class="add" bindtap="addHouse" src="https://s1.ax1x.com/2020/04/27/JRuzJU.png" mode="widthFix"></image>
-	</navigator>
+	</navigator> -->
+	  <view id="modal" animation="{{animationModal}}" style="position:fixed;width:80rpx;height:80rpx;z-index:1002;bottom: 100rpx;right: 30rpx;border-radius:40rpx;opacity: 0;background:#000"  bindtap="closeAnimate">
+  </view>
+	<!-- 创建树屋 -->
+  <image class="more" style="opacity: 0;" src="https://s1.ax1x.com/2020/05/20/YIvase.png" mode="widthFit" animation="{{animationCreatHouse}}"  bindtap="creatHouse"></image>
+	<!-- 树屋 -->
+  <image  class="more" style="opacity: 0;" src="https://s1.ax1x.com/2020/05/20/Youx7n.png" mode="widthFit" animation="{{animationAllMyHouse}}" bindtap="allMyHouse"></image>
+	<!-- 玩法说明 -->
+  <image  class="more" style="opacity: 0;" src="https://s1.ax1x.com/2020/05/09/YMUlP1.png" animation="{{animationHelp}}" bindtap="help"></image>
+	<!-- 搜索 -->
+  <image  class="more" style="opacity: 0;" src="https://s1.ax1x.com/2020/05/20/Youjmj.png" animation="{{animationSearch}}" bindtap="search"></image>
+	<!-- 加号，控制图标的弹出与关闭 -->
+  <image class="more" src="https://s1.ax1x.com/2020/04/27/JRuzJU.png" bindtap="contorlAnimate"></image>
+
 
 </view>

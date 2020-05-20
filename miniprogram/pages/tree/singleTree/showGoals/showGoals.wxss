@@ -40,10 +40,11 @@ text2{
 .more{
   float: right;
   font-size: 8px;
-  background-color: rgba(14, 186, 11, 0.881);
-  color: whitesmoke;
-  border-radius: 30%;
+  background-color:#D6EEC9;
+  color: #67C23A;
+  border-radius: 10%;
   padding:10rpx;
+  margin-right: 20rpx;
 }
 .bg {
   /* 一开始设为不可见 */

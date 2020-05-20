@@ -1,8 +1,8 @@
-<!--miniprogram/pages/tree/tree.wxml-->
-<text>miniprogram/pages/tree/tree.wxml</text>
-<view class="org_box"> <text class="org_bot_cor"></text>你好啊</view>
-
-<div class="org_box">
-    <span class="org_bot_cor"></span>
-    边框法实现底部90度尖角对话框
-</div>
+  <view id="modal" animation="{{animationModal}}" style="position:fixed;width:80rpx;height:80rpx;z-index:1002;bottom: 100rpx;right: 30rpx;border-radius:40rpx;opacity: 0;background:#000"  bindtap="closeAnimate">
+  </view>
+  <image id="contact" style="position:fixed;width:80rpx;height:80rpx;z-index:1002;bottom: 100rpx;right: 30rpx;opacity: 0;" src="https://s1.ax1x.com/2020/05/09/YMUlP1.png" animation="{{animationContact}}" bindtap="contact" bindtap="clickContact"></image>
+  <image id="share" style="position:fixed;width:80rpx;height:80rpx;z-index:1002;bottom: 100rpx;right: 30rpx;opacity: 0;" src="https://s1.ax1x.com/2020/05/09/YMUlP1.png" animation="{{animationShare}}" bindtap="clickShare"></image>
+  <image id="save" style="position:fixed;width:80rpx;height:80rpx;z-index:1002;bottom: 100rpx;right: 30rpx;opacity: 0;" src="https://s1.ax1x.com/2020/05/09/YMUlP1.png" animation="{{animationSave}}" bindtap="clickSave"></image>
+  <image id="home" style="position:fixed;width:80rpx;height:80rpx;z-index:1002;bottom: 100rpx;right: 30rpx;opacity: 0;" src="https://s1.ax1x.com/2020/05/09/YMUlP1.png" animation="{{animationHome}}" bindtap="clickHome"></image>
+  <image style="position:fixed;width:80rpx;height:80rpx;z-index:1002;bottom: 100rpx;right: 30rpx;" 
+  src="https://s1.ax1x.com/2020/05/09/YMUlP1.png" bindtap="contorlAnimate"></image>

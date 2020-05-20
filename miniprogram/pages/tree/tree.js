@@ -1,66 +1,122 @@
-// miniprogram/pages/tree/tree.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    isShow: false,
+    animationContact: {},
+    animationSave: {},
+    animationShare: {},
+    animationHome: {},
+    animationModal: {},
+    animationContainer:{}
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  contorlAnimate(){
+    if(this.data.isShow){
+      this.closeAnimate()
+    }else{
+      this.showAnimate()
+    }
   },
+  closeAnimate() {
+    var animationModal = wx.createAnimation({
+      duration: 200,
+      timingFunction: 'ease-in'
+    })
+    animationModal.opacity(0).scale(0.0, 0.0).step()
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+    var animationContact = wx.createAnimation({
+      duration: 200,
+      timingFunction: 'ease-in'
+    })
+    animationContact.opacity(0).scale(0.0, 0.0).translateX(0).step()
 
+    var animationSave = wx.createAnimation({
+      duration: 200,
+      timingFunction: 'ease-in'
+    })
+    animationSave.opacity(0).scale(0.0, 0.0).translateX(0).step()
+
+    var animationShare = wx.createAnimation({
+      duration: 200,
+      timingFunction: 'ease-in'
+    })
+    animationShare.opacity(0).scale(0.0, 0.0).translateX(0).step()
+
+    var animationHome = wx.createAnimation({
+      duration: 200,
+      timingFunction: 'ease-in'
+    })
+    animationHome.opacity(0).scale(0.0, 0.0).translateX(0).step()
+    this.data.isShow = false
+    this.setData({
+      animationContact: animationContact.export(),
+      animationSave: animationSave.export(),
+      animationShare: animationShare.export(),
+      animationHome: animationHome.export(),
+      animationModal: animationModal.export()
+    })
   },
+  showAnimate() {
+    var animationModal = wx.createAnimation({
+      duration: 200,
+      timingFunction: 'ease-out'
+    })
+    animationModal.opacity(0.0).scale(300, 300).step()
+    var animationContact = wx.createAnimation({
+      duration: 200,
+      timingFunction: 'ease-out'
+    })
+    animationContact.opacity(1).scale(0.8, 0.8).translateX(-120).step()
+    var animationSave = wx.createAnimation({
+      duration: 200,
+      timingFunction: 'ease-out'
+    })
+    animationSave.opacity(1).scale(0.8, 0.8).translateX(-104).translateY(-60).step()
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+    var animationShare = wx.createAnimation({
+      duration: 200,
+      timingFunction: 'ease-out'
+    })
+    animationShare.opacity(1).scale(0.8, 0.8).translateX(-60).translateY(-104).step()
 
+    var animationHome = wx.createAnimation({
+      duration: 200,
+      timingFunction: 'ease-out'
+    })
+    animationHome.opacity(1).scale(0.8, 0.8).translateX(0).translateY(-120).step()
+    this.data.isShow = true
+    this.setData({
+      animationContact: animationContact.export(),
+      animationSave: animationSave.export(),
+      animationShare: animationShare.export(),
+      animationHome: animationHome.export(),
+      animationModal: animationModal.export()
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  clickHome(){
+    wx.showToast({
+      icon:"none",
+      title: '点击了Home',
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  clickShare() {
+    wx.showToast({
+      icon: "none",
+      title: '点击了分享',
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  clickContact() {
+    wx.showToast({
+      icon: "none",
+      title: '点击了联系',
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  clickSave() {
+    wx.showToast({
+      icon: "none",
+      title: '点击了保存',
+    })
   }
 })

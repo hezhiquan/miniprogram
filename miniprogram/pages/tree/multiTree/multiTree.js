@@ -67,7 +67,14 @@ Page({
         bgColor:"#027F7B",
         bgSrc:"https://s1.ax1x.com/2020/05/19/Y4hUiR.png"
       }
-    ]//每个树屋的背景图片
+    ],//每个树屋的背景图片
+    //更多动画
+    isShow: false,
+    animationCreatHouse: {},
+    animationHelp: {},
+    animationAllMyHouse: {},
+    animationSearch: {},
+    animationModal: {},
   },
   onLoad: function (options) {
     this.setData({
@@ -77,8 +84,6 @@ Page({
   },
   onShow: function () {
     console.log("onShow begin")
-    
-   
   },
   onReachBottom: function (e) {
     console.log("触底了")
@@ -258,6 +263,112 @@ Page({
          });
       });
     }
- }
+ },
+ //加号旋转动画
+ contorlAnimate(){
+  if(this.data.isShow){
+    this.closeAnimate()
+  }else{
+    this.showAnimate()
+  }
+},
+closeAnimate() {
+  var animationModal = wx.createAnimation({
+    duration: 200,
+    timingFunction: 'ease-in'
+  })
+  animationModal.opacity(0).scale(0.0, 0.0).step()
+
+  var animationCreatHouse = wx.createAnimation({
+    duration: 200,
+    timingFunction: 'ease-in'
+  })
+  animationCreatHouse.opacity(0).scale(0.0, 0.0).translateX(0).step()
+
+  var animationHelp = wx.createAnimation({
+    duration: 200,
+    timingFunction: 'ease-in'
+  })
+  animationHelp.opacity(0).scale(0.0, 0.0).translateX(0).step()
+
+  var animationAllMyHouse = wx.createAnimation({
+    duration: 200,
+    timingFunction: 'ease-in'
+  })
+  animationAllMyHouse.opacity(0).scale(0.0, 0.0).translateX(0).step()
+
+  var animationSearch = wx.createAnimation({
+    duration: 200,
+    timingFunction: 'ease-in'
+  })
+  animationSearch.opacity(0).scale(0.0, 0.0).translateX(0).step()
+  this.data.isShow = false
+  this.setData({
+    animationCreatHouse: animationCreatHouse.export(),
+    animationHelp: animationHelp.export(),
+    animationAllMyHouse: animationAllMyHouse.export(),
+    animationSearch: animationSearch.export(),
+    animationModal: animationModal.export()
+  })
+},
+showAnimate() {
+  var animationModal = wx.createAnimation({
+    duration: 200,
+    timingFunction: 'ease-out'
+  })
+  animationModal.opacity(0.0).scale(300, 300).step()
+  var animationCreatHouse = wx.createAnimation({
+    duration: 200,
+    timingFunction: 'ease-out'
+  })
+  animationCreatHouse.opacity(1).scale(1, 1).translateX(-90).step()
+  var animationHelp = wx.createAnimation({
+    duration: 200,
+    timingFunction: 'ease-out'
+  })
+  animationHelp.opacity(1).scale(1, 1).translateX(-75).translateY(-42).step()
+
+  var animationAllMyHouse = wx.createAnimation({
+    duration: 200,
+    timingFunction: 'ease-out'
+  })
+  animationAllMyHouse.opacity(1).scale(1, 1).translateX(-43).translateY(-73).step()
+
+  var animationSearch = wx.createAnimation({
+    duration: 200,
+    timingFunction: 'ease-out'
+  })
+  animationSearch.opacity(1).scale(1, 1).translateX(0).translateY(-90).step()
+  this.data.isShow = true
+  this.setData({
+    animationCreatHouse: animationCreatHouse.export(),
+    animationHelp: animationHelp.export(),
+    animationAllMyHouse: animationAllMyHouse.export(),
+    animationSearch: animationSearch.export(),
+    animationModal: animationModal.export()
+  })
+},
+
+  help(){//树屋玩法说明
+      wx.showToast({
+    icon: "none",
+    title: '此处放置玩法说明',
+  })
+  },
+  search(){//跳转到搜索界面
+    wx.navigateTo({
+      url: './searchHouse/searchHouse'
+    })
+  },
+  allMyHouse(){//跳转到我加入的树屋
+    wx.navigateTo({
+      url: './allMyHouse/allMyHouse',
+    })
+  },
+  creatHouse(){//跳转到创建树屋
+    wx.navigateTo({
+      url: './addHouse/addHouse',
+    })
+  }
 
 })
