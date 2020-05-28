@@ -26,13 +26,15 @@ Page({
 
       },
       {
-        value:"联系我们",
+        value:"反馈意见",
         footer:"",
         src:"https://s1.ax1x.com/2020/05/09/YMUFCq.png"
       }
       
       
-    ]
+    ],
+    display:'',//设置是否展示遮罩层
+    myIndex:0,//被点击的列表下标
   },
 
     /**
@@ -76,5 +78,34 @@ Page({
           });
        });
      }
+  },
+  bindOther:function(e){
+    this.setData({
+      myIndex:e.currentTarget.dataset["index"]
+    })
+    if(this.data.myIndex==2){
+      wx.showToast({
+        icon:"none",
+        title: '反馈意见的url还没写',
+      })
+      //填写完url后把toast删掉
+      // wx.navigateTo({
+      //   url: 'url',//跳转到反馈意见界面
+      // })
+    }else{
+      this.showview();
+    }
+
+  },
+  showview: function() { //展示遮罩层
+    this.setData({
+      display: "block"
+    })
+  },
+  hideview: function() {
+    //关闭遮罩层，display：none的意思是隐藏该元素，其他的display：block or inline都默认设置为元素可见
+    this.setData({
+      display: "none"
+    })
   }
 })

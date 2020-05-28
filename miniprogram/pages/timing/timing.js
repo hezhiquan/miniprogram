@@ -1,6 +1,7 @@
 // pages/timing/timing.js
 const db =wx.cloud.database();
 const app=getApp();
+
 Page({
     
   /**
@@ -468,6 +469,7 @@ countInterval: function(){
    * 生命周期函数--监听页面显示
    */
   onShow: function () { 
+      
     //判断是否登录
     // console.log(app)
     this.progress_canvas(0)
@@ -486,6 +488,7 @@ countInterval: function(){
    */
   onHide: function () {
 
+      
          const that=this 
         if(that.data.fag) 
         {

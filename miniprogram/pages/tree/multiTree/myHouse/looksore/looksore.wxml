@@ -1,26 +1,39 @@
 <!--pages/looksore/looksore.wxml-->
-<view class="item">
-	<view class="head">自己的目标</view>
-	<view class="mycontain">
-		<view class="goals" wx:for="{{list}}" wx:key="*this" >
-			<text class="text0">{{item.goal}}</text>
-			<text class="text00">预计完成: {{item.expectedTime}}</text>
-			<view class="look">
-			是否完成：<radio disabled="{{item.isAchieve?false:true}}" checked="{{item.isAchieve}}"></radio>
-		  是否通过：<radio disabled="{{item.myCheck?false:true}}" checked="{{item.myCheck}}"></radio>
-			</view>		
-			<view class="check">	
-			<text class="text" data-id="{{item._id}}" data-check="{{item.myCheck}}" style="display:{{item.myCheck?'none':'inline'}};" bindtap="myCancel">放弃</text>
-			<text class="text1" data-id="{{item._id}}" data-check="{{item.myCheck}}" style="display:{{item.myCheck?'none':'inline'}};" bindtap="myCheck">确认</text>
-			</view>
-		</view>
-	</view>
-	<view class="head">树友的目标</view>
-	<view class="goals1" wx:for="{{list2}}" wx:key="*this">
-		{{item.goal}}
-		<text class="text00">预计完成: {{item.expectedTime}}</text>
-		<view class="look1">
-		等待确认：<radio disabled="{{item.myCheck?false:true}}" checked="{{item.myCheck}}"></radio>
-		<text class="text2" data-id="{{item._id}}" data-checklist="{{item.checkOtherList}}" bindtap="Checkothers">确认</text></view>
-	</view>
+<view class="swiper-tab">
+	<view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">我的目标</view>
+	<view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">树友目标</view>
 </view>
+
+<swiper current="{{currentTab}}" duration="300" bindchange="swiperTab">
+	<swiper-item>
+			<view class="mycontain">
+				<view class="goals" wx:for="{{list}}" wx:key="*this">
+					<view><text class="text0">{{item.goal}}</text></view>
+				
+					<view><text class="text00">预计完成: {{item.expectedTime}}</text></view>
+					<view class="look">
+						是否完成：<radio disabled="{{item.isAchieve?false:true}}" checked="{{item.isAchieve}}"></radio>
+						是否通过：<radio disabled="{{item.myCheck?false:true}}" checked="{{item.myCheck}}"></radio>
+					</view>
+					<view class="check">
+						<text class="text" data-id="{{item._id}}" data-check="{{item.myCheck}}" style="display:{{item.myCheck?'none':'inline'}};" bindtap="myCancel">放弃</text>
+						<text class="text1" data-id="{{item._id}}" data-check="{{item.myCheck}}" style="display:{{item.myCheck?'none':'inline'}};" bindtap="myCheck">确认</text>
+					</view>
+				</view>
+			</view>
+	</swiper-item>
+	<swiper-item>
+		
+			<view class="mycontain">
+				<view class="goals" wx:for="{{list2}}" wx:key="*this">
+				{{item.goal}}
+				<view></view>
+				<text class="text00">预计完成: {{item.expectedTime}}</text>
+				<view class="look1">
+					等待确认：<radio disabled="{{item.myCheck?false:true}}" checked="{{item.myCheck}}"></radio>
+					<text class="text2" data-id="{{item._id}}" data-checklist="{{item.checkOtherList}}" bindtap="Checkothers">确认</text></view>
+			</view>
+			</view>
+		
+	</swiper-item>
+</swiper>

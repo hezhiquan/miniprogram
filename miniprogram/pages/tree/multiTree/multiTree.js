@@ -75,6 +75,7 @@ Page({
     animationAllMyHouse: {},
     animationSearch: {},
     animationModal: {},
+    display2:"none",//是否展示玩法说明
   },
   onLoad: function (options) {
     this.setData({
@@ -350,10 +351,7 @@ showAnimate() {
 },
 
   help(){//树屋玩法说明
-      wx.showToast({
-    icon: "none",
-    title: '此处放置玩法说明',
-  })
+     this.showView2();
   },
   search(){//跳转到搜索界面
     wx.navigateTo({
@@ -369,6 +367,19 @@ showAnimate() {
     wx.navigateTo({
       url: './addHouse/addHouse',
     })
-  }
+  },
+  showView2: function () { //展示遮罩层
+    this.setData({
+      display2: "block"
+    })
+    this.closeAnimate();
+  },
+  hideView2: function () {
+    //关闭遮罩层，display：none的意思是隐藏该元素，其他的display：block or inline都默认设置为元素可见
+    this.setData({
+      display2: "none"
+    })
+    
+  },
 
 })

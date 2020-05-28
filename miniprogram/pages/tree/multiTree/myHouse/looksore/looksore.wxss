@@ -1,9 +1,9 @@
 /* pages/looksore/looksore.wxss */
 page {
-  /* background-color: #b4e0c1; */
   
-  height: fit-content;
-  /* background-color: #80a3d1; */
+  
+  height: 100%;
+
   line-height: 150%;
 }
 .item{
@@ -12,17 +12,21 @@ page {
 
 .goals{
   padding-top: 20rpx;
-  width: 100%; 
-  border-top: 1px solid rgb(244, 210, 153);
-  border-bottom:1px solid rgb(244, 210, 153);
+  width: 88%;
+  margin: 30rpx 6%; 
+  /* border-top: 1px solid rgb(244, 210, 153);
+  border-bottom:1px solid rgb(244, 210, 153); */
+  border:1px solid rgb(244, 210, 153);
   font-size: 20px;
 }
 .goals1{
-  width: 100%;
-  height: 150rpx;
-  position: relative;
-  border-top:1px solid rgb(244, 210, 153);
-  border-bottom:1px solid rgb(244, 210, 153);
+  width: 88%;
+  margin: 30rpx 6%;
+  /* height: 150rpx; */
+  /* position: relative; */
+  /* border-top:1px solid rgb(244, 210, 153);
+  border-bottom:1px solid rgb(244, 210, 153); */
+  border:1px solid rgb(244, 210, 153);
   padding: 30rpx;
   font-size: 20px;
 }
@@ -35,9 +39,9 @@ page {
    margin-right: 40rpx;
 }
 .look1{
-  margin-bottom: 10rpx;
+  margin-bottom: 20rpx;
   margin-top:20rpx;
-  position: relative;
+  
   top:20rpx;
   font-size: 15px;
   margin-right: 40rpx;
@@ -63,13 +67,14 @@ page {
   margin-top:40rpx;
   margin-bottom: 20rpx;
   margin-left:50rpx;
+  font-size: 16px;
 }
 .text{
   right: 20px;
   border-radius: 5px;
   padding: 10rpx;
   font-size: 20px;
-  background-color:red ;
+  background-color:rgb(255, 0, 0) ;
   border:1px solid #dadada; 
   color: white;
 }
@@ -79,7 +84,7 @@ page {
   padding: 10rpx;
   margin-left: 80rpx;
   font-size: 20px;
-  background-color:rgb(26, 167, 73) ;
+  background-color:#07C160 ;
   
   border:1px solid #dadada; 
   color: white;
@@ -91,13 +96,13 @@ page {
   margin-top: 10rpx;
   margin-left: 50rpx;
   font-size: 20px;
-  background-color:rgb(26, 167, 73) ;
+  background-color:#07C160 ;
   border:1px solid #dadada; 
   color: white;
 }
 
 .mycontain {
-    height: 700rpx;
+   height: 100%;
    overflow: scroll; 
 }
 
@@ -106,4 +111,28 @@ page {
   margin-top: 60rpx;
   margin-bottom: 30rpx;
   margin-left:30rpx;
+}
+/* 滑动选项卡 */
+.swiper-tab{
+  width: 100%;
+  border-bottom: 2rpx solid #ccc;
+  text-align: center;
+  height: 8%;
+  line-height: 88rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+.swiper-tab-item{
+  width: 50%; 
+  color:#434343;
+}
+.active{
+  color:orange;
+  border-bottom: 4rpx solid orange;
+}
+swiper{
+text-align: center;
+height: 92%;
+overflow: scroll;
 }

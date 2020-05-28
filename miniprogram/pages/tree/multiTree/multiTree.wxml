@@ -22,20 +22,7 @@
 		</view>
 
 	</view>
-	<!-- <view class="head">
-		<navigator class="allMyHouse"><text class="housebox">树屋世界</text>
-		</navigator>
-		<navigator url="./searchHouse/searchHouse">
-			<image src="https://s1.ax1x.com/2020/04/28/JhfPpR.png" mode="widthFIx"></image>
-		</navigator>
-	</view> -->
 
-	<!-- 我的树屋 -->
-	<!-- <view>
-		<navigator url="./allMyHouse/allMyHouse">
-			<image class="myhouses" src="https://s1.ax1x.com/2020/05/06/YA2aEd.jpg" mode="=" widthFit></image>
-		</navigator>
-	</view> -->
 	<!-- 所有树屋列表，先展示最新的 -->
 	<view>
 		<view wx:for="{{dataList}}" wx:key="item" style="" class="treeHouse-item0">
@@ -73,6 +60,10 @@
   <image  class="more" style="opacity: 0;" src="https://s1.ax1x.com/2020/05/20/Youjmj.png" animation="{{animationSearch}}" bindtap="search"></image>
 	<!-- 加号，控制图标的弹出与关闭 -->
   <image class="more" src="https://s1.ax1x.com/2020/04/27/JRuzJU.png" bindtap="contorlAnimate"></image>
-
+	<!--玩法说明弹出框  -->
+	<view class="mask-bg" bindtap='hideView2' style='display:{{display2}};z-index:1003; '></view>
+	<view class="mask-myContent" style='display:{{display2}};z-index:1004;  '>
+		<view>此处放置玩法说明</view>
+	</view>
 
 </view>
