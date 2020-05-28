@@ -3,16 +3,6 @@
 	<view>
 		<mp-searchbar focus placeholder="请输入树屋名" bindblur="startSearch" search="{{search}}"></mp-searchbar>
 	</view>
-  <!-- 展示结果列表 -->
-	<!-- <view wx:for="{{resultList}}" wx:key="item">
-	
-		<view class="treeHouse-item" bindtap="enterHouse" data-index="{{index}}" data-id="{{item._id}}" data-password="{{item.password}}">
-			<view class="treeHouse-name"> <text>{{item.name}}</text> </view>
-			<view class="treeHouse-introduction"> <text>{{item.introduction}}</text> </view>
-			<view class="treeHouse-footer"> <text>由 {{item.memberList[0]}} 创建于 {{item.createdDate}}</text> </view>
-		</view>
-
-	</view> -->
 			<view wx:if="{{msg}}" style="text-align:center;padding-top:30px;">还没有该树屋哦 ╮（￣▽￣）╭</view>
 			<view wx:for="{{resultList}}" wx:key="item" style="" class="treeHouse-item0">
 			<image src="{{bgSrcList[index%12].bgSrc}}" class="img"></image>

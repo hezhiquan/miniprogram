@@ -22,7 +22,7 @@
   display: none;
   text-align: center;
    /* 使用绝对定位，将该遮罩层放在距离其父元素顶部10%，左边10%的位置 */
-  position: absolute; top: 10%; left: 10%;
+  position: fixed; top: 10%; left: 10%;
    /*设置宽度为整个父元素宽度的80%，长度大小为整个父元素长度的80%  */
   width: 80%; height: 80%;
  /*设置背景色  */

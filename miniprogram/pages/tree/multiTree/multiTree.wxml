@@ -62,8 +62,18 @@
   <image class="more" src="https://s1.ax1x.com/2020/04/27/JRuzJU.png" bindtap="contorlAnimate"></image>
 	<!--玩法说明弹出框  -->
 	<view class="mask-bg" bindtap='hideView2' style='display:{{display2}};z-index:1003; '></view>
-	<view class="mask-myContent" style='display:{{display2}};z-index:1004;  '>
-		<view>此处放置玩法说明</view>
+	<view class="mask-myContent" style='display:{{display2}};z-index:1004;color: rgb(6, 48, 88);background-color:rgb(244, 220, 188) ;line-height:150%;overflow:scroll;border-radius: 20px;  '>
+		<view style="margin: 20px;">
+		<text style="font-weight:bolder;">玩法说明 </text>
+		<view style="text-align:left;">
+		<text >用户可以在这里创建树屋，邀请好友来一起制定目标、共同进步\n
+		每个树屋拥有独一无二的树屋名，在创建树屋后，其他用户可通过搜索树屋名，填写对应的树屋暗号加入树屋\n
+		树屋成员可以在树屋内制定自己的目标，也可以看到树屋内其它成员及自己的目标完成情况，且可以确认自己和其它成员完成情况，从而达到互相监督、共同进步的效果\n
+		同时，树屋成员可以通过查看成就树，了解树屋内最近一段时间完成的目标\n
+		当树屋内用户设定的目标数超过十个之后，还会解锁小树苗的新形态哦 ♪(^∇^*)
+		</text>
+		</view>
+		</view>
 	</view>
 
 </view>

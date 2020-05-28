@@ -14,7 +14,7 @@
 		<view class="page-content" wx:for="{{sidebars}}" wx:key="item">
 
 			<navigator url="{{item.url}}" data-index="{{index}}" class="sidebar-content" bindtap="needHelp">
-				<image src="{{item.src}}" ></image>{{item.text}}
+				<image src="{{item.src}}"></image>{{item.text}}
 			</navigator>
 		</view>
 	</view>
@@ -51,25 +51,32 @@
 		</view>
 		<!-- 遮罩层 -->
 		<view class="bg" bindtap='hideview' style='display:{{display}}'></view>
-		<view class="myGoal" bindtap='hideview' style='display:{{display}}'>
-			<view wx:if="{{needHelp}}">
-				<view>展示玩法说明</view>
+		<view class="myGoal" bindtap='hideview' style='display:{{display}}; color: rgb(6, 48, 88);line-height:150%;overflow:scroll;border-radius: 20px; '>
+			<view wx:if="{{needHelp}}" style="margin:18px;">
+				<view style="font-weight:bolder;"><text>玩法说明</text></view>
+				<view style="text-align:left;">
+					<text>
+					用户可在这里制定小目标，确认目标完成情况\n
+					当用户完成目标数超过10个时，小树苗会成长为新的形态哦 ♪(^∇^*)\n
+					在新形态下，点击苹果会有惊喜哦
+					</text>
+				</view>
 			</view>
 			<view wx:else>
-			<image src="{{bgUrl}}" mode="widthFit"></image>
+				<image src="{{bgUrl}}" mode="widthFit"></image>
 
-			<view class="goal">
+				<view class="goal">
 
-				<view>
-					<text>{{myGoal}} √ </text>
+					<view>
+						<text>{{myGoal}} ✔ </text>
+					</view>
+					<view class="time0">
+						<view class="time"><text>设定时间：{{createdTime}}</text></view>
+						<view class="time"><text>预计完成时间：{{expectedTime}}</text></view>
+						<view class="time"> <text>完成时间：{{finishedTime}}</text></view>
+					</view>
+
 				</view>
-				<view class="time0">
-					<view class="time"><text>设定时间：{{createdTime}}</text></view>
-					<view class="time"><text>预计完成时间：{{expectedTime}}</text></view>
-					<view class="time"> <text>完成时间：{{finishedTime}}</text></view>
-				</view>
-
-			</view>
 			</view>
 
 

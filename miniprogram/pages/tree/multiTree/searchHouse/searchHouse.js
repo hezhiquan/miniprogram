@@ -111,8 +111,12 @@ Page({
               }
             that.setData({
               resultList: data,
-              msg:true
             })
+            if(data.length==0){
+              that.setData({
+                msg:true
+              })
+            }
   
           },
           fail: function (err) {

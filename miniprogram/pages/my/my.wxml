@@ -19,8 +19,16 @@
 	</view>
 	<!-- 显示生辰树由来，帮助与技巧弹窗 -->
 	<view class="mask-bg" bindtap='hideview' style='display:{{display}}'></view>
-	<view class="mask-myContent" style='display:{{display}}'>
-		<view wx:if="{{myIndex==0}}"> 这里放置帮助与技巧的内容</view>
-		<view wx:else>这里放置生辰树由来</view>
+	<view class="mask-myContent" style='display:{{display}};text-align: left;background-color:rgb(244, 220, 188) ;line-height:150%;overflow:scroll;color: rgb(6, 48, 88);border-radius: 20px;'>
+		<view style="margin: 20px" wx:if="{{myIndex==0}}"> 
+		<text class="h3"> 1、种树界面玩法 \n</text>
+		<text>该界面旨在帮助使用者在一定时间内放下手机，投身于其他事情；\n 用户在设定一定的时长后，在规定时间内完成自律活动即可获得金币奖励，可进入商店界面“购买”自己喜欢的树苗卡片，若是在规定时间内离开该界面，则计时失败，失去奖励。\n 积分规则：完成自律活动后，设定的时长的分钟数会自动转化为金币数，每分钟可换取一金币 \n</text>
+		<text class="h3">\n 2、没有收到信 \n</text>
+		<text>可能是邮箱写错，或者时间选在了当天10点以后，或者邮件被误识别，放在了垃圾邮件处</text>
+		<text></text>
+		<text></text>
+		</view>
+		<view style="margin: 20px" wx:else>
+		<text>生辰树上生命果，每个人都有生辰，从生命伊始，每分每秒我们都在消费时间；\n 每棵树的树桩上都被时间刻着一圈圈的年轮，有人做了很多有意义的事情，也有的人还尚未开始。\n 生辰邮递树的初衷是希望使用者把握当下，在最好的时间里，做好每一件对自己来说有意义的事情，专注于自己定下的所有小目标，给未来的自己一个声音，终有一天，会看到硕果累累的成就树。</text></view>
 	</view>
 </view>

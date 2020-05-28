@@ -516,7 +516,7 @@ page {
 /* 苹果掉落后的遮罩层 */
 .bg {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 0%;
   left: 0%;
   width: 100%;
@@ -531,7 +531,7 @@ page {
 .myGoal {
   display: none;
   text-align: center;
-  position: absolute;
+  position: fixed;
   top: 10%;
   left: 10%;
   width: 80%;

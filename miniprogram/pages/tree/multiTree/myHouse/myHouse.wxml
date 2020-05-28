@@ -21,12 +21,12 @@
 		<view class="bgs" style='display:{{display}}'></view>
 		<view class="myContent" style='display:{{display}}'>
 			<view class="contents">
-				<view class="infor"><text style="color:red" >树屋名称：</text><text>{{name}}</text>
+				<view class="infor"><text style="" >树屋名称：</text><text>{{name}}</text>
 				</view>
-				<view class="infor"><text style="color:red" >创建时间：</text><text>{{createdDate}}</text>
+				<view class="infor"><text style="" >创建时间：</text><text>{{createdDate}}</text>
 				</view>
 				<view class="member">
-					<view class="infor"><text style="color:red" >成员列表：</text></view>
+					<view class="infor"><text style="" >成员列表：</text></view>
 
 					<view class="item">
 						<view  wx:for="{{memberList}}" wx:for-item="item">
@@ -36,10 +36,10 @@
 
 
 				</view>
-				<view class="infor"><text style="color:red" >树屋简介：</text>
+				<view class="infor"><text style="" >树屋简介：</text>
 					<view class="jianjie">{{introduction}}</view>
 				</view>
-				<view class="infor"><text style="color:red" >树屋密码：</text><text>{{password}}</text>
+				<view class="infor"><text style="" >树屋密码：</text><text>{{password}}</text>
 				</view>
 			</view>
 			<view class="btbox">

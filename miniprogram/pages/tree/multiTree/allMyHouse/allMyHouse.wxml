@@ -1,26 +1,17 @@
-<!--miniprogram/pages/tree/multiTree/allMyHouse/allMyHouse.wxml-->
-<!-- <view class="myHouses"><text>我的树屋</text></view> -->
-<!-- 展示结果列表 -->
-<!-- <view wx:for="{{dataList}}" wx:key="item">
+<view>
+<view wx:if="{{dataList.length==0}}" style="text-align:center;"><text>您还没有创建或加入树屋哦</text></view>
+<view wx:for="{{dataList}}" wx:key="item" style="" class="treeHouse-item0">
+	<image src="{{bgSrcList[index%12].bgSrc}}" class="img"></image>
+	<view style="background-color: {{bgSrcList[index%12].bgColor}};" class="bg_2"></view>
+	<view id="treeHouse{{index}}" class="treeHouse-item" bindtap="enterHouse" data-index="{{index}}" data-id="{{item._id}}" data-password="{{item.password}}">
 
-	<view class="treeHouse-item" bindtap="enterHouse" data-index="{{index}}" data-id="{{item._id}}" data-password="{{item.password}}"  style="background-image: url(https://s1.ax1x.com/2020/05/05/Ykm0XR.jpg);">
-		<view class="treeHouse-name"> <text>{{item.name}}</text> </view>
-		<view class="treeHouse-introduction"> <text>{{item.introduction}}</text> </view>
-		<view class="treeHouse-footer"> <text>由 {{item.memberList[0]}} 创建于 {{item.createdDate}}</text> </view>
+		<view class="treeHouse-text">
+			<view class="treeHouse-name"> <text>{{item.name}}</text> </view>
+			<view class="treeHouse-introduction"> <text style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">{{item.introduction}}</text> </view>
+			<view class="treeHouse-footer"> <text>由 {{item.memberList[0]}} 创建于 {{item.createdDate}}</text> </view>
+		</view>
+
 	</view>
 
-</view> -->
-		<view wx:for="{{dataList}}" wx:key="item" style="" class="treeHouse-item0">
-			<image src="{{bgSrcList[index%12].bgSrc}}" class="img"></image>
-			<view style="background-color: {{bgSrcList[index%12].bgColor}};" class="bg_2"></view>
-			<view id="treeHouse{{index}}" class="treeHouse-item" bindtap="enterHouse" data-index="{{index}}" data-id="{{item._id}}" data-password="{{item.password}}">
-
-				<view class="treeHouse-text">
-					<view class="treeHouse-name"> <text>{{item.name}}</text> </view>
-					<view class="treeHouse-introduction"> <text style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">{{item.introduction}}</text> </view>
-					<view class="treeHouse-footer"> <text>由 {{item.memberList[0]}} 创建于 {{item.createdDate}}</text> </view>
-				</view>
-
-			</view>
-
-		</view>
+</view>
+</view>

@@ -14,4 +14,8 @@
   height: 200rpx;
   margin: 20rpx;
   border-radius: 50%;
+ 
+}
+.h3{
+  font-weight: bolder;
 }

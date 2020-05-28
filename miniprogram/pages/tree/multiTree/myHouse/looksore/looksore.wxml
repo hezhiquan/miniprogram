@@ -7,6 +7,7 @@
 <swiper current="{{currentTab}}" duration="300" bindchange="swiperTab">
 	<swiper-item>
 			<view class="mycontain">
+				<view wx:if="{{list.length==0}}">您还未设定小目标哦</view>
 				<view class="goals" wx:for="{{list}}" wx:key="*this">
 					<view><text class="text0">{{item.goal}}</text></view>
 				
@@ -25,6 +26,7 @@
 	<swiper-item>
 		
 			<view class="mycontain">
+			<view wx:if="{{list2.length==0}}">树友小目标还未完成哦</view>
 				<view class="goals" wx:for="{{list2}}" wx:key="*this">
 				{{item.goal}}
 				<view></view>
