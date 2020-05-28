@@ -5,14 +5,14 @@
 		<image bindtap="secondbind" class="choose bg1" src="../../../../images/timeCapsule/tubiao-.png" class="icons" bindtap="secondbind"></image>
 		<image bindtap="thirdbind" class="choose bg1" src="../../../../images/timeCapsule/iconmingchengpaixu68.png" class="icons" bindtap="thirdbind"></image>
 		<image bindtap="fourthbind" class="choose bg1" src="../../../../images/timeCapsule/shu.png" class="icons" bindtap="fourthbind"></image>
-	</view><!--这是导航栏的设置，点击图片可以跳转到各个页面-->
+	</view>
 
 	<view class="tabar" style="display:flex;">
 		<text  bindtap="firstbind" class="choose bg1">树屋简介</text>
 		<text bindtap="secondbind" class="choose bg1">设定目标</text>
 		<text  bindtap="thirdbind" class="choose bg1">查看目标</text>
 		<text  bindtap="fourthbind" class="choose bg1">成就树</text>
-	</view><!--这是导航栏的设置，点击文字也可以跳转到各个页面-->
+	</view>
 
 	<image src="{{bgSrc}}" class="bgimage" mode="widthFix"></image>
 	<view class="bg">
@@ -21,12 +21,12 @@
 		<view class="bgs" style='display:{{display}}'></view>
 		<view class="myContent" style='display:{{display}}'>
 			<view class="contents">
-				<view class="infor"><text style="color:red" >树屋名称：</text><text>{{name}}</text>
+				<view class="infor"><text>树屋名称：</text><text>{{name}}</text>
 				</view>
-				<view class="infor"><text style="color:red" >创建时间：</text><text>{{createdDate}}</text>
+				<view class="infor"><text>创建时间：</text><text>{{createdDate}}</text>
 				</view>
 				<view class="member">
-					<view class="infor"><text style="color:red" >成员列表：</text></view>
+					<view class="infor"><text>成员列表：</text></view>
 
 					<view class="item">
 						<view  wx:for="{{memberList}}" wx:for-item="item">
@@ -36,10 +36,10 @@
 
 
 				</view>
-				<view class="infor"><text style="color:red" >树屋简介：</text>
+				<view class="infor"><text>树屋简介：</text>
 					<view class="jianjie">{{introduction}}</view>
 				</view>
-				<view class="infor"><text style="color:red" >树屋密码：</text><text>{{password}}</text>
+				<view class="infor"><text >树屋密码：</text><text>{{password}}</text>
 				</view>
 			</view>
 			<view class="btbox">
