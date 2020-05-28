@@ -21,7 +21,8 @@ Page({
     [
     {text:"成就列表",url:"./showDoneGoals/showDoneGoals",src:"https://s1.ax1x.com/2020/04/16/JizRnU.png"},
     {text:"设定小目标",url:"./addGoal/addGoal",src:"https://s1.ax1x.com/2020/04/16/JizBkj.png"},
-    {text:"待完成的小目标",url:"./showGoals/showGoals",src:"https://s1.ax1x.com/2020/04/16/Jiz610.png"}
+    {text:"待完成的小目标",url:"./showGoals/showGoals",src:"https://s1.ax1x.com/2020/04/16/Jiz610.png"},
+    {text:"玩法说明",url:"",src:"https://s1.ax1x.com/2020/05/09/YMUlP1.png"}
     ],//侧边栏列表项的内容
 
     //下面五个属性针对小树苗
@@ -34,17 +35,18 @@ Page({
    
     //完成的成就数若少于10个则展示小树苗，否则展示大树
     
-    appleSrc:["https://s1.ax1x.com/2020/04/18/JnEtL8.md.png"],
+    appleSrc:["https://s1.ax1x.com/2020/04/18/JnEtL8.md.png","https://s1.ax1x.com/2020/04/18/JnE1JA.png"],
     dropApple:[false,false,false,false,false,false,false,false,false,false],
     drop:['drop0','drop1','drop2','drop3','drop4','drop5','drop6','drop7','drop8','drop9'],
     top10:[],
-    isDisplay:'',
+    display:'none',
     myGoal:"",
     bgUrl:"",
     finishedTime:'',//完成时间
     createdTime:"",//创建时间
     expectedTime:"",//预计完成时间
     isLogin:false,//是否登录
+    needHelp:false,//是否展示玩法说明
   },
 
   /**
@@ -226,6 +228,11 @@ Page({
     })
   },
   hideview: function() {
+    if(this.data.needHelp){
+      this.setData({
+        needHelp:false
+      })
+    }
     this.setData({
       display: "none"
     })
@@ -255,5 +262,15 @@ Page({
          });
       });
     }
+ },
+ needHelp:function(e){
+  let index=e.currentTarget.dataset["index"];
+  if(index==3){
+    this.setData({
+      needHelp:true,
+      open:false
+    })
+    this.showview()
+  }
  }
 })

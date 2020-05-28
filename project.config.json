@@ -53,8 +53,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/tree/multiTree/searchHouse/searchHouse",
-					"pathName": "pages/tree/multiTree/searchHouse/searchHouse",
+					"name": "pages/my/my",
+					"pathName": "pages/my/my",
 					"query": "",
 					"scene": null
 				},

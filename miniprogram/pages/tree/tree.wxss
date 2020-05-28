@@ -1,22 +1,23 @@
 /* miniprogram/pages/tree/tree.wxss */
-.org_box{
-  height:80px;
-  line-height:80px; 
-  margin-bottom:30px; 
-  padding-left:2em;
-  background:#F3961C; 
-  position:relative; 
+.swiper-tab{
+  width: 100%;
+  border-bottom: 2rpx solid #ccc;
+  text-align: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
 }
-.org_bot_cor{
-  width:0; 
-  height:0; 
-  font-size:0; 
-  border-width:15px; 
-  border-style:solid; 
-  border-color:#f3961c transparent transparent; 
-  _border-color:#f3961c white white; 
-  overflow:hidden; 
-  position:absolute; 
-  left:60px; 
-  bottom:-30px;
+.swiper-tab-item{
+  width: 50%; 
+  color:#434343;
 }
+.active{
+  color:orange;
+  border-bottom: 4rpx solid orange;
+}
+swiper{
+text-align: center;
+}
+
