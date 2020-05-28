@@ -63,7 +63,7 @@
 .myContent {
   /* 一开始设为不可见 */
   display: none;
-  background-image: url(https://i.loli.net/2020/05/07/Sz7MGpRqlsOc5Yd.jpg);
+  background-image: url(https://i.loli.net/2020/05/20/xfaQzSsyVTbZuoA.jpg);
   background-size: cover;
   background-repeat: repeat-y;
   border-radius: 10%;
@@ -108,14 +108,17 @@
 }
 
 .contents {
-  margin-top: 100rpx;
+  margin-top: 50rpx;
   margin-left: 150rpx;
   margin-right: 50rpx;
   overflow: scroll;
   text-align: justify;
 }
-
+text{
+  color: rgb(6, 48, 88);
+}
 .item {
+  color: rgb(6, 48, 88);
   margin-left: 173rpx;
   overflow: scroll;
   height: 180rpx;
@@ -124,6 +127,7 @@
 }
 
 .jianjie {
+  color: rgb(2, 49, 94);
   height: 200rpx;
   margin-left: 160rpx;
   overflow: scroll;

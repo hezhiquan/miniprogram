@@ -7,13 +7,13 @@ Page({
       list:
       [{
         id:0,
-        src:"https://s1.ax1x.com/2020/05/14/YBBjyR.jpg",
+        src:"https://i.loli.net/2020/05/27/HePmpltyNV4uqrk.jpg",
         gray:0.8,
         price:15
       },
       {
         id:1,
-        src:"https://s1.ax1x.com/2020/05/14/YB0lE8.jpg",
+        src:"https://i.loli.net/2020/05/27/adI47KGzsXS9r3o.jpg",
         gray:0.8,
         price:20  
         
@@ -90,13 +90,8 @@ Page({
     const that=this
     var up="list["+e.currentTarget.dataset.id+"].gray"
     //console.log(that.data.list[e.currentTarget.dataset.id].gray)
-    let index=e.currentTarget.dataset.id;
-   if(!app.userInfo.nickName){
-    that.setData({
-      info:"登录之后才能购买哦(๑¯∀¯๑)"
-    })
-   }
-    else if(that.data.list[e.currentTarget.dataset.id].gray>0)
+    let index=e.currentTarget.dataset.id
+    if(that.data.list[e.currentTarget.dataset.id].gray>0)
     wx.showModal({
        title:'兑换卡片',
        content:'确定要购买这张图片吗？',
@@ -155,7 +150,7 @@ Page({
         } else if (res.cancel) {
         console.log('用户点击取消')
           }
-        }
+        }  
      })
      else
      wx.navigateTo({
@@ -164,25 +159,21 @@ Page({
   },
 
   onLoad: function (options) {
-    // 登录状况下才更新本地余额
-    if(app.userInfo.nickName){
-      const banner=db.collection("users")
-      banner.doc(app.userInfo._id).get()
-      .then(res=>{
-        this.setData({
-          Balance:res.data.times,
-        })
-        var i,len;
-        for(i=0,len=res.data.gray.length;i<len;i++)
-        {
-          var up="list["+res.data.gray[i]+"].gray"
-          this.setData({
-            [up]:0
-          })
-        }
+    const banner=db.collection("users")
+    banner.doc(app.userInfo._id).get()
+    .then(res=>{
+      this.setData({
+        Balance:res.data.times,
       })
-    }
-
+      var i,len;
+      for(i=0,len=res.data.gray.length;i<len;i++)
+      {
+        var up="list["+res.data.gray[i]+"].gray"
+        this.setData({
+          [up]:0
+        })
+      }
+    })
   },
 
   /**

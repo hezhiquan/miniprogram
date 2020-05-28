@@ -8,19 +8,19 @@ Page({
     list:
       [{
         id:0,
-        src:"https://s1.ax1x.com/2020/05/14/YBBjyR.jpg",
+        src:"https://i.loli.net/2020/05/27/HePmpltyNV4uqrk.jpg",
         word:'愿有岁月可回首\n且以深情共白头'
       },
       {
         id:1,
-        src:"https://s1.ax1x.com/2020/05/14/YB0lE8.jpg",
+        src:"https://i.loli.net/2020/05/27/adI47KGzsXS9r3o.jpg",
         word:'最是人间留不住\n朱颜辞镜花辞树'
         
       },
       {
         id:2,
         src:"https://s1.ax1x.com/2020/04/28/J5jl7Q.png", 
-        word:'我一人流浪 \n 岩浆滚烫\n 漫过胸膛\n 心中的不屈\n向烈日生长'
+        word:'我一人流浪 \n 岩浆滚烫，漫过胸膛\n 心中的不屈，向烈日生长'
       },
       {
         id:3,

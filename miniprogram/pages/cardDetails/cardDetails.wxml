@@ -1,8 +1,11 @@
 <!--pages/cardDetails/cardDetails.wxml-->
-<view class="container">
-<image class="show" src="{{SelectedPath}}" mode="widthFix" >
-</image>
+<view class="bg">
+		<view class="image">
+     <view class="border">
+		  	<view class="center"><image class="show" src="{{SelectedPath}}"></image></view>
+      </view>
+		</view>
+  <view class="father">
+  	<view class="sentence"><text>{{Selectedword}}</text></view>
+  </view>
 </view>
-<view class="sentence" style="text-align: center"><text>{{Selectedword}}</text></view>
-
-
