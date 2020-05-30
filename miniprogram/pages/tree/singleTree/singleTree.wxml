@@ -23,7 +23,7 @@
 		<image class="more" bindtap="tap_ch" src="https://s1.ax1x.com/2020/04/27/JRuzJU.png"></image>
 
 		<view wx:if="{{top10.length<10}}" class="page ">
-			<image src="https://s1.ax1x.com/2020/04/14/JpyRMj.md.png" mode="widthFit"></image>
+			<image src="https://s1.ax1x.com/2020/04/14/JpyRMj.md.png" style="width:750rpx;" mode="widthFit"></image>
 			<!-- 浮动的云 -->
 			<view class="flowingCloud">
 				<image src="../../../images/tree/cloud1.png" mode="widthFix" style="width:40%;">

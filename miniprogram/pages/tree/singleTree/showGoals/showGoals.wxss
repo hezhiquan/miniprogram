@@ -1,9 +1,11 @@
 /* miniprogram/pages/tree/singleTree/showGoals/showGoals.wxss */
 page{
   height:100%;
+  
 }
 .all{
-  height: 100%;
+  min-height: 100%;
+  
   background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
 }
 .showGoal{

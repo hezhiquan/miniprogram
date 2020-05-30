@@ -1,4 +1,7 @@
-<!--pages/purchase/purchase.wxml-->
+<view>
+<!-- <view wx:if="{{!app.userInfo._id}}"> 请至个人信息界面登录</view> -->
+<view >
+
 <view class="top">当前余额：{{Balance}}
 	<block>
 		<image src="../../../images/wodejinbi.png" class="jinbi"> </image>
@@ -17,3 +20,6 @@
 	</view>
 </view>
 <mp-toptips msg="{{info}}" type="info" show="{{info}}"></mp-toptips>
+
+</view>
+</view>

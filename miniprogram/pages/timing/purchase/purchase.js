@@ -145,7 +145,9 @@ Page({
                    }
                 })
                 .catch(err=>{
+                  
                     console.log(err)
+
                 })         
         } else if (res.cancel) {
         console.log('用户点击取消')
@@ -160,27 +162,37 @@ Page({
 
   onLoad: function (options) {
     const banner=db.collection("users")
-    banner.doc(app.userInfo._id).get()
-    .then(res=>{
-      this.setData({
-        Balance:res.data.times,
-      })
-      var i,len;
-      for(i=0,len=res.data.gray.length;i<len;i++)
-      {
-        var up="list["+res.data.gray[i]+"].gray"
+    if(app.userInfo._id){
+      banner.doc(app.userInfo._id).get()
+      .then(res=>{
         this.setData({
-          [up]:0
+          Balance:res.data.times,
         })
-      }
-    })
+        var i,len;
+        for(i=0,len=res.data.gray.length;i<len;i++)
+        {
+          var up="list["+res.data.gray[i]+"].gray"
+          this.setData({
+            [up]:0
+          })
+        }
+      })
+    }else{
+      wx.showModal({
+        content:"请至个人信息界面登录",
+        showCancel:false
+      })
+    }
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    // if(!app.userInfo._id){
+    //   app=getApp()
+    // }
   },
 
   /**

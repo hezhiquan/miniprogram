@@ -194,7 +194,7 @@ page {
 /* 设置渐变 */
 .gradients {
   width: 750rpx;
-  height: 1200rpx;
+  height: 1900rpx;
   background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
 }
 

@@ -26,7 +26,7 @@ Page({
 
       },
       {
-        value:"反馈意见",
+        value:"",//反馈意见
         footer:"",
         src:"https://s1.ax1x.com/2020/05/09/YMUFCq.png"
       }
@@ -84,10 +84,10 @@ Page({
       myIndex:e.currentTarget.dataset["index"]
     })
     if(this.data.myIndex==2){
-      wx.showToast({
-        icon:"none",
-        title: '反馈意见的url还没写',
-      })
+      // wx.showToast({
+      //   icon:"none",
+      //   title: '反馈意见的url还没写',
+      // })
       //填写完url后把toast删掉
       // wx.navigateTo({
       //   url: 'url',//跳转到反馈意见界面

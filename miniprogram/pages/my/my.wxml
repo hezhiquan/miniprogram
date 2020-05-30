@@ -13,10 +13,20 @@
 			<view data-index="{{index}}" bindtap="bindOther" wx:for="{{lists}}" wx:key="*this">
 				<mp-cell hover value="{{item.value}}" footer="{{item.footer}}">
 					<image slot="title" src="{{item.src}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;padding:10px;"></image>
+					
 				</mp-cell>
+				<view wx:if="{{index==2}}" style="position: relative;top: -50px;left:-160rpx;">
+				<button plain="true" open-type="feedback" type="default" style="border:0;width: 750rpx;font-weight:normal;color: black;font-size: 17px;margin-right:600rpx;" >反馈意见</button>
+				</view>
 			</view>
 		</mp-cells>
+		<!-- <view style="display:flex;vertical-align: middle;" > -->
+		<!-- <image  src="https://s1.ax1x.com/2020/05/09/YMUFCq.png" style="margin-right: 16px;width:20px; height: 20px;padding:10px;"></image>
+				<text>反馈意见</text> -->
+					
+				<!-- </view> -->
 	</view>
+
 	<!-- 显示生辰树由来，帮助与技巧弹窗 -->
 	<view class="mask-bg" bindtap='hideview' style='display:{{display}}'></view>
 	<view class="mask-myContent" style='display:{{display}};text-align: left;background-color:rgb(244, 220, 188) ;line-height:150%;overflow:scroll;color: rgb(6, 48, 88);border-radius: 20px;'>
@@ -25,6 +35,8 @@
 		<text>该界面旨在帮助使用者在一定时间内放下手机，投身于其他事情；\n 用户在设定一定的时长后，在规定时间内完成自律活动即可获得金币奖励，可进入商店界面“购买”自己喜欢的树苗卡片，若是在规定时间内离开该界面，则计时失败，失去奖励。\n 积分规则：完成自律活动后，设定的时长的分钟数会自动转化为金币数，每分钟可换取一金币 \n</text>
 		<text class="h3">\n 2、没有收到信 \n</text>
 		<text>可能是邮箱写错，或者时间选在了当天10点以后，或者邮件被误识别，放在了垃圾邮件处</text>
+		<text class="h3">\n 3、关于图片 \n</text>
+		<text>小程序内的图片版权归原作者所有</text>
 		<text></text>
 		<text></text>
 		</view>

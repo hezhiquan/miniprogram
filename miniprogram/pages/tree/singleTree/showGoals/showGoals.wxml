@@ -1,21 +1,4 @@
-<!--miniprogram/pages/tree/singleTree/showGoals/showGoals.wxml-->
-<!-- <view>
-	<view class="text1">未完成列表</view>
 
-	<view wx:for="{{goals}}" wx:key="item" wx:for-index="index">
-		<mp-cells>
-					<view  class="{{(index%2)==0?'color1':'color2'}}">
-						<mp-slideview data-id="{{item._id}}" buttons="{{slideButtons}}"  bindbuttontap="slideButtonTap">
-							<mp-cell value="{{item.goal}}" footer="<"></mp-cell>
-						</mp-slideview>
-					</view>
-			 <mp-dialog title="删除" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
-        <view>确认删除该任务</view>
-    </mp-dialog>
-		</mp-cells>
-	</view>
-
-</view> -->
 <view class="all">
 	<view class="text1">待完成的小目标</view>
 	<view class="text1" wx:if="{{goals.length==0}}" >还没有小目标哦，快去设定一个小目标吧</view>

@@ -66,6 +66,7 @@ Page({
   
 
   onLoad: function (options) {
+
   },
   getcake:function(i){
     //掉落时间
@@ -126,6 +127,16 @@ Page({
     .catch((err)=>{
       console.log(err)
     })
+    // wx.cloud.callFunction({
+    //   name : 'delete',
+    //   data : {}
+    // }).then((res)=>{
+    //   console.log(res);
+    // })
+    // .catch((err)=>{
+    //   console.log(err)
+    // })
+    // console.log("删除完毕");
   },
   onShow: function (e) {
    
