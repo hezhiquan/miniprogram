@@ -1,4 +1,4 @@
-<view wx:if="{{top10.length<100}}" class="page1">
+<view wx:if="{{top10.length<10}}" class="page1">
 	<!-- 浮动的云 -->
 	<view class="flowingCloud">
 		<image src="../../../../../images/tree/cloud1.png" mode="widthFix" style="width:40%;">
