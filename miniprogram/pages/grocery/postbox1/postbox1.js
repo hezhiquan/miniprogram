@@ -77,7 +77,7 @@ Page({
             dataList: res.data, //获取数据数组    
             currentPage: that.data.currentPage + 1
           });
-          if (res.data.length < that.data.pageSize) {
+          if (res.data.length <= 0) {
             console.log("数量不够")
             wx.showToast({
               title: '信囊已经空了哦',

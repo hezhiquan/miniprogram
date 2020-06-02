@@ -23,7 +23,8 @@ Page({
       {value:"快乐",checked:'true'}
     ],
     emotion:"",
-    selectdb:"Happy"
+    selectdb:"Happy",
+    box:"享其乐"
   },
 
   content:function (e) {
@@ -105,12 +106,14 @@ Page({
     if(this.data.mycontent!=""&&this.data.Nickname!=""){
       if(this.data.emotion==="烦恼"){
         this.setData({
-          selectdb:"Annoy"
+          selectdb:"Annoy",
+          box:"解我忧"
         })
       }
       else if(this.emotion==="快乐"){
         this.setData({
-          selectdb:"Happy"
+          selectdb:"Happy",
+          box:"享其乐"
         })
       }
       console.log(that.data.selectdb+"99")
@@ -122,8 +125,9 @@ Page({
         },
         success:function(res){
           console.log("上传成功")
+          console.log(that.data.emotion+that.data.box)
           wx.showToast({  
-            title: '上传成功',  
+            title:'漂流至'+that.data.box,  
             icon: 'success',  
             mask: true,  
             duration: 2000 

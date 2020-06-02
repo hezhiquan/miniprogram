@@ -97,7 +97,7 @@ page{
 .input{
   border-radius: 10rpx;
   margin-top: 50rpx;
-  background-color: rgb(226, 244, 238);
+  background-color: rgb(244, 238, 226);
   width:375px ;
   height: 50rpx;
 }
@@ -158,7 +158,7 @@ textarea{
 .myContent {
   /* 一开始设为不可见 */
   display: none;
-  background-color: rgb(197, 243, 235);
+  background-color: #faeac8;
   border-radius: 3%;
   position: fixed;
   top: 10%;

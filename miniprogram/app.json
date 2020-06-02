@@ -39,20 +39,20 @@
       {
         "pagePath": "pages/index/index",
         "text": "主页",
-        "iconPath": "../miniprogram/images/tabbar/zhuye11.png",
-        "selectedIconPath": "../miniprogram/images/tabbar/zhuye2.png"
+        "iconPath": "images/tabbar/zhuye11.png",
+        "selectedIconPath": "images/tabbar/zhuye2.png"
       },
       {
         "pagePath": "pages/timing/timing",
         "text": "种树",
-        "iconPath": "../miniprogram/images/tabbar/shu.png",
-        "selectedIconPath": "../miniprogram/images/tabbar/shu2.png"
+        "iconPath": "images/tabbar/shu.png",
+        "selectedIconPath": "images/tabbar/shu2.png"
       },
       {
         "pagePath": "pages/my/my",
         "text": "个人信息",
-        "iconPath": "../miniprogram/images/tabbar/my0.png",
-        "selectedIconPath": "../miniprogram/images/tabbar/my00.png"
+        "iconPath": "images/tabbar/my0.png",
+        "selectedIconPath": "images/tabbar/my00.png"
       }
     ]
   },

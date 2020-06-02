@@ -30,7 +30,7 @@
 			</block>
 		</swiper>
 	
-		<button class="btn" bindtap="update">更新</button>
+		<button class="btn" bindtap="update">换一批</button>
 		<!-- <button class="btn" bindtap="hideView">try</button> -->
 		
 	</view>

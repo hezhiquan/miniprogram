@@ -38,7 +38,7 @@ Page({
         success:function(res){
           console.log("上传成功")
           wx.showToast({  
-            title: '上传成功',  
+            title: '回信成功',  
             icon: 'success',  
             mask: true,  
             duration: 2000 
