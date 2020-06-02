@@ -22,7 +22,7 @@
 </view>
 
 	<view class="size">
-		<textarea bindinput="content" maxlength="5000" style="display:{{hidetextarea}} ;border:0;border-radius:5px;width: 355px;height:700px;padding: 10px;resize: none;" placeholder="欢迎来到忘忧箱，在这里你可以选择写下苦恼或分享快乐，您写下的这封信会漂流到您所选择的漂流箱中，您也可能会受到其他人的温柔回信~" auto-focus />
+		<textarea bindinput="content" maxlength="5000" style="display:{{hidetextarea}} ;border:0;border-radius:5px;width: 355px;height:700px;padding: 10px;resize: none;" placeholder="欢迎来到忘忧箱，在这里你可以选择写下苦恼或分享快乐，您写下的这封信会漂流到您所选择的漂流箱中，您也可能会收到其他人的温柔回信~" auto-focus />
 	</view>
 	
 	<!-- maxlength="500"设定字符最大数量 -->
