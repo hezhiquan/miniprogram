@@ -188,9 +188,9 @@ Page({
     let date1 = that.data.date.split('-');
     date1 = parseInt(date1[0] * 12) + parseInt(date1[1]);    
     let date2 = today.getFullYear() * 12 + today.getMonth();
-
+    console.log("bi",birthday.getDate(),today.getDate())
     //彩蛋，当当前月份与生辰钟的月份相同时，掉落生日蛋糕
-    if(today.getMonth()==birthday.getMonth()&&this.data.isFirst){
+    if(today.getMonth()==birthday.getMonth()&&this.data.isFirst&&today.getDate()==birthday.getDate()){
       this.getcake(1);
       this.setData({
         info:"Happy Birthday ！！！",

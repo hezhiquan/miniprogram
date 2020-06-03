@@ -27,9 +27,12 @@ Page({
         success: res => {
           if (res.confirm) {
             console.log('确定')
-            wx.showModal({
-              title: '提醒',
-              content: '成功'
+            // wx.showModal({
+            //   title: '提醒',
+            //   content: '成功'
+            // })
+            wx.showToast({
+              title: '成功完成小目标',
             })
             banner.doc(e.currentTarget.dataset.id).update({
                 data: {
@@ -60,8 +63,10 @@ Page({
     else {
       wx.showModal({
         title: "提醒",
-        content: "小目标已经完成了哦"
+        content: "小目标已经完成了哦",
+        showCancel:false
       })
+      
     }
   },
  
@@ -90,9 +95,13 @@ Page({
             }).catch(err => {
               console.log(err) 
             }) 
-            wx.showModal({
-              title: '提醒',
-              content: '任务已移除'
+            // wx.showModal({
+            //   title: '提醒',
+            //   content: '任务已移除',
+            //   showCancel:false
+            // })
+            wx.showToast({
+              title: '任务已移除',
             })
             
           })
