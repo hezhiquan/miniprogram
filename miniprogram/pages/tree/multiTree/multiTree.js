@@ -5,10 +5,12 @@ const _=db.command;
 let id; //被点击的树屋id
 let rightPassword; //被点击的树屋对应的密码
 let index;//对应下标
+
+
 Page({
 
   data: {
-    currentPage: 0,
+    currentPage:0,
     pageSize: 10, //每一页的大小
     dataList: [], //放置返回数据的数组  
     loadMore: true, //"上拉加载"的变量，默认true，隐藏  
@@ -125,8 +127,9 @@ Page({
             let list = that.data.dataList.concat(data)
             that.setData({
               dataList: list, //获取数据数组    
-              currentPage: that.data.currentPage + 1
+              
             });
+            that.data.currentPage++;
             if (res.data.length < that.data.pageSize) {
               console.log("001")
               that.setData({

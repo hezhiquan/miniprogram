@@ -1,24 +1,3 @@
-/* miniprogram/pages/tree/singleTree/showDoneGoals/showDoneGoals.wxss */
-
-/* .title{
-  background-color: white;
-  height: auto;
-}
-.text1{
-  color: grey;
-  font-size: 40rpx;
-  padding:20rpx 0rpx;
-  /* text-align: center;
-} */
-/* .color1{
-  background-color: white;
-    }
-  .color2{
-  background-color: #F8F8F8;
-  }
-.scroll{
-  height: 100%;
-}  */
 
 /* pages/postbox2/postbox2.wxss */
 page {
@@ -134,12 +113,13 @@ page {
 }
 
 .center {
-
+/* color: rgba(241, 180, 82, 0.861); */
   width: 80%;
   height: 77%;
   margin-top: 7%;
   margin-left: 10%;
   /* background-color: rgb(249, 207, 143); */
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
   text-align: justify;
 }

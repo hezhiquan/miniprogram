@@ -103,6 +103,7 @@ height: 800rpx;
   margin-left: 10%;
   /* background-color: rgb(249, 207, 143); */
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
   text-align:justify;
 }
 

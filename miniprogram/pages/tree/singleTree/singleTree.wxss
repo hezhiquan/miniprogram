@@ -60,7 +60,7 @@ page {
   background-color: rgb(255, 255, 255);
   z-index: 0;
   transition: All 0.4s ease;
-
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 /* 左上角图标的样式 */
@@ -525,7 +525,7 @@ page {
   z-index: 1001;
   opacity: 0.70;
   filter: alpha(opacity=70);
-
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .myGoal {
@@ -543,6 +543,7 @@ page {
   /* background-color: white; */
   z-index: 1002;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
   animation: myGoal 2s ease 1;
 }
 

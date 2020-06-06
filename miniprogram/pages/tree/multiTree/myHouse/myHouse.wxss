@@ -112,6 +112,7 @@
   margin-left: 150rpx;
   margin-right: 50rpx;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
   text-align: justify;
 }
 text{
@@ -121,6 +122,7 @@ text{
   color: rgb(6, 48, 88);
   margin-left: 173rpx;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
   height: 180rpx;
   margin-top: 20rpx;
 
@@ -131,6 +133,7 @@ text{
   height: 200rpx;
   margin-left: 160rpx;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .member {

@@ -2,6 +2,8 @@
 const app = getApp();
 const db=wx.cloud.database()
 const search = db.command
+// 优化性能，将未与界面绑定的变量提取出来
+
 
 Page({
 
@@ -75,8 +77,9 @@ Page({
           // let list = that.data.dataList.concat(res.data)
           that.setData({
             dataList: res.data, //获取数据数组    
-            currentPage: that.data.currentPage + 1
+            
           });
+          that.data.currentPage++;
           if (res.data.length <= 0) {
             console.log("数量不够")
             wx.showToast({

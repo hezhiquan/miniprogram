@@ -2,7 +2,7 @@
 <view class="bg">
 		<view class="image">
      <view class="border">
-		  	<view class="center"><image class="show" src="{{SelectedPath}}"></image></view>
+		  	<view class="center"><image lazy-load="true" class="show" src="{{SelectedPath}}"></image></view>
       </view>
 		</view>
   <view class="father">

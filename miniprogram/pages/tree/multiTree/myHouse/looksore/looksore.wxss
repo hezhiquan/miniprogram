@@ -104,6 +104,7 @@ page {
 .mycontain {
    height: 100%;
    overflow: scroll; 
+   -webkit-overflow-scrolling: touch;
 }
 
 .check{
@@ -135,4 +136,5 @@ swiper{
 text-align: center;
 height: 92%;
 overflow: scroll;
+-webkit-overflow-scrolling: touch;
 }

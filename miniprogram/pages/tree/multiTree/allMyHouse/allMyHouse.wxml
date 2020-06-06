@@ -1,7 +1,7 @@
 <view>
 <view wx:if="{{dataList.length==0}}" style="text-align:center;"><text>您还没有创建或加入树屋哦</text></view>
 <view wx:for="{{dataList}}" wx:key="item" style="" class="treeHouse-item0">
-	<image src="{{bgSrcList[index%12].bgSrc}}" class="img"></image>
+	<image src="{{bgSrcList[index%12].bgSrc}}" lazy-load="true" class="img"></image>
 	<view style="background-color: {{bgSrcList[index%12].bgColor}};" class="bg_2"></view>
 	<view id="treeHouse{{index}}" class="treeHouse-item" bindtap="enterHouse" data-index="{{index}}" data-id="{{item._id}}" data-password="{{item.password}}">
 

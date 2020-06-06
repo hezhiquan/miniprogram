@@ -3,6 +3,7 @@ const app2 = getApp();
 const db2=wx.cloud.database()
 const search2 = db2.command
 
+
 Page({
 
   /**
@@ -75,8 +76,9 @@ Page({
           // let list = that.data.dataList.concat(res.data)
           that.setData({
             dataList: res.data, //获取数据数组    
-            currentPage: that.data.currentPage + 1
+            
           });
+          that.data.currentPage++;
           if (res.data.length <=0) {
             console.log("数量不够")
             wx.showToast({

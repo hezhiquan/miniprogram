@@ -1,6 +1,7 @@
 // miniprogram/pages/tree/singleTree/showDoneGoals/showDoneGoals.js
 const db=wx.cloud.database();
 
+
 Page({
 
   /**
@@ -19,7 +20,7 @@ Page({
         bgSrc:"https://s1.ax1x.com/2020/05/19/YIDMY8.jpg"
       },
       {
-        bgColor:"rgb(118, 217, 43)",
+        bgColor:"rgba(108, 205, 43, 0.861)",
         bgSrc:"https://s1.ax1x.com/2020/05/19/YIDQfS.jpg"
       },
       {
@@ -90,7 +91,7 @@ Page({
       isAchieve:true
     })
     .orderBy("createdDate","desc")
-      .skip(that.data.currentPage * that.data.pageSize) //从第几个数据开始
+      .skip(this.data.currentPage * that.data.pageSize) //从第几个数据开始
       .limit(that.data.pageSize)
       .get({
         success(res) {
@@ -98,8 +99,9 @@ Page({
             console.log("请求成功", res.data)
             that.setData({
               dataList: res.data, //获取数据数组    
-              currentPage:that.data.currentPage+1
+              
             });
+            that.data.currentPage++;
             console.log("res.data.length is ",res.data.length)
             if (res.data.length < that.data.pageSize) {
               that.setData({

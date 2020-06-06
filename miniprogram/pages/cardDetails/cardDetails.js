@@ -8,7 +8,7 @@ Page({
     list:
       [{
         id:0,
-        src:"https://i.loli.net/2020/05/27/HePmpltyNV4uqrk.jpg",
+        src:"https://s1.ax1x.com/2020/06/05/tsyVN8.jpg",
         word:'愿有岁月可回首\n且以深情共白头'
       },
       {

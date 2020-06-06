@@ -2,6 +2,7 @@
 const db = wx.cloud.database();
 const app = getApp();
 const _ = db.command;
+var num=0;
 Page({
 
   /**
@@ -12,7 +13,7 @@ Page({
     treehouseId: '',
     list: [],
     list2: [],
-    num: 0,
+    
     currentTab: 0
   },
 
@@ -124,7 +125,7 @@ Page({
                 name: 'confirmTeammateGoal',
                 data: {
                   id: e.currentTarget.dataset.id,
-                  length: parseInt(that.data.num / 2)
+                  length: parseInt(num / 2)
                 }
               }).then((res) => {
                 console.log(res)
@@ -179,8 +180,9 @@ Page({
       console.log(res.data) 
       this.setData({
         list: res.data,
-        num: length
+        
       })
+      num=length;
       console.log(this.data.list)
     })
 
@@ -194,8 +196,9 @@ Page({
       console.log(res.data)
       this.setData({
         list2: res.data,
-        num: length
+        
       })
+      num=length;
       console.log(this.data.list2)
     })
 

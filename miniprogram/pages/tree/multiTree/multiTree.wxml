@@ -48,7 +48,7 @@
 	<!-- <navigator url="./addHouse/addHouse">
 		<image class="add" bindtap="addHouse" src="https://s1.ax1x.com/2020/04/27/JRuzJU.png" mode="widthFix"></image>
 	</navigator> -->
-	  <view id="modal" animation="{{animationModal}}" class="more" style="border-radius:40rpx;opacity: 0;background:#000"  bindtap="closeAnimate">
+	  <view id="modal" animation="{{animationModal}}" class="more" style="border-radius:40rpx;opacity: 0;background:#000;padding-bottom: env(safe-area-inset-bottom);"  bindtap="closeAnimate">
   </view>
 	<!-- 创建树屋 -->
   <image class="more" style="opacity: 0;" src="https://s1.ax1x.com/2020/05/20/YIvase.png" mode="widthFit" animation="{{animationCreatHouse}}"  bindtap="creatHouse"></image>

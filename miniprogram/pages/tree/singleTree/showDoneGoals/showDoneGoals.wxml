@@ -11,7 +11,7 @@
 					<swiper-item style="">
 						<view class="type-line">
 							<view class="swiperClass  {{swiperIndex == index ? 'active' : 'quiet'}}">
-							<image src="{{bgSrcList[index%10].bgSrc}}" class="swiperClass-img"></image>
+							<image src="{{bgSrcList[index%10].bgSrc}}" lazy-load="true" class="swiperClass-img"></image>
 						<view style="background-color: {{bgSrcList[index%10].bgColor}};" class="swiperClass2"></view>
 								<view class="swiperClass3">
 								<mp-cell hover class="center" value="{{item.goal}}"> </mp-cell>

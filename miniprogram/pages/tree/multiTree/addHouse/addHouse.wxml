@@ -30,7 +30,7 @@
 			<swiper class='swiperClass' previous-margin="40px" next-margin="40px" circular bindchange="bindChange" style="height:900rpx">
 				<block wx:for="{{imgUrls}}" wx:key="index">
 					<swiper-item>
-						<image src="{{item}}" class="slide-image {{swiperIndex == index ? 'active' : 'quiet'}}" mode="aspectFill">
+						<image src="{{item}}" lazy-load="true" class="slide-image {{swiperIndex == index ? 'active' : 'quiet'}}" mode="aspectFill">
 						</image>
 					</swiper-item>
 				</block>

@@ -5,6 +5,8 @@ const app = getApp()
 const db = wx.cloud.database()
 let timeId=0;
 const ctx1 = wx.createCanvasContext('canvasArcCir')
+
+var clockIntervalId=0;
 Page({
   data: {
     endTime:"",
@@ -66,7 +68,28 @@ Page({
   
 
   onLoad: function (options) {
-
+    console.log("gg",app.userInfo)
+    if(!app.userInfo.nickName){
+    //刚进入页面时，调用云函数尝试登录
+    wx.cloud.callFunction({
+      name : 'login',
+      data : {}
+    }).then((res)=>{
+      db.collection('users').where({
+        _openid : res.result.openid
+      }).get().then((res)=>{
+        if( res.data.length ){         
+          console.log("login函数调用结果为",res)
+          app.userInfo = Object.assign(app.userInfo, res.data[0]);    
+         
+        }       
+      });
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+    console.log("登录函数被调用")
+    }
   },
   getcake:function(i){
     //掉落时间
@@ -109,38 +132,12 @@ Page({
       endTime:getEndTime()
     })
 
-    //刚进入页面时，调用云函数尝试登录
-    wx.cloud.callFunction({
-      name : 'login',
-      data : {}
-    }).then((res)=>{
-      db.collection('users').where({
-        _openid : res.result.openid
-      }).get().then((res)=>{
-        if( res.data.length ){         
-          console.log("login函数调用结果为",res)
-          app.userInfo = Object.assign(app.userInfo, res.data[0]);    
-         
-        }       
-      });
-    })
-    .catch((err)=>{
-      console.log(err)
-    })
-    // wx.cloud.callFunction({
-    //   name : 'delete',
-    //   data : {}
-    // }).then((res)=>{
-    //   console.log(res);
-    // })
-    // .catch((err)=>{
-    //   console.log(err)
-    // })
-    // console.log("删除完毕");
+
+
   },
   onShow: function (e) {
    
-    setInterval(show,1000); //每秒执行1次
+    clockIntervalId=setInterval(show,1000); //每秒执行1次
     function show() {
       secshow()
       minshow()
@@ -149,6 +146,9 @@ Page({
       ctx.draw()
     }
 
+  },
+  onHide:function(){
+    clearInterval(clockIntervalId);
   },
   bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value);
@@ -167,9 +167,8 @@ Page({
   getBirthday:function() {
     console.log("getBirthday")
     clearInterval(this.data.timer);
-    this.setData({
-      timer:setInterval(this.getTime,1000)
-    })
+    this.data.timer=setInterval(this.getTime,1000)
+   
   },
   getTime:function(){//将对应的时间转换月，周，日，时，分，秒
       //出生时间    
@@ -233,6 +232,10 @@ Page({
       ctx1.clearRect(0,0,150,150)
       wave(ctx1, rate);
 
+  },
+  onUnload:function(){
+    clearTimeout(timeId);
+    clearInterval(this.data.timer)
   }
 
 })

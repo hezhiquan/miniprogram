@@ -289,6 +289,7 @@ textarea{
   margin-left: 10rpx;
   margin-right: 10rpx;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
   text-align: justify;
 }
 .fasong{
