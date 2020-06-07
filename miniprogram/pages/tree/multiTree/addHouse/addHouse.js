@@ -67,6 +67,7 @@ Page({
     this.setData({
       swiperIndex: e.detail.current
     })
+    console.log("dsada");
   },
   showView: function () { //展示遮罩层
     this.setData({

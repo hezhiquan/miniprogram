@@ -212,6 +212,8 @@ Page({
     this.setData({
       toBall:false
     })
+    clearTimeout(timeId);
+    ctx1.clearRect(0,0,150,150)
   },
   toBall:function(){
    
@@ -228,8 +230,7 @@ Page({
         remainMonth:900-this.data.months
       })
       //创建并返回绘图上下文context对象。
-      clearTimeout(timeId);
-      ctx1.clearRect(0,0,150,150)
+      
       wave(ctx1, rate);
 
   },

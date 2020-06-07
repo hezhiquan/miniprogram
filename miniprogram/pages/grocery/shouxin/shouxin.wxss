@@ -170,6 +170,8 @@ white-space:nowrap;
   z-index: 1002;
   /* 添加缩放动画，动画的关键帧为myContent1，持续时长2s，速度曲线为ease(动画以低速开始，然后加快，在结束前变慢)，执行一次 */
   animation: myContent1 2s ease 1;
+  /*避免背景图片超过mycontent的大小  */
+  overflow: hidden;
 }
 
 /* 设定动画的关键帧，一开始时大小变为原来的0.3，最后缩放成原来的大小 */

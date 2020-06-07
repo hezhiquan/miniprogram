@@ -136,13 +136,10 @@ Page({
           }
         })//以上是将数据写入数据库
         .then(res => {
-          wx.showModal
-            (
-              {
-                showCancel: false,
-                title: "您的信已寄出"
-              }
-            )
+         
+            wx.showToast({
+              title: '您的信已寄出',
+            })
           this.setData
             (
               {
@@ -156,13 +153,15 @@ Page({
         .catch(err => {
           wx.showModal({
             title: '数据保存失败',
+            showCancel:false
           })
           console.log('数据保存失败')
         })
     }
     else {
       wx.showModal({
-        title: "请输入完整信息"
+        title: "请输入完整信息",
+        showCancel:false
       })
     }//如果finishemail和finishSetTime有一个不是true，说明用户的邮箱和收信时间至少有一项没有写好，这时候要提示用户输入完整信息
   }

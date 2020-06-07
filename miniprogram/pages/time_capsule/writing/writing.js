@@ -32,6 +32,7 @@ Page({
     if (that.data.textareaData == "") {
       wx.showModal({
         title: '信件不能为空哦~',
+        showCancel:false
       })//判断信件内容是否为空，如果为空则出现提示框
     } else {
       var mydate = new Date();
@@ -45,16 +46,16 @@ Page({
         createTime: mycreateTime//将createTime的值设定为今天的日期
       })
       console.log(that.data.createTime)
-      wx.showModal({
-        title: '完成编辑！',
-        showCancel: false,
-        confirmText: '去发送~',
-        success: function (res) {
+      // wx.showModal({
+      //   title: '完成编辑！',
+      //   showCancel: false,
+      //   confirmText: '去发送~',
+      //   success: function (res) {
           wx.redirectTo({
             url: '../capsule?finished=' + "true" + '&textareaData=' + that.data.textareaData + '&createTime=' + that.data.createTime,//点击返回，回到上一个界面，然后将finished的值true和textarea里面的文字，以及信件写作的时间createTime传递到上一个界面。
           })
-        }
-      })
+      //   }
+      // })
 
 
     }

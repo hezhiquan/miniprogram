@@ -32,17 +32,16 @@ Page({
 
 
   bindChange(e) {
-   
     this.setData({
-         swiperIndex: e.detail.current,
-        
+      swiperIndex: e.detail.current
     })
-    },
+    console.log("dsada");
+  },
     
   test: function (e) {
     //云数据的请求
     console.log("分页")
-    var that=this
+    let that=this;
     db.collection("Back").where({
       Hisopenid:app.userInfo._openid
       // _openid:app.userInfo._openid
@@ -53,15 +52,9 @@ Page({
     .get({
       success(res) {
           console.log("请求成功", res.data)
-         console.log(res.data[0].Hiscontent)
-          //把新请求到的数据添加到dataList里 ,concat是将数组一个一个加进去，而push则是直接加入
-          let list = that.data.dataList.concat(res.data)
-          that.setData({
-            dataList: list, //获取数据数组    
-            mycontent:res.data[0].Hiscontent
-          });
-          that.data.currentPage++;
-          if (res.data.length <= 0) {
+          console.log("请求成功002", res.data.length)
+ 
+        if (res.data.length<=0) {
             console.log("数量不够")
             wx.showToast({
               title: '还没有回信的朋友哦',
@@ -82,9 +75,13 @@ Page({
                
             });
           }
-          //隐藏加载动画
-          // wx.hideLoading()
 
+          that.setData({
+            dataList:res.data
+          })
+        
+          
+          that.data.currentPage++;
         
       },
       fail(res) {
@@ -98,8 +95,12 @@ Page({
    
  },
 
- firstbind: function () {
+ firstbind: function (e) {
   this.showView();
+  
+  this.setData({
+    mycontent:e.currentTarget.dataset.hiscontent
+  })
 },
 //遮罩层部分
 // bindImage:function(){//展示内容
@@ -122,7 +123,7 @@ hideView: function() {
   })
 },
 
- update:function (params) {
+ update:function (e) {
    this.test();
    
  },
@@ -137,62 +138,10 @@ hideView: function() {
     //   openid:app.userInfo._openid,
     // })
   },
-  bindchange(e) {
-    this.setData({
-         swiperIndex: e.detail.current
-    })
-    },
   //获取用户openid
   userid:function (params) {
     console.log(app.userInfo._openid)
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+ 
 })
 

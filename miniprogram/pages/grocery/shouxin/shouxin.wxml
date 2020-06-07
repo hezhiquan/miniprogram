@@ -5,14 +5,14 @@
 
 <view >
 	<view>
-		<swiper class='swiper-item' previous-margin="40px" next-margin="40px" circular bindchange="bindchange">
+		<swiper class='swiper-item' previous-margin="40px" next-margin="40px" circular bindchange="bindChange">
 			<block wx:for="{{dataList}}" wx:key="{{index}}" class="">
 				<swiper-item class="" >
 				<view class="type-line">
 					<view class="swiperClass  {{swiperIndex == index ? 'active' : 'quiet'}}">
           <view class="">
             <view class="hello">你好，陌生人：</view>
-						<image bindtap="firstbind"  src="../../../images/plants/icon_envelope3.png" class="icons"></image>
+						<image data-hisContent="{{item.Hiscontent}}" bindtap="firstbind"  src="../../../images/plants/icon_envelope3.png" class="icons"></image>
           </view>
 						<text class="center">{{item.content}}</text>
 						<view class="namebox">
@@ -31,14 +31,14 @@
 	<mp-toptips msg="{{tips}}" type="{{type}}" show="{{tips}}"></mp-toptips>
 	
 		<!-- 遮罩层 -->
-		<view class="bgs" style='display:{{display}}'></view>
+		<view class="bgs" bindtap="hideView" style='display:{{display}}'></view>
 		<view class="myContent" style='display:{{display}}'>
 			<view class="conbox">
 				<view class="hello">你好，陌生人：</view>
 				<view class="contents">  {{mycontent}}</view>
 			</view>
 			<view class="btbox">
-				<image src="../../../images/plants/back.png" class="btnt" bindtap="hideView">确定</image>
+				<image src="../../../images/plants/back.png" class="btnt" bindtap="hideView"></image>
 			</view>
 		</view>
 

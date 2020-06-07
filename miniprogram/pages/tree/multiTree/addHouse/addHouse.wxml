@@ -23,7 +23,7 @@
 
 		
 		<!-- 遮罩层 -->
-		<view class="bg" style='display:{{display}}'></view>
+		<view class="bg" bindtap="hideView" style='display:{{display}}'></view>
 		<view class="myContent"  style='display:{{display}}'>
     
 			<!-- swiper组件，滑动的图片 -->

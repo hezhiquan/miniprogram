@@ -49,7 +49,7 @@ Page({
     console.log(e.detail.value+"1")
     this.setData({
       emotion:e.detail.value,
-      selectdb:e.detail.value
+      
     })
   },
 
