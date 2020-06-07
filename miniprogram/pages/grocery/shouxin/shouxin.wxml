@@ -12,10 +12,11 @@
 					<view class="swiperClass  {{swiperIndex == index ? 'active' : 'quiet'}}">
           <view class="">
             <view class="hello">你好，陌生人：</view>
+						<image bindtap="firstbind"  src="../../../images/plants/icon_envelope3.png" class="icons"></image>
           </view>
 						<text class="center">{{item.content}}</text>
 						<view class="namebox">
-						<text class="name">By  {{item.NickName}}</text></view>
+						<text class="name">{{item.NickName}}</text></view>
 						<view>{{item.date}}</view>
 					</view>
 				</view>
@@ -28,4 +29,17 @@
 		
 	</view>
 	<mp-toptips msg="{{tips}}" type="{{type}}" show="{{tips}}"></mp-toptips>
+	
+		<!-- 遮罩层 -->
+		<view class="bgs" style='display:{{display}}'></view>
+		<view class="myContent" style='display:{{display}}'>
+			<view class="conbox">
+				<view class="hello">你好，陌生人：</view>
+				<view class="contents">  {{mycontent}}</view>
+			</view>
+			<view class="btbox">
+				<image src="../../../images/plants/back.png" class="btnt" bindtap="hideView">确定</image>
+			</view>
+		</view>
+
 </view>

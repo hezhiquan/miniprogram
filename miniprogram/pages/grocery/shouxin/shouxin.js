@@ -15,6 +15,7 @@ Page({
       url1:"huixin1/huixin1"
     },
     openid:"",
+    mycontent:"",
     loadMore:true,
     loadAll:false,
     dataList:[],
@@ -23,7 +24,9 @@ Page({
     nickName:"",
     content:"",
     contents:[],//空数组用于存放获取的内容
-    swiperIndex: 0, //这里不写第一次启动展示的时候会有问题
+    display:"none",
+    swiperIndex: 0 ,//这里不写第一次启动展示的时候会有问题
+    select:0,//选择遮罩层内容
     tip:"青山飞鸟拾信鸽……",
   },
 
@@ -50,15 +53,15 @@ Page({
     .get({
       success(res) {
           console.log("请求成功", res.data)
-
+         console.log(res.data[0].Hiscontent)
           //把新请求到的数据添加到dataList里 ,concat是将数组一个一个加进去，而push则是直接加入
           let list = that.data.dataList.concat(res.data)
           that.setData({
             dataList: list, //获取数据数组    
-            
+            mycontent:res.data[0].Hiscontent
           });
           that.data.currentPage++;
-          if (res.data.length < that.data.pageSize) {
+          if (res.data.length <= 0) {
             console.log("数量不够")
             wx.showToast({
               title: '还没有回信的朋友哦',
@@ -94,6 +97,30 @@ Page({
     })
    
  },
+
+ firstbind: function () {
+  this.showView();
+},
+//遮罩层部分
+// bindImage:function(){//展示内容
+//   this.showView();
+// },
+bindChange(e) {
+  this.setData({
+       swiperIndex: e.detail.current
+  })
+  },
+showView: function() { //展示遮罩层
+  this.setData({
+    display: "block"
+  })
+},
+hideView: function() {
+  //关闭遮罩层，display：none的意思是隐藏该元素，其他的display：block or inline都默认设置为元素可见
+  this.setData({
+    display: "none"
+  })
+},
 
  update:function (params) {
    this.test();

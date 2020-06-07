@@ -287,6 +287,20 @@
 					"id": -1,
 					"name": "pages/tree/multiTree/myHouse/myHouse",
 					"pathName": "pages/tree/multiTree/myHouse/myHouse",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/timing/purchase/purchase",
+					"pathName": "pages/timing/purchase/purchase",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/tree/multiTree/addHouse/addHouse",
+					"pathName": "pages/tree/multiTree/addHouse/addHouse",
 					"scene": null
 				}
 			]

@@ -15,14 +15,14 @@
           </view>
 							<!-- 回信 -->
 						<view class="btn-area">
-						<navigator hover-class="navigator-hover" url="{{hui.url1}}?openid={{item._openid}}">
+						<navigator hover-class="navigator-hover" url="{{hui.url1}}?openid={{item._openid}}&content={{item.content}}">
 							<view class="writeback">写回信</view>
 							<image class="huixin" src="https://s1.ax1x.com/2020/04/19/JKRdE9.png" ></image>
 						</navigator>
 						</view>
 						<text class="center">{{item.content}}</text>
 						<view class="namebox">
-						<text class="name">By  {{item.NickName}}</text></view>
+						<text class="name">{{item.NickName}}</text></view>
 						<view>{{item.date}}</view>
 					</view>
 				</view>

@@ -6,8 +6,8 @@
 }
 .myhover{
   cursor: pointer;
-  height:300rpx;
-  width:176rpx;
+  height:170rpx;
+  width:170rpx;
  
 }
 

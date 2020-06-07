@@ -23,7 +23,7 @@ height: 800rpx;
   position: initial;
   width: 500rpx;
   height: 50rpx;
-  margin: 690rpx 30rpx;
+  margin: 650rpx 30rpx;
 
 }
 .name{
@@ -129,4 +129,106 @@ white-space:nowrap;
   bottom: 20rpx;
   width: 80rpx;
   height: 80rpx;
+}
+
+/* 遮罩层 */
+.bgs {
+  /* 一开始设为不可见 */
+  display: none;
+
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  /*设置大小为整个父元素的大小  */
+  width: 100%;
+  height: 100%;
+  /* 设置背景色 */
+  background-color: rgba(143, 134, 134, 0.744);
+  /* 设置所处的z轴高度，一般元素的z-index为1左右，将遮罩层设置为1001是为了确保将遮罩层放在一般元素的上
+  方，遮罩层的内容必须放在遮罩层的上方，即z-index至少为1002，当然，只要确保遮罩层的z-index比一般元素大，把遮罩层设为5，9，等等之类也行 */
+  z-index: 1001;
+  /* 设置遮罩层透明度 */
+  opacity: 0.70;
+}
+
+.myContent {
+  /* 一开始设为不可见 */
+  display: none;
+  background-image: url(https://i.loli.net/2020/06/07/7P2w85UVyTZa1du.jpg);
+  background-size: cover;
+  background-repeat: repeat-y;
+  border-radius: 10%;
+
+  position: fixed;
+  top: 10%;
+  left: 5%;
+  width: 90%;
+  height: 80%;
+  /*设置背景色  */
+  /* background-color: white; */
+  /* 见上文 */
+  z-index: 1002;
+  /* 添加缩放动画，动画的关键帧为myContent1，持续时长2s，速度曲线为ease(动画以低速开始，然后加快，在结束前变慢)，执行一次 */
+  animation: myContent1 2s ease 1;
+}
+
+/* 设定动画的关键帧，一开始时大小变为原来的0.3，最后缩放成原来的大小 */
+@keyframes myContent1 {
+  from {
+    scale: 0.3;
+  }
+
+  to {
+    scale: 1;
+  }
+}
+.conbox{
+  margin-top: 80rpx;
+  height:420px;
+}
+.btbox {
+  position: absolute;
+  top: 1rpx;
+  right: 80rpx;
+}
+
+.icons{
+  width: 55rpx;
+  height: 55rpx;
+  margin-top: -20rpx;
+  margin-left: 480rpx;
+  border-radius: 10%;
+  box-shadow: 2rpx 3rpx 10rpx rgba(0, 0, 0, 0.4);
+}
+
+.btnt {
+  /* margin-bottom: 30rpx; */
+  position: fixed;
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  opacity: 0.8;
+  margin-left: -550rpx;
+  margin-top: 5rpx;
+  box-shadow: 2rpx 3rpx 10rpx 5rpx rgba(0, 0, 0, 0.4);
+}
+
+.contents {
+  color: rgb(2, 41, 87);
+  margin-top: 50rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  height: 370px;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  text-align: justify;
+}
+
+
+.jianjie {
+  color: rgb(2, 49, 94);
+  height: 200rpx;
+  margin-left: 160rpx;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }

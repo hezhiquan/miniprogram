@@ -9,6 +9,7 @@ Page({
    */
   data: {
     hisopenid:"",
+    hiscontent:"",
     content:"",
     mycontent:"",
     Nickname:"",
@@ -31,6 +32,7 @@ Page({
       db.collection("Back").add({
         data:{
           Hisopenid:that.data.hisopenid,
+          Hiscontent:that.data.hiscontent,
           content:that.data.mycontent,
           NickName:that.data.Nickname,
           date:new Date(),
@@ -92,9 +94,11 @@ Page({
   onLoad: function (options) {
     console.log(options)
     this.setData({
-      hisopenid:options.openid
+      hisopenid:options.openid,
+      hiscontent:options.content
     })
     console.log(this.data.hisopenid)
+    console.log(this.data.hiscontent)
   },
 
   firstbind:function () {

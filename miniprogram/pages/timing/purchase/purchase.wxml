@@ -9,7 +9,7 @@
 </view>
 
 <view class="item">
-	<view wx:for="{{list}}" wx:key="*this">
+	<view wx:for="{{list}}" wx:key="{{index}}">
 		<view>
 			<image class="myhover" src="{{item.src}}" style="height:200px;width:156px;filter:grayscale({{item.gray}})" data-id="{{item.id}}" bindtap="purChase">
 			</image>

@@ -29,12 +29,12 @@
 					<view class="infor"><text>成员列表：</text></view>
 
 					<view class="item">
-						<view  wx:for="{{memberList}}" wx:for-item="item">
+						<view wx:for="{{memberList}}" wx:for-item="item">
 							<view>{{item}}</view>
 						</view>
 					</view>
 
-
+					
 				</view>
 				<view class="infor"><text>树屋简介：</text>
 					<view class="jianjie">{{introduction}}</view>
