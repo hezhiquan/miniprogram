@@ -103,7 +103,7 @@ Page({
     } else { //在名字不重复，暗号不为空的情况下，开始创建树屋
       //日期格式化
       let date = new Date();
-      let dateString = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate()
+      let dateString = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate()
       db.collection("treeHouse").add({
         data: {
           name: that.data.name,
@@ -124,10 +124,10 @@ Page({
           console.log("开始跳转")
           //两秒后跳转回上一页
           setTimeout(function () {
-            wx.navigateBack({
-              delta: 1
+            wx.redirectTo({
+              url: '../multiTree',
             })
-          }, 2000)
+          }, 1500)
         },
         fail: function (err) {
           console.log("提交失败", err)

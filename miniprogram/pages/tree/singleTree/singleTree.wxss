@@ -69,8 +69,8 @@ page {
   position: fixed;
   width: 100rpx;
   height: 100rpx;
-  right: 20rpx;
-  bottom: 20rpx;
+  right: 50rpx;
+  bottom: 90rpx;
   z-index: 4;
   border-radius: 50%;
 

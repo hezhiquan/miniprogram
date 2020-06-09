@@ -56,7 +56,7 @@
    		<view class="drawer_content">
    			<view class="myGoal">
    				<!-- <text>目标名：</text> -->
-   				<input class="input_base input_h30 " name="rName" placeholder="给自己定个小目标吧" bindinput="Finput"></input>
+   				<input class="input_base input_h30 " name="rName" placeholder="给自己定个小目标吧,如学习 (选填)" bindinput="Finput"></input>
    			</view>
    			<view class="section">
    				<picker mode="time" value="{{time}}" start="00:00" end="24:00" bindchange="bindTimeChange">

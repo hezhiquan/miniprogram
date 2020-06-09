@@ -1,12 +1,12 @@
 <!--miniprogram/pages/tree/multiTree/multiTree.wxml-->
 <!-- 我的树屋 -->
-<!-- <view wx:if="{{!nickName}}" class="mask-bg" style="display:block;opacity:1;">
+<view wx:if="{{!nickName}}" class="mask-bg" style="display:block;opacity:1;">
 	<view class="mask-myContent content2">
 		<button open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录 </button>
 	</view>
-</view> -->
+</view>
 
-<view>
+<view wx:else>
 	<!-- 遮罩层 -->
 
 	<view class="mask-bg" bindtap='hideView' style='display:{{display}}; '></view>

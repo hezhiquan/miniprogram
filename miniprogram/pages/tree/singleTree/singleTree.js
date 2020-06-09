@@ -240,6 +240,7 @@ Page({
   getUserInfo(event){
     //console.log(ev);
     let userInfo = event.detail.userInfo;
+    var that=this;
     if(  userInfo ){
       db.collection('users').add({
         data : {
@@ -248,16 +249,16 @@ Page({
           signature : '', //寄语          
           friendList : [],
           gray:[],
-          times:0
+          times:25
         }
       }).then((res)=>{
          db.collection('users').doc(res._id).get().then((res)=>{
            //console.log(res.data);
            app.userInfo = Object.assign( app.userInfo , res.data );
-           this.setData({
+           that.setData({
             
              nickName : app.userInfo.nickName,
-                         
+             avatarUrl:app.userInfo.avatarUrl            
            });
          });
       });

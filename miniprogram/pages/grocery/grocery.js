@@ -82,7 +82,7 @@ Page({
           signature : '', //寄语          
           friendList : [],
           gray:[],
-          times:0
+          times:25
         }
       }).then((res)=>{
          db.collection('users').doc(res._id).get().then((res)=>{
