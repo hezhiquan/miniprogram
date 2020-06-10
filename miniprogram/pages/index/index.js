@@ -64,6 +64,7 @@ Page({
     toBall:false,//是否查看人生进度球
     isBallInit:false,//球是否是第一次被初始化
     remainMonth:"",
+    ballIndex:0,//进度球气泡框显示的文字的下标
   },
   
 
@@ -147,6 +148,7 @@ Page({
     }
 
   },
+  
   onHide:function(){
     clearInterval(clockIntervalId);
   },
@@ -208,7 +210,15 @@ Page({
     })
   },
   toClock:function(){
-    
+    // 开启生辰钟
+    clockIntervalId=setInterval(show,1000); //每秒执行1次
+    function show() {
+      secshow()
+      minshow()
+      houshow()
+      backshow()
+      ctx.draw()
+    }
     this.setData({
       toBall:false
     })
@@ -216,7 +226,8 @@ Page({
     ctx1.clearRect(0,0,150,150)
   },
   toBall:function(){
-   
+  //  关闭生辰钟，节省资源
+  clearInterval(clockIntervalId);
     this.setData({
       toBall:true
     })
@@ -237,7 +248,14 @@ Page({
   onUnload:function(){
     clearTimeout(timeId);
     clearInterval(this.data.timer)
+  },
+  changeBallIndex:function(){
+      console.log("fff")
+      this.setData({
+        ballIndex:(this.data.ballIndex+1)%4
+      })
   }
+
 
 })
 //秒针

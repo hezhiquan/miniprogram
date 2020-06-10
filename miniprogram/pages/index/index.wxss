@@ -1,4 +1,5 @@
 /* miniprogram/pages/index/index.wxss */
+
 .canvas{
   margin-top: 80rpx;
   width: 200px;
@@ -43,6 +44,7 @@
   display:flex;
   justify-content:center;
   align-items:center;
+  
   }
 .btn{
 
@@ -70,4 +72,85 @@
   border:1px solid gray;
   font-size: 20rpx;
   display: inline;
+}
+/* 设定生辰钟文字的颜色，位置 */
+
+.pos0,.pos1,.pos2,.pos3,.pos4,.pos5,.pos6{
+  /* background-color: #99CCCC; */
+ 
+  border-radius: 3px;
+  position: absolute;
+  padding: 7rpx;
+}
+.pos0{
+  top: 20rpx;
+  color: #6aafd1;
+}
+.pos1{
+  top: 230rpx;
+  right: 50rpx;
+  writing-mode: vertical-lr;
+  color: #006699;
+}
+.pos2{
+  writing-mode: vertical-lr;
+  left: 40rpx;
+  top: 200rpx;
+  color: #009999;
+}
+.pos3{
+  top: 75rpx;
+  right: 40rpx;
+  transform: rotate(45deg);
+  color: #66CCCC;
+}
+.pos4{
+  top: 50rpx;
+  left: 90rpx;
+  transform: rotate(-20deg);
+  color: #666699;
+}
+.pos5{
+  top: 500rpx;
+  left: 30rpx;
+  transform: rotate(9deg);
+  color: #CCCC99;
+}
+
+.pos6{
+  right: 50rpx;
+  top: 490rpx;
+  transform: rotate(-9deg);
+  color: #CC3399;
+}
+/* 进度球气泡框 */
+.org_box {
+  /* display: none; */
+  width: 230rpx;
+  color: white;
+  line-height: 30px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #99CCCC;
+  position: absolute;
+  left: 43%;
+  top: 20rpx;
+  border-radius: 15px;
+
+}
+
+.org_bot_cor {
+  /* display: none; */
+  width: 0;
+  height: 0;
+  font-size: 0;
+  border-width: 15px;
+  border-style: solid;
+  border-color: #99CCCC transparent transparent;
+  /* _border-color: #66CC66 white white; */
+  overflow: hidden;
+  position: absolute;
+  left: 20px;
+  bottom: -30px;
 }

@@ -7,13 +7,23 @@
 			</block>
 		</view>
 	</view>
-	<view >
+	<view>
 		<!-- 基础内容：画钟 -->
-		
-		<view wx:if="{{!toBall}}"  >
+
+		<view wx:if="{{!toBall}}">
 			<!-- 绘制时钟 -->
 			<view class="center">
-				<canvas class='canvas' canvas-id='myCanvas'></canvas>
+			<!-- <view wx:if="{{showClock}}"> -->
+			<view wx:if="{{showClock}}" class="pos0 "><text>你已经度过</text></view>
+				<view wx:if="{{showClock}}" class="pos1 "><text>{{years}} 年</text></view>
+				<view wx:if="{{showClock}}" class="pos2 "> <text>{{months}} 月</text></view>
+				<view wx:if="{{showClock}}" class="pos3 "><text>{{weeks}} 周</text></view>
+				<view wx:if="{{showClock}}" class="pos4 "> <text>{{days}} 天</text></view>
+				<view wx:if="{{showClock}}" class="pos5 "> <text>{{hours}} 小时</text></view>
+				<view wx:if="{{showClock}}" class="pos6 "><text>{{minutes}} 分</text></view>
+			<!-- </view> -->
+			
+				<canvas class='canvas' style="padding-bottom: 80rpx;" canvas-id='myCanvas'></canvas>
 			</view>
 			<view wx:if="{{showClock}}">
 				<view style="" class="center">
@@ -41,11 +51,11 @@
 				<view wx:if="{{showClock}}" class="birthday">
 
 					<view><text style="padding-left:90rpx;">你已经 {{seconds }} 岁了</text></view>
-					<view><text style="color:grey;font-size:12px;">
+					<!-- <view><text style="color:grey;font-size:12px;">
 	         在这个世界上，你已经存在</text>
-					</view>
+					</view> -->
 
-					<view>
+					<!-- <view>
 						<view class="table ">
 							<view class="tr">
 								<view class="th ">{{years}} 年</view>
@@ -58,7 +68,7 @@
 								<view class="td ">{{minutes}} 分</view>
 							</view>
 						</view>
-					</view>
+					</view> -->
 
 				</view>
 				<view wx:else>
@@ -71,18 +81,27 @@
 			</view>
 		</view>
 		<!-- 拓展内容：画球 -->
-		<view wx:else  >
+		<view wx:else>
 			<view class="center">
-				<canvas canvas-id='canvasArcCir' style="width: 150px;"></canvas>
+			<!-- 气泡框 -->
+				<view  class=" org_box " bindtap="changeBallIndex">
+				 <text class="org_bot_cor ">
+				 </text>
+				 <text wx:if="{{ballIndex==0}}">你还可以享受{{remainMonth*3.5|int}}个长假</text>
+				 <text wx:if="{{ballIndex==1}}">你还可以度过{{remainMonth*4}}个周末</text>
+				 <text wx:if="{{ballIndex==2}}">你还可以学会{{remainMonth*13}}首歌曲</text>
+				 <text wx:if="{{ballIndex==3}}">你还可以观看{{remainMonth/2|int}}场演唱会</text>
+				 </view>
+				<canvas bindtap="changeBallIndex" canvas-id='canvasArcCir' style="width: 150px;margin-top: 200rpx;"></canvas>
 			</view>
 			<view bindtap="toClock"><button>返回生辰钟</button></view>
 			<!-- 文字部分 -->
 			<view style="padding-left:10%;">
-				<view>
+				<!-- <view>
 					<text style="color:grey;font-size:12px;margin-left:20rpx;">你还可以：</text>
-				</view>
+				</view> -->
 				<!-- 加个 |int 就可以在wxml里面取整 -->
-				<view class="table ">
+				<!-- <view class="table ">
 					<view class="tr">
 						<view class="td  ">享受{{remainMonth*3.5|int}}个长假</view>
 						<view class="td ">度过{{remainMonth*4}}个周末</view>
@@ -92,7 +111,7 @@
 						<view class="td  ">学会{{remainMonth*13}}首歌曲</view>
 						<view class="td ">观看{{remainMonth/2|int}}场演唱会</view>
 					</view>
-				</view>
+				</view> -->
 			</view>
 		</view>
 
