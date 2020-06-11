@@ -13,16 +13,25 @@
 		<view wx:if="{{!toBall}}">
 			<!-- 绘制时钟 -->
 			<view class="center">
-			<!-- <view wx:if="{{showClock}}"> -->
-			<view wx:if="{{showClock}}" class="pos0 "><text>你已经度过</text></view>
-				<view wx:if="{{showClock}}" class="pos1 "><text>{{years}} 年</text></view>
-				<view wx:if="{{showClock}}" class="pos2 "> <text>{{months}} 月</text></view>
-				<view wx:if="{{showClock}}" class="pos3 "><text>{{weeks}} 周</text></view>
-				<view wx:if="{{showClock}}" class="pos4 "> <text>{{days}} 天</text></view>
-				<view wx:if="{{showClock}}" class="pos5 "> <text>{{hours}} 小时</text></view>
-				<view wx:if="{{showClock}}" class="pos6 "><text>{{minutes}} 分</text></view>
-			<!-- </view> -->
-			
+
+				<!-- </view> -->
+				<view wx:if="{{showClock}}">
+					<view class=" org_boxxx " baindtap="toClock">
+						<text class="org_bot_cor ">
+				 </text>
+						<!-- <view wx:if="{{showClock}}"> -->
+
+						<text wx:if="{{clockIndex==0}}"><text>你已经度过了{{years}} 年</text></text>
+						<text wx:if="{{clockIndex==1}}"><text>你已经度过了{{months}} 月</text></text>
+						<text wx:if="{{clockIndex==2}}"><text>你已经度过了{{weeks}} 周</text></text>
+						<text wx:if="{{clockIndex==3}}"><text>你已经度过了{{days}} 天</text></text>
+						<text wx:if="{{clockIndex==4}}"><text>你已经度过了{{hours}} 小时</text></text>
+						<text wx:if="{{clockIndex==5}}"><text>你已经度过了{{minutes}} 分钟</text></text>
+
+						<canvas bindtap="toClock" canvas-id='canvasArcCir' style="width: 50px;margin-top: 100rpx;"></canvas>
+					</view>
+				</view>
+
 				<canvas class='canvas' style="padding-bottom: 80rpx;" canvas-id='myCanvas'></canvas>
 			</view>
 			<view wx:if="{{showClock}}">
@@ -83,16 +92,16 @@
 		<!-- 拓展内容：画球 -->
 		<view wx:else>
 			<view class="center">
-			<!-- 气泡框 -->
-				<view  class=" org_box " bindtap="changeBallIndex">
-				 <text class="org_bot_cor ">
+				<!-- 气泡框 -->
+				<view class=" org_box " baindtap="toBall">
+					<text class="org_bot_cor ">
 				 </text>
-				 <text wx:if="{{ballIndex==0}}">你还可以享受{{remainMonth*3.5|int}}个长假</text>
-				 <text wx:if="{{ballIndex==1}}">你还可以度过{{remainMonth*4}}个周末</text>
-				 <text wx:if="{{ballIndex==2}}">你还可以学会{{remainMonth*13}}首歌曲</text>
-				 <text wx:if="{{ballIndex==3}}">你还可以观看{{remainMonth/2|int}}场演唱会</text>
-				 </view>
-				<canvas bindtap="changeBallIndex" canvas-id='canvasArcCir' style="width: 150px;margin-top: 200rpx;"></canvas>
+					<text wx:if="{{ballIndex==0}}">你还可以享受{{remainMonth*3.5|int}}个长假</text>
+					<text wx:if="{{ballIndex==1}}">你还可以度过{{remainMonth*4}}个周末</text>
+					<text wx:if="{{ballIndex==2}}">你还可以学会{{remainMonth*13}}首歌曲</text>
+					<text wx:if="{{ballIndex==3}}">你还可以观看{{remainMonth/2|int}}场演唱会</text>
+				</view>
+				<canvas bindtap="toBall" canvas-id='canvasArcCir' style="width: 150px;margin-top: 200rpx;"></canvas>
 			</view>
 			<view bindtap="toClock"><button>返回生辰钟</button></view>
 			<!-- 文字部分 -->

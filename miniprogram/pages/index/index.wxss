@@ -1,7 +1,7 @@
 /* miniprogram/pages/index/index.wxss */
 
 .canvas{
-  margin-top: 80rpx;
+  margin-top: 105px;
   width: 200px;
   height: 200px;
 }
@@ -138,6 +138,22 @@
   top: 20rpx;
   border-radius: 15px;
 
+}
+.org_boxxx {
+  /* display: none; */
+  margin-top: 10px;
+  width: 100px;
+  color: white;
+  line-height: 30px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #99CCCC;
+  position: absolute;
+  left: 43%;
+  top: 20rpx;
+  border-radius: 15px;
+  height: 60px;
 }
 
 .org_bot_cor {

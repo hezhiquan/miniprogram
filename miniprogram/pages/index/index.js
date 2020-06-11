@@ -7,6 +7,9 @@ let timeId=0;
 const ctx1 = wx.createCanvasContext('canvasArcCir')
 
 var clockIntervalId=0;
+var close=0;
+var closeball=0;
+// var ballIndex=0;
 Page({
   data: {
     endTime:"",
@@ -65,6 +68,7 @@ Page({
     isBallInit:false,//球是否是第一次被初始化
     remainMonth:"",
     ballIndex:0,//进度球气泡框显示的文字的下标
+    clockIndex:0,
   },
   
 
@@ -137,7 +141,6 @@ Page({
 
   },
   onShow: function (e) {
-   
     clockIntervalId=setInterval(show,1000); //每秒执行1次
     function show() {
       secshow()
@@ -151,6 +154,9 @@ Page({
   
   onHide:function(){
     clearInterval(clockIntervalId);
+    var that =this;
+    clearInterval(closeball);
+    clearInterval(close);
   },
   bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value);
@@ -159,6 +165,15 @@ Page({
       showClock: true,
       
     })
+   
+    var that=this;
+    clearInterval(close);
+    close=setInterval(
+      function(){
+        that.setData({
+          clockIndex:(that.data.clockIndex+1)%6
+        })
+      },1500);
     console.log(this.data);
     
       this.getBirthday();
@@ -211,6 +226,8 @@ Page({
   },
   toClock:function(){
     // 开启生辰钟
+    clearInterval(closeball);
+    clearInterval(close);
     clockIntervalId=setInterval(show,1000); //每秒执行1次
     function show() {
       secshow()
@@ -219,6 +236,14 @@ Page({
       backshow()
       ctx.draw()
     }
+    var that=this;
+    close=setInterval(
+      function(){
+        that.setData({
+          clockIndex:(that.data.clockIndex+1)%6
+        })
+      },1500);
+
     this.setData({
       toBall:false
     })
@@ -227,10 +252,20 @@ Page({
   },
   toBall:function(){
   //  关闭生辰钟，节省资源
-  clearInterval(clockIntervalId);
-    this.setData({
-      toBall:true
-    })
+    var that=this;
+    clearInterval(clockIntervalId);
+    clearInterval(closeball);
+    clearInterval(close);
+      this.setData({
+        toBall:true
+      })
+    
+    closeball=setInterval(
+      function(){
+        that.setData({
+          ballIndex:(that.data.ballIndex+1)%4
+        })
+      },1500);
  
       let allMonth=900;//人的平均寿命为900个月
 
@@ -249,13 +284,13 @@ Page({
     clearTimeout(timeId);
     clearInterval(this.data.timer)
   },
-  changeBallIndex:function(){
-      console.log("fff")
-      this.setData({
-        ballIndex:(this.data.ballIndex+1)%4
-      })
-  }
 
+  // changeBallIndex:function(){
+  //     console.log("fff")
+  //     this.setData({
+  //       ballIndex:(this.data.ballIndex+1)%4
+  //     })
+  // }
 
 })
 //秒针
