@@ -266,6 +266,10 @@ countInterval: function(){
     // 调用函数
     this.Initi() 
     this.smile();
+    //设置屏幕常亮
+    wx.setKeepScreenOn({
+        keepScreenOn: true
+      })
   },  
   
   startTime()

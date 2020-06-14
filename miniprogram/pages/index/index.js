@@ -95,6 +95,17 @@ Page({
     })
     console.log("登录函数被调用")
     }
+    // 手动开启发信
+    // wx.cloud.callFunction({
+    //   name : 'get',
+    //   data : {}
+    // }).then((res)=>{
+    //   console.log(res)
+    // })
+    // .catch((err)=>{
+    //   console.log(err)
+    // })
+    
   },
   getcake:function(i){
     //掉落时间
