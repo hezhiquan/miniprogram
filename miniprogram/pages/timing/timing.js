@@ -61,6 +61,7 @@ countInterval: function(){
     context.stroke()
     context.draw()
   },
+  //时钟进度条
   progress_canvas:function (step) {
     // 使用 wx.createContext 获取绘图上下文 context
     var context = wx.createCanvasContext('progress_canvas')
@@ -78,7 +79,7 @@ countInterval: function(){
   },
 
   bindTimeChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    // console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       time: e.detail.value,
       flag:true, 
@@ -101,7 +102,7 @@ countInterval: function(){
             ghour:that.data.time[0]+that.data.time[1]
         })
     }
-    console.log(that.data.ghour)
+    // console.log(that.data.ghour)
     if(that.data.time[3]==0)
     {
          var minute = that.data.time[4]
@@ -116,7 +117,7 @@ countInterval: function(){
             gminute:that.data.time[3]+that.data.time[4]
         })
     }
-    console.log(that.data.gminute)
+    // console.log(that.data.gminute)
     if (hours < 10) {
         // 少于10补零
         that.setData({
@@ -541,12 +542,12 @@ countInterval: function(){
   },
    // 点击左上角小图标事件
    tap_ch: function (e) {
-    console.log("点击小图标");
+    // console.log("点击小图标");
     
     this.setData({
       open:!this.data.open
     })
-    console.log(this.data.open) 
+    // console.log(this.data.open) 
   },
 
   tap_start: function (e) {
@@ -560,7 +561,7 @@ countInterval: function(){
     this.data.nweMark = e.touches[0].pageX;
 
     // 手指从左向右移动
-    console.log("111",this.data.istoright)
+    // console.log("111",this.data.istoright)
     if (this.data.mark < this.data.nweMark) {
       this.data.istoright = true;
     }

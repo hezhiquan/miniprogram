@@ -140,7 +140,7 @@ text{
   background-repeat: no-repeat;
   background-position: -20rpx 50rpx 10rpx; */
   writing-mode:vertical-lr;
-  margin: auto;
+  margin: 15px auto;
   color: rgba(74, 152, 173, 0.847);
   border-radius: 10px;
   box-shadow: 5rpx 8rpx 15rpx 7rpx rgba(189, 152, 96, 0.4);

@@ -15,6 +15,7 @@ App({
         traceUser: true
       })
     }
+
     this.globalData = {}
     this.userInfo = {}
     

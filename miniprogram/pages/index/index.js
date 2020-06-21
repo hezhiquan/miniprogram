@@ -73,7 +73,7 @@ Page({
   
 
   onLoad: function (options) {
-    console.log("gg",app.userInfo)
+    
     if(!app.userInfo.nickName){
     //刚进入页面时，调用云函数尝试登录
     wx.cloud.callFunction({
@@ -93,7 +93,7 @@ Page({
     .catch((err)=>{
       console.log(err)
     })
-    console.log("登录函数被调用")
+    
     }
     // 手动开启发信
     // wx.cloud.callFunction({
@@ -114,7 +114,7 @@ Page({
     var marginLeft = Math.ceil(Math.random() * 690);
     var width = Math.floor(Math.random() * (100 - 60 + 1) + 60);
     var animation = Math.floor(Math.random() * (6-3)+3)
-    console.log(marginLeft);
+    // console.log(marginLeft);
     var cake = {
       id: i,
       angle: angle,
@@ -137,7 +137,7 @@ Page({
     if(i <= 60){
       var timerTem =setTimeout(function () {
         i = i+ 1;
-        console.log(i);
+        // console.log(i);
         that.getcake(i)
       }, dropTime)
     }
@@ -170,7 +170,7 @@ Page({
     clearInterval(close);
   },
   bindDateChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value);
+    // console.log('picker发送选择改变，携带值为', e.detail.value);
     this.setData({
       date: e.detail.value,
       showClock: true,
@@ -185,7 +185,7 @@ Page({
           clockIndex:(that.data.clockIndex+1)%6
         })
       },1500);
-    console.log(this.data);
+    // console.log(this.data);
     
       this.getBirthday();
     
@@ -193,7 +193,7 @@ Page({
   
   //生辰钟
   getBirthday:function() {
-    console.log("getBirthday")
+    // console.log("getBirthday")
     clearInterval(this.data.timer);
     this.data.timer=setInterval(this.getTime,1000)
    
@@ -215,7 +215,7 @@ Page({
     let date1 = that.data.date.split('-');
     date1 = parseInt(date1[0] * 12) + parseInt(date1[1]);    
     let date2 = today.getFullYear() * 12 + today.getMonth();
-    console.log("bi",birthday.getDate(),today.getDate())
+    // console.log("bi",birthday.getDate(),today.getDate())
     //彩蛋，当当前月份与生辰钟的月份相同时，掉落生日蛋糕
     if(today.getMonth()==birthday.getMonth()&&this.data.isFirst&&today.getDate()==birthday.getDate()){
       this.getcake(1);
@@ -280,7 +280,7 @@ Page({
  
       let allMonth=900;//人的平均寿命为900个月
 
-      console.log("months is"+this.data.months);
+      // console.log("months is"+this.data.months);
       let rate=Math.ceil((1-(this.data.months/allMonth))*100);
       rate=rate>100?100:rate;
       this.setData({
@@ -518,7 +518,7 @@ var wave = function (ctx, oRange){
     //  data = ~~(oRange.value) / 100;
     //  console.log("data=" + data)
     //}, 0);
-    console.log("data is ",data)
+    // console.log("data is ",data)
     if (data >= 0.85) {
       if (nowrange > range / 4) {
         var t = range * 0.01;
